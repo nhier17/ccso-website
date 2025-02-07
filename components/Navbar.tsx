@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { navbarLinks } from "@/constants";
-import { Button } from "./ui/button";
 import Image from "next/image";
 
 export function Navbar() {
@@ -34,18 +33,18 @@ export function Navbar() {
           </ul>
 
           <div className="hidden md:flex items-center space-x-4">
-              <Button className="bg-primary text-dark-100 hover:bg-primary inline-flex w-full items-center justify-center rounded-md px-6 py-3 font-bold text-base">
+              <Link href="/support" className="bg-primary text-dark-100 hover:bg-dark-100 hover:text-light-100 inline-flex w-full items-center justify-center rounded-md px-6 py-3 font-bold text-base">
                 Get Involved
-              </Button>
+              </Link>
             </div>
 
-          <Button
+          <button
             className="md:hidden p-2 text-muted-foreground hover:text-primary"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="size-6 text-black" />}
-          </Button>
+            {isOpen ? <X className="size-6" /> : <Menu className="size-6 text-dark-100" />}
+          </button>
         </div>
         {isOpen && (
           <div className="md:hidden py-4 border-t">

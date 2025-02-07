@@ -15,6 +15,7 @@ export enum FormFieldType {
 }
 
 interface CustomInputProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     control: Control<any>;
     name: string;
     fieldType: FormFieldType;
@@ -22,16 +23,17 @@ interface CustomInputProps {
     placeholder?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) => {
     switch (props.fieldType) {
         case FormFieldType.INPUT:
             return (
                 <FormControl>
-                    <Input
-                        {...field}
-                        placeholder={props.placeholder}
-                        className="field-input"
-                    />
+                 <Input
+                     {...field}
+                     placeholder={props.placeholder}
+                     className="field-input"
+                 />
                 </FormControl>
             );
         case FormFieldType.TEXTAREA:

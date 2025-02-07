@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="font-serif bg-gray-50 py-20 mt-8">
+    <section className="font-serif py-20 mt-8">
       <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
         Get to know <span className="text-green-600">CCSO</span>
       </h2>

@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center">
+    <section className="relative h-[90vh]  flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+            src="/images/hero.jpg"
             alt="People"
             className="object-cover opacity-20"
             fill
@@ -21,10 +21,10 @@ export const Hero = () => {
             Empowering communities in South Sudan through faith, compassion, and sustainable development
           </p>
           <div className="flex gap-4 justify-center">
-            <Button className="bg-gray-50 hover:bg-orange-400 text-dark-100" size="lg" asChild>
+            <Button className="bg-gray-50 text-dark-100 hover:bg-dark-100 hover:text-light-100" size="lg" asChild>
               <Link href="#mission">Our Mission</Link>
             </Button>
-            <Button className="border border-primary" size="lg" variant="outline" asChild>
+            <Button className="border-primary border-[2px] hover:bg-dark-100 hover:text-light-100" size="lg" variant="outline" asChild>
               <Link href="#donate">Donate now</Link>
             </Button>
           </div>

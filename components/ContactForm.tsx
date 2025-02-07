@@ -12,6 +12,7 @@ import UseAlert from "@/hooks/useAlert";
 import CustomInput, { FormFieldType } from "./CustomInput";
 import { FaLocationArrow } from "react-icons/fa6";
 
+
 const schema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
   email: z.string().email({ message: "Invalid email address" }),
@@ -54,12 +55,6 @@ const ContactForm = () => {
         form.reset();
       } catch (error) {
         console.error(error);
-  
-        showAlert({
-          show: true,
-          text: "I didn't receive your message 😢",
-          type: "danger",
-        });
       } finally {
         setLoading(false);
         setTimeout(() => hideAlert(false), 3000);
@@ -96,7 +91,7 @@ const ContactForm = () => {
           disabled={loading}
         >
           {loading ? 'Sending...' : 'Send Message'}
-          <FaLocationArrow className="size-4" />
+          <FaLocationArrow className="size-5" />
         </Button>
       </form>
     </Form>

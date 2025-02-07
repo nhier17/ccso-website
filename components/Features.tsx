@@ -13,7 +13,7 @@ const Features = () => {
           {FOCUS_AREAS.map((area) => (
             <div
               key={area.id}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 text-center"
+              className="bg-white p-8 rounded-md shadow-lg  transition duration-300 transform hover:scale-105 text-center"
             >
               <div className="relative w-full mb-6">
                 <Image 
@@ -30,7 +30,7 @@ const Features = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-          <Link href="/programs" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-blue-700 transition-all duration-300">
+          <Link href="/donate" className="inline-block bg-orange-400 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-dark-100 hover:text-light-100 transition-all duration-300">
               Donate Now
           </Link>
         </div>

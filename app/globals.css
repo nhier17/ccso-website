@@ -111,6 +111,9 @@
     background: linear-gradient(180deg, #232839 0%, #12141d 100%);
   }
 
+  .c-space {
+    @apply sm:px-10 px-5;
+  }
   /* Auth */
   .auth-container {
     @apply relative flex flex-col-reverse text-light-100 sm:flex-row;
@@ -135,7 +138,7 @@
   
   /* Root */
   .root-container {
-    @apply flex min-h-screen w-full flex-1 flex-col bg-cover bg-white px-5 xs:px-10 md:px-16;
+    @apply flex min-h-screen w-full flex-1 flex-col bg-cover bg-white;
   }
   
    /* Course Card */
@@ -157,10 +160,23 @@
       @apply mt-10 flex gap-8 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible;
   }
 
-  /* Course Overview */
-  .course-overview {
-    @apply flex flex-col-reverse items-center gap-12 sm:gap-32 xl:flex-row xl:gap-8;
+  /* contact section */
+  .contact-container {
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
   }
+
+  .field-label {
+    @apply text-lg text-light-100;
+  }
+
+  .field-input {
+    @apply w-full bg-dark-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-light-100 text-lg text-light-100 shadow-dark-200 shadow-2xl focus:outline-none;
+  }
+
+  .field-btn {
+    @apply bg-primary px-5 py-2 min-h-12 rounded-lg shadow-dark-200 shadow-2xl flex justify-center items-center text-lg text-light-100 gap-3;
+  }
+
 
   .course-overview h1 {
     @apply text-5xl font-semibold text-white md:text-7xl;
