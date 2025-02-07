@@ -205,7 +205,7 @@ export const otherSupportOptions = [
     title: "Become a Partner",
     description:
       "Collaborate with us to create long-term, sustainable impact in communities.",
-    imageSrc: "/images/partner.png",
+    imageSrc: "/images/culture.png",
     link: "/support-details#partner",
     bgClass: "bg-gradient-blue",
   },
