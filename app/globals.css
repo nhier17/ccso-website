@@ -10,6 +10,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: #F8FAFC;
+}
 
 @layer base {
   :root {
@@ -138,7 +141,7 @@
   
   /* Root */
   .root-container {
-    @apply flex min-h-screen w-full flex-1 flex-col bg-cover bg-white;
+    @apply flex min-h-screen w-full flex-1 flex-col bg-cover bg-white px-5 xs:px-10 md:px-16;
   }
   
    /* Course Card */

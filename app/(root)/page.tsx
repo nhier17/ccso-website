@@ -7,15 +7,12 @@ import { Impact } from "@/components/Impact";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero />
-
-      <div className="mx-auto w-full max-w-7xl px-5 xs:px-10 md:px-16">
       <About />
       <Features />
       <Impact />
       <CTA />
-      </div>
-    </div>
+      </>
   );
 }

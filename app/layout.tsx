@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "CCSO - Christ Compassion Service Organization",
   description: "Empowering communities in South Sudan through faith, compassion, and sustainable development",
   icons: {
-    icon: "/images/ccso.png"
+    icon: "/images/logo.webp"
   }
 };
 

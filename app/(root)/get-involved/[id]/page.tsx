@@ -12,9 +12,9 @@ const SupportDetails = ({ params }: { params: { id: string } }) => {
     }
 
   return (
-    <main className="w-full py-10 px-5 md:px-16 mt-8">
-    <div className="max-w-5xl mx-auto text-center">
-      <h1 className="text-4xl font-bold mb-6 text-primary">{supportDetail.title}</h1>
+    <main className="w-full mt-8 py-20">
+    <div className="max-w-5xl text-start md:text-center">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-primary">{supportDetail.title}</h1>
       <Image
         src={supportDetail.image}
         alt={supportDetail.title}

@@ -2,8 +2,8 @@ export const navbarLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Programs", path: "/programs" },
-  { name: "Support", path: "/support" },
   { name: "Contact Us", path: "/contact" },
+  { name: "Get Involved", path: "/get-involved"}
 ];
 
 // constants/focusAreas.ts
@@ -13,7 +13,7 @@ export const FOCUS_AREAS = [
     title: "Food Security",
     description:
       "Enhancing agricultural skills and technologies to ensure food security.",
-    icon: "/images/food.jpg",
+    icon: "/images/food4.jpg",
   },
   {
     id: 2,
@@ -45,8 +45,6 @@ export const FOCUS_AREAS = [
 ];
 
 //quick links
-// constants/quickLinks.ts
-
 export const quickLinks = [
   {
     id: 1,

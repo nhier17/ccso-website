@@ -1,52 +1,92 @@
+"use client";
+import { useRef } from "react";
+import { gsap } from "gsap";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CTA = () => {
+  const textRef = useRef(null);
+  const imgRef = useRef(null);
+  const btnRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: "top 80%", 
+        toggleActions: "play none none reverse", 
+      },
+    });
+
+    gsap.from(imgRef.current, {
+      opacity: 0,
+      x: 30,
+      duration: 1,
+      delay: 0.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: imgRef.current,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    gsap.from(btnRef.current, {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      delay: 0.8,
+      ease: "power3.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: btnRef.current,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
   return (
-    <div className="bg-white">
-      <div className="py-10 sm:py-10">
-        <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-          <svg
-            viewBox="0 0 1024 1024"
-            aria-hidden="true"
-            className="absolute top-1/2 left-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
-          >
-            <circle r={512} cx={512} cy={512} fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
-            <defs>
-              <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stopColor="#7775D6" />
-                <stop offset={1} stopColor="#E935C1" />
-              </radialGradient>
-            </defs>
-          </svg>
-          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-3xl font-semibold tracking-tight text-balance text-light-100 sm:text-4xl">
-            Join Us in Building a Better Future.
-            </h2>
-            <p className="mt-6 text-lg/8 text-pretty text-gray-300">
+    <section className="bg-gray-50 py-16 mt-8">
+      <div className="px-6 flex flex-col lg:flex-row items-center gap-12">
+        <div ref={textRef} className="lg:w-1/2 text-start md:text-center lg:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Join Us in <span className="text-primary">Building a Better Future</span>.
+          </h2>
+          <p className="mt-4 text-lg text-gray-700">
             Your support can transform lives. Whether through donations, volunteering, or partnerships, you can help us create a resilient and self-reliant South Sudan.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <button className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-                Donate Now
-              </button>
-               <button className="text-sm/6 font-semibold text-white">
-              Partner with Us <span aria-hidden="true">→</span>
-              </button>
-            </div>
-          </div>
-          <div className="relative mt-16 h-80 lg:mt-8">
-            <Image
-              alt="App screenshot"
-              src="/images/impact.jpg"
-              width={1824}
-              height={1080}
-              className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-            />
+          </p>
+          <div ref={btnRef} className="mt-6 flex justify-center lg:justify-start gap-4">
+            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
+              Donate Now
+            </Button>
+            <Button className="border-primary border-[2px] text-primary bg-white hover:bg-primary hover:text-white transition-all">
+              Partner with Us
+            </Button>
           </div>
         </div>
-      </div>
-    </div>
-  )
-}
 
-export default CTA
+        {/* Image Section */}
+        <div ref={imgRef} className="relative w-full lg:w-1/2">
+          <Image
+            alt="Community Impact"
+            src="/images/impact.jpg"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTA;
