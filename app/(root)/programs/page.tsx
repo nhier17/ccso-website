@@ -1,24 +1,26 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { HeartPulse, Droplet, BookOpen, HandHelping } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { programs, impactMetrics, successStories } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Programs = () => {
   const textRef = useRef(null);
   const imgRef = useRef(null);
-  const programsRef = useRef([]);
+  const programsRef = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRef = useRef(null);
+  const [activeProgram, setActiveProgram] = useState("healthcare");
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
-      // Animate Header Text
       gsap.from(textRef.current, {
         opacity: 0,
         y: 30,
@@ -31,7 +33,6 @@ const Programs = () => {
         },
       });
 
-      // Animate Image
       gsap.from(imgRef.current, {
         opacity: 0,
         x: -30,
@@ -45,7 +46,6 @@ const Programs = () => {
         },
       });
 
-      // Animate Programs Cards
       programsRef.current.forEach((el, index) => {
         if (el) {
           gsap.from(el, {
@@ -68,81 +68,147 @@ const Programs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16">
-      <div className="relative h-[60vh] flex items-center justify-center bg-gray-900 text-white">
-        <Image
-          src="https://cmmb.org/wp-content/uploads/2017/01/Mothers-with-children-wait-for-care_South-Sudan.jpg"
-          alt="Programs"
-          fill
-          className="absolute inset-0 opacity-40 object-cover"
-        />
-        <h1 className="relative text-4xl md:text-5xl font-bold">Our Programs</h1>
-      </div>
-
-      <div className="px-6 mt-16">
-        <div ref={textRef} className="text-start md:text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Our Key Programs</h2>
-          <p className="text-lg text-gray-700 mt-2">
-            Transforming lives through education, healthcare, and social support.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10">
-          {[
-            { icon: HeartPulse, title: "Healthcare Support", desc: "Providing medical assistance & awareness." },
-            { icon: Droplet, title: "Clean Water Access", desc: "Ensuring clean and safe drinking water." },
-            { icon: BookOpen, title: "Education Programs", desc: "Supporting children’s education & literacy." },
-            { icon: HandHelping, title: "Community Empowerment", desc: "Skill training & self-reliance projects." },
-          ].map((program, index) => (
-            <div
-              key={index}
-              className="p-8 bg-white shadow-lg rounded-xl flex flex-col items-center text-center hover:scale-105 transition-transform"
-            >
-              <program.icon className="text-primary w-12 h-12 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800">{program.title}</h3>
-              <p className="text-gray-600 mt-2">{program.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-20 flex flex-col lg:flex-row items-center gap-12">
-          <div ref={imgRef} className="relative w-full lg:w-1/2">
-            <Image
-              src="https://i0.wp.com/humanitarian.worldconcern.org/wp-content/uploads/2011/08/humanitarian-sudan-schoolkids.jpg?ssl=1"
-              alt="Impact"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg object-cover"
-            />
+        <section ref={sectionRef} className="py-16">
+        <div className="relative h-[70vh] flex items-center justify-center bg-gray-900 text-white">
+          <Image
+            src="https://i.pinimg.com/736x/99/2b/ee/992beee6f85227231bc4b97728f437c8.jpg"
+            alt="Programs"
+            fill
+            priority
+            className="absolute inset-0 opacity-40 object-cover"
+          />
+          <div className="relative z-10 text-center max-w-3xl px-4">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Empowering Communities</h1>
+            <p className="text-xl md:text-2xl mb-8">Through sustainable programs and lasting partnerships</p>
+            <Button size="lg" className="bg-primary text-white hover:bg-primary/90" asChild>
+              <Link href="#our-programs">Explore Our Programs</Link>
+            </Button>
           </div>
+        </div>
 
-          <div ref={textRef} className="lg:w-1/2 text-start md:text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold">How We Make a Difference</h2>
-            <p className="mt-4 text-lg text-gray-700">
-              We work closely with local communities to provide essential services and create sustainable programs that empower individuals and families.
+            <section className="py-16 bg-gray-50">
+              <div className="px-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {impactMetrics.map((metric, index) => (
+                    <div key={index} className="text-center">
+                      <metric.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                      <span className="text-4xl font-bold block">{metric.number}</span>
+                      <span className="text-gray-600">{metric.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+          <section id="our-programs" className="py-20">
+          <div ref={textRef} className="text-start md:text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Key Programs</h2>
+            <p className="text-xl text-gray-700">
+              Transforming lives through sustainable and impactful initiatives
             </p>
-            <Button className="mt-6 bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-              Learn More
-            </Button>
           </div>
-        </div>
 
-        <div className="text-start md:text-center mt-20">
-          <h2 className="text-3xl md:text-4xl font-bold">Be Part of the Change</h2>
-          <p className="text-lg text-gray-700 mt-2">
-            Support our programs by donating or volunteering today.
-          </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-              Donate Now
-            </Button>
-            <Button className="border-primary border-[2px] bg-white text-primary hover:bg-primary hover:text-white transition-all">
-              Get Involved
-            </Button>
+          <Tabs defaultValue="healthcare" onValueChange={setActiveProgram}>
+            <TabsList
+              className="flex gap-6 md:gap-8 overflow-x-auto lg:grid lg:grid-cols-4 bg-transparent h-auto w-full">
+              {programs.map((program) => (
+                <TabsTrigger
+                  key={program.id}
+                  value={program.id}
+                  className={`flex-shrink-0  ${
+                    activeProgram === program.id ? "bg-primary text-white" : "bg-transparent"
+                  }`}
+                >
+                  <div className="flex flex-col items-center">
+                    <program.icon className="w-8 h-8 mb-2" />
+                    <span>{program.title}</span>
+                  </div>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {programs.map((program) => (
+              <TabsContent key={program.id} value={program.id}>
+                <div className="mt-8 grid md:grid-cols-2 gap-8">
+                  <div>
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      width={500}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">{program.title}</h3>
+                    <p className="text-gray-700 mb-6">{program.longDesc}</p>
+                    <div className="grid grid-cols-3 gap-4">
+                      {Object.entries(program.stats).map(([key, value]) => (
+                        <div key={key} className="text-center p-4 bg-gray-50 rounded-lg">
+                          <span className="block text-2xl font-bold text-primary">{value}</span>
+                          <span className="text-sm text-gray-600 capitalize">{key}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="mt-8" asChild>
+                      <Link href={`/programs/${program.id}`}>Learn More</Link>
+                    </Button>
+                  </div>
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </section>
+
+
+        <section className="py-20 bg-gray-50">
+          <div className="px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-start md:text-center mb-8">Success Stories</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {successStories.map((story, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    if (el) programsRef.current[index] = el;
+                  }}
+                  className="bg-white rounded-lg overflow-hidden shadow-lg"
+                >
+                  <div className="relative h-48">
+                    <Image
+                      src={story.image}
+                      alt={story.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{story.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{story.location}</p>
+                    <p className="text-gray-700">{story.story}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+
+        <section className="py-20 bg-primary text-white">
+          <div className="text-start md:text-center px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Make a Difference Today</h2>
+            <p className="text-xl mb-8">
+              Join us in our mission to create lasting change in communities around the world.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100" asChild>
+                <Link href="/get-involved">Get Involved</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-dark-100 hover:bg-white/10" asChild>
+                <Link href="/donate">Donate Now</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </section>
   );
 };
 

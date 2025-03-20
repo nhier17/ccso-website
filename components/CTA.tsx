@@ -2,9 +2,10 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,8 +22,8 @@ const CTA = () => {
       ease: "power3.out",
       scrollTrigger: {
         trigger: textRef.current,
-        start: "top 80%", 
-        toggleActions: "play none none reverse", 
+        start: "top 80%",
+        toggleActions: "play none none reverse",
       },
     });
 
@@ -39,7 +40,7 @@ const CTA = () => {
       },
     });
 
-    gsap.from(btnRef.current, {
+    const btnAnimation = gsap.from(btnRef.current, {
       opacity: 0,
       y: 20,
       duration: 1,
@@ -52,6 +53,12 @@ const CTA = () => {
         toggleActions: "play none none reverse",
       },
     });
+
+    // Ensure buttons are clickable after animation
+    btnAnimation.eventCallback("onComplete", () => {
+      gsap.set(btnRef.current, { pointerEvents: "auto" });
+    });
+
   }, []);
 
   return (
@@ -65,23 +72,22 @@ const CTA = () => {
             Your support can transform lives. Whether through donations, volunteering, or partnerships, you can help us create a resilient and self-reliant South Sudan.
           </p>
           <div ref={btnRef} className="mt-6 flex justify-center lg:justify-start gap-4">
-            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-              Donate Now
+            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all" asChild>
+              <Link href="/donate">Donate Now</Link>
             </Button>
-            <Button className="border-primary border-[2px] text-primary bg-white hover:bg-primary hover:text-white transition-all">
-              Partner with Us
+            <Button asChild className="border-primary border-[2px] text-primary bg-white hover:bg-primary hover:text-white transition-all">
+              <Link href="/partner">Partner with Us</Link>
             </Button>
           </div>
         </div>
 
-        {/* Image Section */}
         <div ref={imgRef} className="relative w-full lg:w-1/2">
           <Image
             alt="Community Impact"
             src="/images/impact.jpg"
             width={600}
-            height={400}
-            className="rounded-lg shadow-lg"
+            height={600}
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>

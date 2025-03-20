@@ -28,7 +28,7 @@ export const Hero = () => {
             variant="outline"
             asChild
           >
-            <Link href="#donate">Donate Now</Link>
+            <Link href="/donate">Donate Now</Link>
           </Button>
         </div>
       </div>

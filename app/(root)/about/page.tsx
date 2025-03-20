@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { HeartHandshake, ShieldCheck, Users, Globe } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +16,6 @@ const About = () => {
   const imgRef = useRef(null);
 
   useGSAP(() => {
-    // Animating the heading
     gsap.from(".about-heading", {
       opacity: 0,
       y: 30,
@@ -27,7 +27,6 @@ const About = () => {
       },
     });
 
-    // Animating the image
     gsap.from(imgRef.current, {
       opacity: 0,
       x: -30,
@@ -39,7 +38,6 @@ const About = () => {
       },
     });
 
-    // Animating the text section
     gsap.from(textRef.current, {
       opacity: 0,
       y: 30,
@@ -113,17 +111,59 @@ const About = () => {
           </div>
         </div>
 
+        <section className="py-16 bg-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-start md:text-center mb-8">Our Leadership</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4">
+                <Image
+                  src="/images/leader1.jpg"
+                  alt="Leader 1"
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold">Joseph Maker Atot</h3>
+              <p className="text-gray-600">Executive Director</p>
+            </div>
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4">
+                <Image
+                  src="/images/leader2.jpg"
+                  alt="Leader 2"
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold">Jane Smith</h3>
+              <p className="text-gray-600">Programs Director</p>
+            </div>
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4">
+                <Image
+                  src="/images/leader3.JPEG"
+                  alt="Leader 3"
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold">Abraham Nhier</h3>
+              <p className="text-gray-600">Software Engineer</p>
+            </div>
+          </div>
+      </section>
+
         <div className="text-start md:text-center mt-20">
           <h2 className="text-3xl md:text-4xl font-bold">Join Our Mission</h2>
           <p className="text-lg text-gray-700 mt-2">
             Be a part of our journey to create lasting change.
           </p>
           <div className="mt-6 flex justify-center gap-4">
-            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-              Get Involved
+            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all" size="lg" asChild>
+              <Link href="/get-involved">Get Involved</Link>
             </Button>
-            <Button className="border-primary border-[2px] bg-white text-primary hover:bg-primary hover:text-white transition-all">
-              Donate Now
+            <Button className="border-primary border-[2px] bg-white text-primary hover:bg-primary hover:text-white transition-all" size="lg" asChild>
+              <Link href="/donate">Donate Now</Link>
             </Button>
           </div>
         </div>

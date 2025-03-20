@@ -144,69 +144,30 @@ body {
     @apply flex min-h-screen w-full flex-1 flex-col bg-cover bg-white px-5 xs:px-10 md:px-16;
   }
   
-   /* Course Card */
-  .course-title {
-    @apply mt-2 line-clamp-1 text-base font-semibold text-white xs:text-xl;
-  }
-
-  .course-category {
-    @apply mt-1 line-clamp-1 text-sm italic text-light-100 xs:text-base;
-  }
-
-  .course-btn {
-    @apply bg-dark-600 mt-3 min-h-14 w-full font-bebas-neue text-base text-primary;
-  }
-
-
-  /* Course List */
-    .course-list {
-      @apply mt-10 flex gap-8 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible;
-  }
-
   /* contact section */
   .contact-container {
     @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
   }
 
   .field-label {
-    @apply text-lg text-light-100;
+    @apply text-lg text-dark-100;
   }
 
   .field-input {
-    @apply w-full bg-dark-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-light-100 text-lg text-light-100 shadow-dark-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-white px-5 py-2 min-h-14 rounded-lg placeholder:text-light-100 text-lg text-dark-100 shadow-dark-200 shadow-2xl focus:outline-none;
   }
 
   .field-btn {
     @apply bg-primary px-5 py-2 min-h-12 rounded-lg shadow-dark-200 shadow-2xl flex justify-center items-center text-lg text-light-100 gap-3;
   }
 
-
-  .course-overview h1 {
-    @apply text-5xl font-semibold text-white md:text-7xl;
+  .shad-select-trigger {
+    @apply bg-white  placeholder:text-dark-100 text-dark-100 border-dark-500 h-11 focus:ring-0 focus:ring-offset-0 !important;
   }
 
-  .course-info {
-    @apply mt-7 flex flex-row flex-wrap gap-4 text-xl text-light-100;
+  .shad-select-content {
+    @apply bg-white border-dark-500 !important;
   }
 
-  .course-copies {
-    @apply flex flex-row flex-wrap gap-4 mt-1;
-  }
-
-  .course-copies p {
-    @apply text-xl text-light-100;
-  }
-
-  .course-copies p span {
-    @apply ml-2 font-semibold text-primary;
-  }
-
-  .course-description {
-    @apply mt-2 text-justify text-xl text-light-100;
-  }
-
-  .course-overview_btn {
-    @apply mt-4 min-h-14 w-fit bg-primary text-dark-100 hover:bg-primary/90 max-md:w-full !important;
-  }
 
 }

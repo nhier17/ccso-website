@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Footer = () => {
   const { quickLinks, contactLinks, socialLinks } = footerLinks;
   return (
-    <footer className="bg-gray-900 text-light-100 py-12 overflow-hidden mt-12">
+    <footer className="bg-primary text-light-100 py-12 overflow-hidden mt-12">
     <div className="max-w-6xl mx-auto px-4">
       <div className="grid md:grid-cols-4 gap-8">
         <div>
