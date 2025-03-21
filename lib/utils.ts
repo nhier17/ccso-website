@@ -54,7 +54,8 @@ export const volunteerSchema = z.object({
 });
 
 export const donateSchema = z.object({
-  amount: z.number().min(1, "Please enter a valid amount"),
+  amount: z
+    .preprocess((val) => Number(val), z.number().min(1, "Please enter a valid amount")),
   firstName: z.string().min(2, "First name is required"),
   lastName: z.string().min(2, "Last name is required"),
   email: z.string().email("Please enter a valid email"),

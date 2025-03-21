@@ -1,13 +1,18 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { config } from "@/lib/config";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  //apiVersion: "2023-10-16",
+const stripe = new Stripe(config.env.stripe.secretKey, {
+  apiVersion: "2025-02-24.acacia",
 });
 
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const { amount, email, name, isMonthly } = await request.json();
+    const { amount, email, name, isMonthly } = await req.json();
+
+    if (!amount || !email || !name) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
 
     // Create a customer
     const customer = await stripe.customers.create({
@@ -23,20 +28,14 @@ export async function POST(request: Request) {
       amount,
       currency: "usd",
       customer: customer.id,
-      automatic_payment_methods: {
-        enabled: true,
-      },
-      metadata: {
-        isMonthly: isMonthly.toString(),
-      },
+      receipt_email: email,
+      metadata: { donorName: name, isMonthly: isMonthly ? "true" : "false" },
+      setup_future_usage: isMonthly ? "off_session" : undefined,
     });
 
     return NextResponse.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
     console.error("Error creating payment intent:", error);
-    return NextResponse.json(
-      { error: "Error creating payment intent" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Error creating payment intent" }, { status: 500 });
   }
 }

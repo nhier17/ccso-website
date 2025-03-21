@@ -17,11 +17,13 @@ import {
     SelectItem
 } from '@/components/ui/select';
 import { Control } from 'react-hook-form';
+import { Switch } from '@/components/ui/switch';
 
 export enum FormFieldType {
     INPUT = 'input',
     TEXTAREA = 'textarea',
-    SELECT = 'select'
+    SELECT = 'select',
+    SWITCH = 'switch'
 }
 
 interface CustomInputProps {
@@ -30,8 +32,10 @@ interface CustomInputProps {
     fieldType: FormFieldType;
     label?: string;
     placeholder?: string;
-    options?: { label: string; value: string }[]; // For Select
-    disabled?: boolean; // Added disabled prop
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    type?: string;
+    options?: { label: string; value: string }[]; 
+    disabled?: boolean; 
 }
 
 const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) => {
@@ -39,7 +43,17 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
         case FormFieldType.INPUT:
             return (
                 <FormControl>
-                    <Input {...field} placeholder={props.placeholder} className="field-input" disabled={props.disabled} />
+                    <Input 
+                    {...field} 
+                    placeholder={props.placeholder} 
+                    className="field-input" 
+                    disabled={props.disabled} 
+                    onChange={(e) => {
+                        field.onChange(e);
+                        props.onChange?.(e);
+                    }}
+                    type={props.type}
+                    />
                 </FormControl>
             );
         case FormFieldType.TEXTAREA:
@@ -65,6 +79,16 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                     </Select>
                 </FormControl>
             );
+        case FormFieldType.SWITCH:
+            return (
+                <FormItem className="flex items-center space-x-2">
+                <FormControl>
+                    <Switch checked={field.value} onCheckedChange={field.onChange} disabled={props.disabled} />
+                </FormControl>
+                </FormItem>
+            );
+        default:
+            return null;
     }
 }
 

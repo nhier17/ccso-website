@@ -9,7 +9,6 @@ import { impactMetrics } from "@/constants";
 export default function DonatePage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <section className="bg-primary text-white py-16">
         <div className="px-2 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -38,14 +37,10 @@ export default function DonatePage() {
           </div>
         </div>
 
-        {/* Main Form */}
-        <div className="max-w-2xl mx-auto">
           <Elements stripe={stripePromise}>
             <DonateForm />
           </Elements>
-        </div>
-
-        {/* Impact Section */}
+        
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-4 text-start md:text-center">Your Impact</h2>
           <div className="px-4">
