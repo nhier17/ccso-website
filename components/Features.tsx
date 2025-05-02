@@ -60,7 +60,7 @@ const Features = () => {
           >
             <div className="relative h-48">
               <Image
-                src={area.icon}
+                src={area.img}
                 alt={area.title}
                fill
                 className="object-cover"

@@ -169,5 +169,7 @@ body {
     @apply bg-white border-dark-500 !important;
   }
 
-
+  .hero-section {
+    @apply relative py-16 md:py-24 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-x-hidden !important;
+  }
 }

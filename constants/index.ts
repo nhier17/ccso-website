@@ -5,9 +5,9 @@ export const navbarLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Programs", path: "/programs" },
-  { name: "Projects", path: "/projects" },
+  { name: "Get Involved", path: "/get-involved"},
+  { name: "Blog", path: "/blog" },
   { name: "Contact Us", path: "/contact" },
-  { name: "Get Involved", path: "/get-involved"}
 ];
 
 // constants/focusAreas.ts
@@ -17,34 +17,34 @@ export const FOCUS_AREAS = [
     title: "Food Security",
     description:
       "Enhancing agricultural skills and technologies to ensure food security.",
-    icon: "/images/food4.jpg",
+    img: "/images/food4.JPG",
   },
   {
     id: 2,
     title: "Health & Hygiene",
     description:
       "Promoting hygiene, sanitation, and access to safe drinking water.",
-    icon: "/images/health.jpg",
+    img: "/images/health.jpg",
   },
   {
     id: 3,
     title: "Peace & Reconciliation",
     description: "Building peace and reconciliation among communities.",
-    icon: "/images/peace.jpg",
+    img: "/images/peace.jpg",
   },
   {
     id: 4,
     title: "Education",
     description:
       "Empowering communities through education and adult literacy programs.",
-    icon: "/images/education.jpg",
+    img: "/images/education.jpg",
   },
   {
     id: 5,
     title: "Empowerment",
     description:
       "Restoring dignity and self-respect through community-driven development.",
-    icon: "/images/empower.jpg",
+    img: "/images/empower.jpg",
   },
 ];
 
@@ -151,94 +151,25 @@ export const footerLinks = {
   ],
 };
 
-//support options
-export const supportOptions = [
-  {
-    id: "education",
-    title: "Support Education",
-    description:
-      "Help fund school supplies, teacher training, and scholarships for students in need.",
-    imageSrc: "/images/partner.png",
-    link: "/support-details#education",
-    bgClass: "bg-gradient-blue",
-  },
-  {
-    id: "water",
-    title: "Water Projects",
-    description:
-      "Provide safe drinking water by funding wells, filtration systems, and sanitation programs.",
-    imageSrc: "/images/water.png",
-    link: "/support-details#water",
-    bgClass: "bg-gradient-gray",
-  },
-  {
-    id: "food",
-    title: "Food Security",
-    description:
-      "Support agricultural training, food distribution, and sustainable farming initiatives.",
-    imageSrc: "/images/partner2.png",
-    link: "/support-details#food",
-    bgClass: "bg-gradient-vertical",
-  },
-  {
-    id: "peace",
-    title: "Peace and Reconciliation",
-    description:
-      "Support initiatives that foster peace, reconciliation, and harmony among communities in South Sudan.",
-    imageSrc: "/images/peace1.png",
-    link: "/support-details#peace",
-    bgClass: "bg-gradient-green",
-  },
-];
-
-// constants/otherSupportOptions.js
-export const otherSupportOptions = [
-  {
-    id: "volunteer",
-    title: "Volunteer With Us",
-    description:
-      "Use your skills and time to help communities in need. Join our initiatives today.",
-    imageSrc: "/images/volunteer.png",
-    link: "/volunteer",
-    bgClass: "bg-gradient",
-  },
-  {
-    id: "partner",
-    title: "Become a Partner",
-    description:
-      "Collaborate with us to create long-term, sustainable impact in communities.",
-    imageSrc: "/images/culture.png",
-    link: "/partner",
-    bgClass: "bg-gradient-blue",
-  },
-];
 
 //faqs
 export const faqs = [
   {
-    question: "What is CCSO?",
-    answer:
-      "CCSO (Christ Compassion Service Organization) is an indigenous South Sudanese non-governmental organization (NGO) committed to alleviating poverty, promoting sustainable livelihoods, and fostering peace and reconciliation in South Sudan.",
+    question: "How can I donate to CCSO?",
+    answer: "You can donate online through our secure donation page, by mail, or by wire transfer. Visit our Donate page for detailed information on all giving options."
   },
   {
-    question: "What is the mission of CCSO?",
-    answer:
-      "CCSO's mission is to alleviate poverty among vulnerable communities in South Sudan and make them self-reliant through initiatives like food security, agricultural development, hygiene awareness, peacebuilding, and evangelism.",
+    question: "Can I volunteer if I don't live in South Sudan?",
+    answer: "Yes! We offer remote volunteer opportunities in areas such as grant writing, social media management, graphic design, and more. Visit our Get Involved page to learn about current openings."
   },
   {
-    question: "What is the vision of CCSO?",
-    answer:
-      "CCSO envisions a democratic, peaceful, and progressive South Sudan where all people have equal opportunities for human development without discrimination.",
+    question: "Can my organization partner with CCSO?",
+    answer: "We welcome partnerships with organizations that share our values and mission. Please contact us through the form above to discuss potential collaboration opportunities."
   },
   {
     question: "Where does CCSO operate?",
     answer:
       "CCSO primarily focuses on Lakes State in South Sudan but plans to expand its operations to other parts of the country in the future.",
-  },
-  {
-    question: "What are the core values of CCSO?",
-    answer:
-      "CCSO's core values include equality, transparency, accountability, grassroots participation, and the recognition of indigenous wisdom.",
   },
   {
     question: "What programs does CCSO offer?",
@@ -247,21 +178,11 @@ export const faqs = [
   },
  
   {
-    question: "Can I partner with CCSO?",
-    answer:
-      "Yes, CCSO invites partnerships with like-minded organizations, donors, and stakeholders to collaborate on impactful community programs.",
-  },
-  {
     question: "How can my organization collaborate with CCSO?",
     answer:
       "Organizations can collaborate with CCSO by supporting its programs, sharing resources, or participating in joint initiatives aimed at community development.",
   },
  
-  {
-    question: "How can I support CCSO?",
-    answer:
-      "You can support CCSO by donating funds, volunteering, or partnering with the organization to implement its programs.",
-  },
   {
     question: "Where do donations to CCSO go?",
     answer:
@@ -271,11 +192,6 @@ export const faqs = [
     question: "Is CCSO a non-profit organization?",
     answer:
       "Yes, CCSO is a non-profit organization dedicated to serving vulnerable communities in South Sudan.",
-  },
-  {
-    question: "Can I volunteer with CCSO?",
-    answer:
-      "Yes, CCSO welcomes volunteers who can contribute their skills and time to support its initiatives.",
   },
 ];
 
@@ -539,23 +455,434 @@ export const testimonials = [
   }
 ];
 
-export const successStories = [
+
+//leaders 
+export const leaders = [
   {
-    name: "Classrooom Construction",
-    location: "South Sudan",
-    story: "CCSO's classroom construction project provided safe learning spaces for over 300 children, improving access to quality education and fostering a brighter future for the community.",
-    image: "/images/school-project3.jpg"
+    name: "Bishop Joseph Maker Atot",
+    role: "Founder & Executive Director",
+    bio: "As Founder and Executive Director, Bishop Joseph Maker Atot provides visionary leadership, drawing on his deep experience in ministry and community development to guide CCSO's mission across South Sudan.",
+    image: "/images/leader1.jpg"
   },
   {
-    name: "Food Distribution",
-    location: "Rumbek East",
-    story: "CCSO provided emergency food relief to 1,500 families affected by severe flooding, ensuring vulnerable households had access to essential nutrition.",
-    image: "/images/food8.jpg"
+    name: "Rebecca Achol Majak",
+    role: "Deputy Chairperson",
+    bio: "Rebecca supports the strategic direction of CCSO by collaborating closely with stakeholders and ensuring that the organization's initiatives align with community needs and development goals.",
+    image: "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
-    name: "Peace Awareness",
-    location: "Pacong",
-    story: "Through community-led peace awareness programs, CCSO has fostered reconciliation and strengthened social cohesion among over 5,000 residents in conflict-affected areas.",
-    image: "/images/peace-project2.jpg"
+    name: "Hellena Ding Maker",
+    role: "Secretary",
+    bio: "Hellena oversees organizational communication, documentation, and record-keeping, ensuring smooth internal operations and transparent reporting at CCSO.",
+    image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    name: "Abraham Nhier",
+    role: "IT and Software Development",
+    bio: "Abraham manages CCSO’s technology initiatives, developing digital solutions that enhance communication, data management, and program efficiency across the organization.",
+    image: "/images/leader3.JPEG"
+  },
+  {
+    name: "James Magok Chilim",
+    role: "Information Officer",
+    bio: "James leads CCSO’s information management efforts, ensuring accurate data collection, reporting, and community outreach to support informed decision-making and transparency.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    name: "Mary Atueny",
+    role: "Finance Manager",
+    bio: "Mary oversees the financial operations of CCSO, managing budgets, financial reporting, and compliance to ensure resources are used effectively and responsibly.",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
+
+//history 
+export const history = [
+  {
+    year: "2019",
+    title: "CCSO Is Founded",
+    description: "Rev. John Mading establishes CCSO to provide emergency relief to displaced persons in Western Lakes State."
+  },
+  {
+    year: "2022",
+    title: "First Agricultural Program",
+    description: "Launch of our first sustainable agriculture program, training 200 farmers in improved techniques."
+  },
+  {
+    year: "2023",
+    title: "Education Initiative Begins",
+    description: "Start of our education program with the construction of our first school in Rumbek."
+  },
+  {
+    year: "2024",
+    title: "Health Program Expansion",
+    description: "Implementation of mobile health clinics to reach remote communities without healthcare access."
+  },
+  {
+    year: "2024",
+    title: "Peace-Building Focus",
+    description: "Development of our peace and reconciliation program to address community conflicts."
+  },
+  {
+    year: "2025",
+    title: "International Partnerships",
+    description: "Expansion of our work through key international partnerships and increased donor support."
+  }
+];
+
+//address
+export const addressInfo = [
+  {
+    icon: "/icons/map-pin.svg",
+    title: "South Sudan Office",
+    details: [
+      "Lakes State",
+      "Rumbek Center, South Sudan"
+    ]
+  },
+  {
+    icon: "/icons/mail.svg",
+    title: "Email",
+    details: [
+      "bishop.pacong@gmail.com",
+      "bishop.pacong@gmail.com"
+    ]
+  },
+  {
+    icon: "/icons/phone.svg",
+    title: "Phone",
+    details: [
+      "+211 920 528 714",
+      "+254 724 396 190"
+    ]
+  },
+  {
+    icon: "/icons/clock.svg",
+    title: "Office Hours",
+    details: [
+      "Monday - Friday: 8:00 AM - 5:00 PM",
+      "Saturday: 9:00 AM - 1:00 PM"
+    ]
+  }
+];
+
+//why partner with us 
+export const partnerWithUs = {
+  type: [
+    {
+      title: "Organizational", 
+      desc: "Join forces with us on program implementation, resource sharing, or joint fundraising."
+    },
+    {
+      title: "Corporate",
+      desc: "Engage your company in corporate social responsibility through sponsorship or employee engagement."
+    },
+    {
+      title: "Academic",
+      desc: "Collaborate on research, internships, or knowledge exchange related to our work."
+    }
+  ],
+  benefits: [
+    "Increased impact through combined resources",
+    "Shared knowledge and expertise",
+    "Greater visibility for collaborative work",
+    "Access to broader networks and resources"
+  ]
+};
+//donate
+export const donate = {
+  type: [
+    {
+      title: "One-Time Donation", 
+      desc: "Make a single contribution to support our programs and initiatives."
+    },
+    {
+      title: "Monthly Giving",
+      desc: "Become a regular supporter with a monthly donation to help us plan for the future."
+    },
+    {
+      title: "Sponsor a project",
+      desc: "Fund a specific program or initiative aligned with your interests."
+    }
+  ],
+  benefits: [
+    "$25 can provide school supplies for a child",
+    "$25 can provide school supplies for a child",
+    "$50 can support a farmer with seeds and tools",
+    "$100 can help provide clean water access",
+    "$250 can sponsor a peace-building workshop"
+  ]
+};
+//volunteer
+export const volunteer = {
+  type: [
+    {
+      title: "Field Volunteers", 
+      desc: "Join us on the ground in South Sudan for hands-on involvement in our programs."
+    },
+    {
+      title: "Remote Volunteers",
+      desc: "Offer your skills remotely in areas like communications, fundraising to help amplify our impact from anywhere in the world."
+    },
+    {
+      title: "Professional Services",
+      desc: "Offer pro bono professional services in areas like accounting, legal advice and so much more."
+    }
+  ],
+  benefits: [
+    "Agricultural specialists (3-6 months)",
+    "English teachers (6-12 months)",
+    "Community Health Workers",
+    "Youth Empowerment Facilitators",
+    "Grant writers (remote)",
+    "Medical Professionals (Doctors/Nurses)",
+    "Monitoring & Evaluation Assistants"
+  ]
+};
+//
+export const upcomingEvents = [
+  {
+    title: "Annual Fundraising Gala",
+    date: "October 15, 2025",
+    location: "Nairobi, Kenya",
+    description: "Join us for an evening of celebration, inspiration, and support for our work in South Sudan.",
+    image: "https://images.pexels.com/photos/3321797/pexels-photo-3321797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    title: "Virtual Information Session",
+    date: "November 5, 2025",
+    location: "Online - Zoom",
+    description: "Learn about our programs and impact in this informative virtual session with our team.",
+    image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    title: "Volunteer Training Workshop",
+    date: "December 10, 2025",
+    location: "Juba, South Sudan",
+    description: "Comprehensive training for new volunteers joining our field programs in South Sudan.",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
+
+//success testimonial
+export const successTestimonials = [
+  {
+    name: "David Miller",
+    role: "Agricultural Volunteer, 2024",
+    quote: "Volunteering with CCSO was one of the most rewarding experiences of my life. Sharing agricultural knowledge with farmers in South Sudan and seeing their yields improve was incredibly fulfilling. The team's dedication and the warm welcome from the communities made this experience unforgettable.",
+    img: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    name: "Ema Thompson",
+    role: "Remote Marketing Volunteer, 2023",
+    quote: "Even working remotely, I felt deeply connected to CCSO's mission. Using my marketing skills to help raise awareness and funds for their work gave me a sense of purpose. The team was supportive and collaborative, making it easy to contribute meaningfully despite the distance.",
+    img: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
+//program stats
+export const programStats = {
+  title: "Program Details",
+  description: "Learn more about our key initiatives and how they're making a difference.",
+  items: [
+    {
+      id: "agriculture",
+      label: "Agriculture",
+      title: "Food Security",
+      description: "Our agricultural programs help communities achieve food security through sustainable farming methods, training, and resources.",
+      image: "/images/impact5.png",
+      features: [
+        {
+          title: "Sustainable Farming Training",
+          description: "Training farmers in climate-smart agricultural techniques adapted to South Sudan's challenging environment."
+        },
+        {
+          title: "Seed and Tool Distribution",
+          description: "Providing quality seeds, tools, and resources to help farmers increase their yields."
+        },
+        {
+          title: "Water Management",
+          description: "Implementing irrigation systems and water management techniques to mitigate the impact of droughts."
+        },
+        {
+          title: "Market Access Support",
+          description: "Helping farmers connect to markets and increase their income from agricultural products."
+        }
+      ],
+      impact: [
+        "500+ farmers to be trained in sustainable techniques",
+        "50% average increase in crop yields",
+        "10+ communities to be achieved improved food security",
+        "AIM: water management systems implementation"
+      ]
+    },
+    {
+      id: "education",
+      label: "Education",
+      title: "Education",
+      description: "We believe education is the foundation for sustainable development and work to increase access to quality education.",
+      image: "/images/partner.png",
+      features: [
+        {
+          title: "School Infrastructure",
+          description: "Building and rehabilitating schools in underserved communities to create safe learning environments."
+        },
+        {
+          title: "Teacher Training",
+          description: "Training and supporting teachers to improve the quality of education."
+        },
+        {
+          title: "Adult Literacy Programs",
+          description: "Providing literacy classes for adults to improve their skills and livelihood opportunities."
+        },
+        {
+          title: "Educational Materials",
+          description: "Supplying textbooks, school supplies, and learning materials to students and schools."
+        }
+      ],
+      impact: [
+        "20+ school to be built or rehabilitated",
+        "1,000+ children to gain access to education",
+        "20 teachers to be trained in modern teaching methods",
+        "AIM: literacy programs for programs"
+      ]
+    },
+    {
+      id: "health",
+      label: "Health",
+      title: "Health & Sanitation",
+      description: "Our health initiatives improve access to basic healthcare services and promote better hygiene and sanitation practices.",
+      image: "/images/health1.JPEG",
+      features: [
+        {
+          title: "Mobile Health Clinics",
+          description: "Bringing essential healthcare services to remote communities with limited access."
+        },
+        {
+          title: "Clean Water Projects",
+          description: "Drilling wells and establishing clean water sources to prevent waterborne diseases."
+        },
+        {
+          title: "Hygiene Education",
+          description: "Teaching proper hygiene practices to prevent disease transmission."
+        },
+        {
+          title: "Maternal & Child Health",
+          description: "Supporting pregnant women and children through prenatal care and nutrition programs."
+        }
+      ],
+      impact: [
+        "35 clean water wells to be established",
+        "8,000+ people to gain access to clean water",
+        "20 mobile health clinics to be conducted",
+        "50% reduction in waterborne diseases in target areas"
+      ]
+    },
+    {
+      id: "peace",
+      label: "Peace Building",
+      title: "Peace & Reconciliation",
+      description: "We work to promote peace, reconciliation, and social cohesion in communities affected by conflict.",
+      image: "/images/peace3.jpeg",
+      features: [
+        {
+          title: "Conflict Resolution Training",
+          description: "Training community leaders in conflict resolution and mediation skills."
+        },
+        {
+          title: "Interfaith Dialogue",
+          description: "Facilitating discussions between different faith communities to promote understanding and cooperation."
+        },
+        {
+          title: "Youth Peace Programs",
+          description: "Engaging young people in peace-building activities to prevent radicalization."
+        },
+        {
+          title: "Community Reconciliation",
+          description: "Organizing events and initiatives to heal divisions and build community cohesion."
+        }
+      ],
+      impact: [
+        "300+ community leaders to be trained in conflict resolution",
+        "15 inter-community peace agreements to be facilitated",
+        "1,000+ youth to be engaged in peace-building programs",
+        "AIM: 70% reduction in violent incidents in target communities"
+      ]
+    }
+  ]
+};
+// Sample blog data
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Bringing Clean Water to Rumbek Village",
+    excerpt: "After years of walking miles for clean water, the Rumbek community now has reliable access thanks to a sustainable water project.",
+    category: "health",
+    date: "April 15, 2025",
+    readTime: "5 min read",
+    image: "/images/water2.jpeg",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Empowering Farmers Through Sustainable Agriculture",
+    excerpt: "Our agricultural training program has helped local farmers increase crop yields by 50% using sustainable techniques.",
+    category: "agriculture",
+    date: "March 28, 2025",
+    readTime: "4 min read",
+    image: "/images/agri.jpg"
+  },
+  {
+    id: 3,
+    title: "New School Opens Doors to 300 Children",
+    excerpt: "The opening of a new school in Wau County provides educational opportunities to hundreds of children who previously had no access.",
+    category: "education",
+    date: "March 10, 2025",
+    readTime: "6 min read",
+    image: "https://images.pexels.com/photos/8466781/pexels-photo-8466781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 4,
+    title: "Youth Peace Ambassadors Program Launches",
+    excerpt: "A new initiative engages young people in peace-building activities across communities affected by conflict.",
+    category: "peace",
+    date: "February 22, 2025",
+    readTime: "3 min read",
+    image: "https://images.pexels.com/photos/6647024/pexels-photo-6647024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 5,
+    title: "Mobile Health Clinic Reaches Remote Villages",
+    excerpt: "Our mobile health team provided medical care to over 500 people in remote villages with limited healthcare access.",
+    category: "health",
+    date: "February 15, 2025",
+    readTime: "4 min read",
+    image: "https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 6,
+    title: "Community Leaders Trained in Conflict Resolution",
+    excerpt: "Twenty community leaders completed intensive training in mediation and conflict resolution techniques.",
+    category: "peace",
+    date: "January 30, 2025",
+    readTime: "5 min read",
+    image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 7,
+    title: "Adult Literacy Program Changes Lives",
+    excerpt: "Our adult literacy program has helped 120 adults learn to read and write, opening new opportunities.",
+    category: "education",
+    date: "January 18, 2025",
+    readTime: "4 min read",
+    image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 8,
+    title: "Seed Distribution Boosts Food Security",
+    excerpt: "A recent seed distribution initiative has helped 300 farming families prepare for the growing season.",
+    category: "agriculture",
+    date: "January 5, 2025",
+    readTime: "3 min read",
+    image: "https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];

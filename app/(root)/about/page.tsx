@@ -4,10 +4,13 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, ShieldCheck, Users, Globe } from "lucide-react";
+import { HeartHandshake, Clock, Award } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"; 
+import { leaders, history } from "@/constants";
+import { Card, CardContent } from "@/components/ui/card"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,123 +55,228 @@ const About = () => {
   }, []);
 
   return (
-    <section className="py-16">
-      <div className="relative h-[60vh] flex items-center justify-center bg-gray-900 text-white">
-        <Image
-          src="/images/impact4.jpg"
-          alt="About Us"
-          fill
-          className="absolute inset-0 opacity-40 object-cover"
-        />
-        <h1 className="relative text-5xl font-bold about-heading">About Us</h1>
-      </div>
-
-      <div className="px-6 mt-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 mt-16">
-          <div ref={imgRef} className="relative w-full lg:w-1/2">
-            <Image
-              src="https://www.unicef.org/southsudan/sites/unicef.org.southsudan/files/styles/large/public/girl%20child%20smile_1.jpg.webp?itok=k5l9vyAD"
-              alt="Our Story"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg object-cover"
-            />
-          </div>
-
-          <div ref={textRef} className="lg:w-1/2 text-start md:text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
-            <p className="mt-4 text-lg text-gray-700">
-              CCSO was founded with a vision to empower the people of South Sudan through faith, compassion, and sustainable development. We are dedicated to improving lives through community-driven initiatives.
-            </p>
-            <Button className="mt-6 bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-              Learn More
-            </Button>
+    <div>
+      {/* Hero Section */}
+      <section className="py-16 relative">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
+          <div className="relative w-full h-96">
+          <Image 
+            src="/images/impact4.jpg"
+            alt="CCSO community work" 
+            fill
+            priority
+            className="object-cover"
+          />
           </div>
         </div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center text-white">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">About CCSO</h1>
+            <p className="text-lg md:text-xl">
+              Get to know our organization, our mission, and the passionate team behind our work in South Sudan.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <div className="mt-20 text-start md:text-center core-values">
-          <h2 className="text-3xl md:text-4xl font-bold">Our Core Values</h2>
-          <p className="text-lg text-gray-700 mt-2">
-            These principles guide everything we do.
-          </p>
+            {/* Our Story */}
+      <section className="py-16 mt-16">
+          <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
+            <div ref={imgRef} className="relative aspect-square overflow-hidden rounded-xl shadow-xl">
+              <Image 
+                src="/images/leader2.jpg"
+                alt="CCSO founder" 
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            <div>
+              <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
+              <div ref={textRef} className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  CCSO was founded in response to the pressing needs of communities in Lakes State, South Sudan. Although the Government of the Republic of South Sudan is now operational, many regions still lack access to basic services due to the infancy of state structures.
+                </p>
+                <p>
+                Recognizing these challenges, the idea for CCSO was initiated by Bishop Joseph Maker Atot, Bishop of Pacong Diocese and a respected community leader in Rumbek East County. His vision was to create an indigenous organization that could act as a vehicle for sustainable development and empowerment, working alongside the government to reach underserved populations.
+              </p>
+              <p>
+                After extensive consultations with county authorities, local leaders, and the South Sudanese diaspora, the idea was warmly received. CCSO was officially formed as a non-governmental organization committed to supplementing government efforts and strengthening community resilience.
+              </p>
+              <p>
+                Today, CCSO supports ongoing initiatives in agriculture, education, health, and peace-building across various regions in Lakes State, guided by Christian values of compassion, service, and dignity for all.
+              </p>
+            </div>
+          </div>
+          </div>
+      </section>
+      {/* Mission, Vision, Values */}
+      <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Foundation</h2>
+            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+            <p className="mb-12 text-lg text-muted-foreground">
+              Learn about the principles that guide our work.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10">
-            {[
-              { icon: HeartHandshake, title: "Compassion", desc: "We serve with love, kindness, and a heart for others." },
-              { icon: ShieldCheck, title: "Integrity", desc: "We operate with honesty, transparency, and accountability." },
-              { icon: Users, title: "Community", desc: "We believe in unity and empowering communities for change." },
-              { icon: Globe, title: "Sustainability", desc: "We focus on long-term, sustainable impact." },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="p-8 bg-white shadow-lg rounded-xl flex flex-col items-center text-center hover:scale-105 transition-transform"
-              >
-                <value.icon className="text-primary w-12 h-12 mb-4" />
-                <h3 className="text-xl font-semibold text-gray-800">{value.title}</h3>
-                <p className="text-gray-600 mt-2">{value.desc}</p>
+          <Tabs defaultValue="mission" className="mx-auto max-w-4xl">
+            <TabsList className="mb-8 grid w-full grid-cols-3">
+              <TabsTrigger value="mission">Mission</TabsTrigger>
+              <TabsTrigger value="vision">Vision</TabsTrigger>
+              <TabsTrigger value="values">Values</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="mission" className="rounded-xl border bg-card p-8 shadow-sm">
+              <div className="flex flex-col items-center text-center">
+                <HeartHandshake className="mb-6 h-16 w-16 text-primary/80" />
+                <h3 className="mb-4 text-2xl font-semibold">Our Mission</h3>
+                <p className="max-w-2xl text-lg text-muted-foreground">
+                  To empower vulnerable communities in South Sudan through sustainable, faith-driven initiatives that promote dignity, self-reliance, and hope for a better future.
+                </p>
               </div>
+            </TabsContent>
+
+            <TabsContent value="vision" className="rounded-xl border bg-card p-8 shadow-sm">
+              <div className="flex flex-col items-center text-center">
+                <Award className="mb-6 h-16 w-16 text-primary/80" />
+                <h3 className="mb-4 text-2xl font-semibold">Our Vision</h3>
+                <p className="max-w-2xl text-lg text-muted-foreground">
+                To realize democratic, peaceful and progressive South Sudan wherein all people have equal and 
+                just opportunities to realize all-round human development without any form of discrimination. 
+                </p>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="values" className="rounded-xl border bg-card p-8 shadow-sm">
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="rounded-lg bg-muted/50 p-6">
+                  <h4 className="mb-2 text-lg font-medium">Equality</h4>
+                  <p className="text-muted-foreground">
+                    We intend to promote a society in which everyone is treated equally without any 
+                    discrimination on grounds of ethnicity, age, religion or disability. 
+                  </p>
+                </div>
+                
+                <div className="rounded-lg bg-muted/50 p-6">
+                  <h4 className="mb-2 text-lg font-medium">Transparency and Accountability</h4>
+                  <p className="text-muted-foreground">
+                  CCSO believes in a society wherein people conduct themselves in a transparent, honest, 
+                  straightforward and truthful way to ensure accountability.  To this extent, CCSO will incorporate 
+                  these values in its own functioning and will operate in a transparent manner and will be totally 
+                  accountable to the community with which it works and to all other stakeholders. 
+                  </p>
+                </div>
+                
+                <div className="rounded-lg bg-muted/50 p-6">
+                  <h4 className="mb-2 text-lg font-medium">Grassroots participation</h4>
+                  <p className="text-muted-foreground">
+                    We believe in facilitating the promotion of a society wherein the values of dignity and self-respect of the 
+                    people are restored.  CCSO will attain this by encouraging community participation and 
+                    involvement of all people at the grassroots level in the decision-making processes.
+                  </p>
+                </div>
+                
+                <div className="rounded-lg bg-muted/50 p-6">
+                  <h4 className="mb-2 text-lg font-medium">Indigenous wisdom </h4>
+                  <p className="text-muted-foreground">
+                  CCSO believes that the local people, although they may be vulnerable due to loss of some 
+                  livelihood assets, have very valuable experience and wisdom that needs to be recognised and 
+                  complemented to further enhance their use.  The existing skills and technologies could be 
+                  mobilised and used as a base for any further sustainable development people may think to be 
+                  disseminated or transferred through the community members 
+                  </p>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+      </section>
+
+            {/* Our Team */}
+      <section className="py-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
+            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+            <p className="mb-12 text-lg text-muted-foreground">
+              Meet the dedicated individuals leading our mission in South Sudan.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {leaders.map((member, index) => (
+              <Card key={index} className="overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <Image 
+                    src={member.image}
+                    alt={member.name} 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="mb-1 text-xl font-semibold">{member.name}</h3>
+                  <p className="mb-3 text-sm text-primary">{member.role}</p>
+                  <p className="text-sm text-muted-foreground">{member.bio}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </div>
+      </section>
 
-        <section className="py-16 bg-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-start md:text-center mb-8">Our Leadership</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="relative w-48 h-48 mx-auto mb-4">
-                <Image
-                  src="/images/leader1.jpg"
-                  alt="Leader 1"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Joseph Maker Atot</h3>
-              <p className="text-gray-600">Executive Director</p>
-            </div>
-            <div className="text-center">
-              <div className="relative w-48 h-48 mx-auto mb-4">
-                <Image
-                  src="/images/leader2.jpg"
-                  alt="Leader 2"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Jane Smith</h3>
-              <p className="text-gray-600">Programs Director</p>
-            </div>
-            <div className="text-center">
-              <div className="relative w-48 h-48 mx-auto mb-4">
-                <Image
-                  src="/images/leader3.JPEG"
-                  alt="Leader 3"
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold">Abraham Nhier</h3>
-              <p className="text-gray-600">Software Engineer</p>
+      {/* Our History */}
+     <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Journey</h2>
+            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+            <p className="mb-12 text-lg text-muted-foreground">
+              Key milestones in our organization's history.
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-4xl">
+            <div className="relative after:absolute after:left-1/2 after:top-0 after:h-full after:w-0.5 after:-translate-x-1/2 after:bg-border">
+              {history.map((event, index) => (
+                <div key={index} className={`relative mb-8 flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className="md:w-1/2"></div>
+                  <div className="absolute left-1/2 top-0 z-10 -mt-1 -translate-x-1/2 transform">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                      <Clock className="h-4 w-4" />
+                    </div>
+                  </div>
+                  <Card className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:mr-10' : 'md:ml-10'}`}>
+                    <CardContent className="p-6">
+                      <span className="mb-2 inline-block rounded bg-primary/10 px-2 py-1 text-sm font-semibold text-primary">
+                        {event.year}
+                      </span>
+                      <h3 className="mb-2 text-xl font-semibold">{event.title}</h3>
+                      <p className="text-muted-foreground">{event.description}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
       </section>
 
-        <div className="text-start md:text-center mt-20">
-          <h2 className="text-3xl md:text-4xl font-bold">Join Our Mission</h2>
-          <p className="text-lg text-gray-700 mt-2">
-            Be a part of our journey to create lasting change.
-          </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all" size="lg" asChild>
-              <Link href="/get-involved">Get Involved</Link>
-            </Button>
-            <Button className="border-primary border-[2px] bg-white text-primary hover:bg-primary hover:text-white transition-all" size="lg" asChild>
-              <Link href="/donate">Donate Now</Link>
-            </Button>
+      {/* Call to Action */}
+      <section className="py-16">
+          <div className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">Join Our Mission</h2>
+            <p className="mb-8 text-lg opacity-90">
+              Together, we can continue bringing hope and transformation to communities across South Sudan.
+            </p>
+            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-center">
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/donate">Make a Donation</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-transparent hover:bg-primary-foreground/10">
+                <Link href="/get-involved">Get Involved</Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
