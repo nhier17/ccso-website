@@ -24,7 +24,6 @@ export default function BlogPage() {
   
     return (
         <div>
-        {/* Hero Section */}
         <section className="relative py-16">
           <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
             <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
@@ -37,7 +36,6 @@ export default function BlogPage() {
             </div>
         </section>
   
-        {/* Featured Post */}
         {featuredPost && (
           <section className="py-16">
               <div className="mx-auto max-w-5xl overflow-hidden rounded-xl">
@@ -69,7 +67,7 @@ export default function BlogPage() {
                         <Clock className="mr-1 h-4 w-4" />
                         {featuredPost.readTime}
                       </div>
-                      <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+                      <Button asChild className="bg-primary text-white hover:bg-primary/90">
                         <Link href={`/blog/${featuredPost.id}`}>Read More</Link>
                       </Button>
                     </div>
@@ -79,7 +77,6 @@ export default function BlogPage() {
           </section>
         )}
   
-        {/* Blog Categories and Search */}
         <section className="py-16">
             <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 md:flex-row">
               <Tabs 
@@ -109,7 +106,6 @@ export default function BlogPage() {
             </div>
         </section>
   
-        {/* Blog Posts */}
         <section className="py-16">
             {filteredPosts.length > 0 ? (
               <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -172,7 +168,6 @@ export default function BlogPage() {
             )}
         </section>
   
-        {/* Newsletter Signup */}
         <section className="bg-muted/30 py-16">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight">Subscribe to Our Newsletter</h2>
@@ -185,7 +180,7 @@ export default function BlogPage() {
                   placeholder="Your email address"
                   className="flex-1"
                 />
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button className="bg-primary text-white hover:bg-primary/90">
                   Subscribe
                 </Button>
               </div>

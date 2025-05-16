@@ -9,7 +9,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Progress } from "@/components/ui/progress";
-import { Input } from "@/components/ui/input";
 import { testimonials, campaigns } from "@/constants";
 import { Handshake, DollarSign, HeartHandshake, CalendarIcon, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,24 +19,34 @@ import { partnerWithUs, donate, volunteer, upcomingEvents, successTestimonials }
 gsap.registerPlugin(ScrollTrigger);
 
 const GetInvolved = () => {
-  const textRef = useRef(null);
-  const imgRef = useRef(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [email, setEmail] = useState("");
+    const sectionRef = useRef<HTMLElement[]>([]);
+    const textRef = useRef(null);
+    const imgRef = useRef(null);
+  
+    sectionRef.current = [];
+  
+    const addToRefs = (el:HTMLElement) => {
+      if(el && !sectionRef.current.includes(el)) {
+        sectionRef.current.push(el);
+      }
+    }
 
-  useGSAP(() => {
-    gsap.from(".about-heading", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".about-heading",
-        start: "top 80%",
-      },
+  useGSAP(() => { 
+    sectionRef.current.forEach((section) => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      });
     });
-
     gsap.from(imgRef.current, {
       opacity: 0,
       x: -30,
@@ -58,20 +67,6 @@ const GetInvolved = () => {
         trigger: textRef.current,
         start: "top 90%",
       },
-    });
-
-    cardsRef.current.forEach((card, index) => {
-      gsap.from(card, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        delay: index * 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 95%",
-        },
-      });
     });
   }, []);
 
@@ -104,8 +99,8 @@ const GetInvolved = () => {
           </div>
       </section>
 
-      <section className="py-16">
-          <div className="mx-auto max-w-3xl text-center">
+      <section ref={addToRefs} className="py-16">
+          <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Ways to Support Our Mission</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="mb-12 text-lg text-muted-foreground">
@@ -114,7 +109,7 @@ const GetInvolved = () => {
           </div>
 
           <Tabs defaultValue="donate" className="mx-auto max-w-4xl">
-            <TabsList className="mb-8 grid w-full grid-cols-2 gap-2 md:grid-cols-3">
+            <TabsList className="mb-8 grid w-full grid-cols-3 gap-2">
               <TabsTrigger value="donate">Donate</TabsTrigger>
               <TabsTrigger value="volunteer">Volunteer</TabsTrigger>
               <TabsTrigger value="partner">Partner With Us</TabsTrigger>
@@ -281,8 +276,8 @@ const GetInvolved = () => {
       </section>
 
           {/* Upcoming Events */}
-      <section className="py-16">
-          <div className="mx-auto max-w-3xl text-center">
+      <section ref={addToRefs} className="py-16">
+          <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Upcoming Events</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="mb-12 text-lg text-muted-foreground">
@@ -309,8 +304,8 @@ const GetInvolved = () => {
                   <h3 className="mb-2 text-xl font-semibold">{event.title}</h3>
                   <p className="mb-1 text-sm font-medium">{event.location}</p>
                   <p className="mb-4 text-sm text-muted-foreground">{event.description}</p>
-                  <Button variant="outline" className="w-full">
-                    Learn More
+                  <Button variant="outline" className="w-full bg-primary text-white">
+                    <Link href="/donate">Donate now</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -318,12 +313,14 @@ const GetInvolved = () => {
           </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
-        <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <section ref={addToRefs} className="py-16 bg-gray-50">
+        <div ref={textRef} className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Current Campaigns
           </h2>
-          <div className="space-y-8">
+          <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+        </div>
+        <div className="space-y-8">
             {campaigns.map((campaign, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex justify-between mb-2">
@@ -335,7 +332,6 @@ const GetInvolved = () => {
               </div>
             ))}
           </div>
-        </div>
       </section>
 
       <div className="flex flex-col lg:flex-row items-center gap-12 py-20">
@@ -366,9 +362,8 @@ const GetInvolved = () => {
       </div>
 
   {/* Testimonials */}
-  <section className="bg-muted/30 py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+  <section ref={addToRefs} className="bg-muted/30 py-16">
+          <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Volunteer Stories</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="mb-12 text-lg text-muted-foreground">
@@ -404,11 +399,10 @@ const GetInvolved = () => {
             </Card>
             ))}
           </div>
-        </div>
       </section>
 
-      <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
+      <section ref={addToRefs} className="py-16 md:py-24">
+          <div ref={textRef} className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Ready to Make a Difference?</h2>
             <p className="mb-8 text-lg opacity-90">
               Your skills, time, and resources can help transform lives in South Sudan. Join us today!

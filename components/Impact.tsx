@@ -126,13 +126,14 @@ export const Impact = () => {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white text-dark-100 py-20 mt-8">
       <div className="px-4">
-        <div ref={textRef} className="text-start md:text-center max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Making Real <span className="text-primary">Impact</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600">
-            Through our programs, we have empowered thousands of families, provided clean water to communities, and promoted peace in conflict-affected areas. Every donation helps us create more success stories.
-          </p>
+        <div ref={textRef}>
+        <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Making Real Impact</h2>
+        <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+        <p className="mb-12 text-lg text-muted-foreground">
+          Through our programs, we have empowered thousands of families, provided clean water to communities, and promoted peace in conflict-affected areas. Every donation helps us create more success stories.
+        </p>
+      </div>
         </div>
 
         <div
@@ -173,7 +174,8 @@ export const Impact = () => {
                     <h3 className="text-3xl font-bold mb-4 text-white">{story.title}</h3>
                     <p className="text-lg mb-6 text-white/90">{story.description}</p>
                     <Button 
-                      className="bg-primary text-white hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    variant="link"
+                      className="text-white h-auto p-0"
                     >
                       Read Full Story
                     </Button>

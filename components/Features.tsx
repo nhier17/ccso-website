@@ -45,9 +45,13 @@ const Features = () => {
 
   return (
     <section ref={sectionRef} className="relative mt-8 py-16 bg-gray-50 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">
-        Our <span className="text-primary">Focus Areas</span>
-      </h2>
+         <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Focus Areas</h2>
+        <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+        <p className="mb-12 text-lg text-muted-foreground">
+          CCSO's focus areas are designed to address the most pressing needs of communities in Lakes State, South Sudan. These initiatives are tailored to support vulnerable populations and promote sustainable development.
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {FOCUS_AREAS.map((area, index) => (

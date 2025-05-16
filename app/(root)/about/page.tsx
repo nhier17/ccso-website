@@ -17,8 +17,30 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const textRef = useRef(null);
   const imgRef = useRef(null);
+  const sectionRef = useRef<HTMLElement[]>([]);
+
+  sectionRef.current = [];
+
+  const addToRefs = (el:HTMLElement) => {
+    if(el && !sectionRef.current.includes(el)) {
+      sectionRef.current.push(el);
+    }
+  }
 
   useGSAP(() => {
+    sectionRef.current.forEach((section) => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
     gsap.from(".about-heading", {
       opacity: 0,
       y: 30,
@@ -56,32 +78,21 @@ const About = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
-          <div className="relative w-full h-96">
-          <Image 
-            src="/images/impact4.jpg"
-            alt="CCSO community work" 
-            fill
-            priority
-            className="object-cover"
-          />
-          </div>
+      <section className="relative py-16">
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
+          <div className="absolute inset-0 bg-[url('/images/relief.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center text-white">
+          <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">About CCSO</h1>
-            <p className="text-lg md:text-xl">
+            <p className="text-lg text-muted-foreground md:text-xl">
               Get to know our organization, our mission, and the passionate team behind our work in South Sudan.
             </p>
           </div>
         </div>
       </section>
 
-            {/* Our Story */}
-      <section className="py-16 mt-16">
+      <section ref={addToRefs} className="py-16">
           <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
             <div ref={imgRef} className="relative aspect-square overflow-hidden rounded-xl shadow-xl">
               <Image 
@@ -111,8 +122,8 @@ const About = () => {
           </div>
           </div>
       </section>
-      {/* Mission, Vision, Values */}
-      <section className="bg-muted/30 py-16">
+
+      <section ref={addToRefs} className="bg-muted/30 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Foundation</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -192,9 +203,8 @@ const About = () => {
             </TabsContent>
           </Tabs>
       </section>
-
-            {/* Our Team */}
-      <section className="py-16">
+      
+      <section ref={addToRefs} className="py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -224,8 +234,7 @@ const About = () => {
           </div>
       </section>
 
-      {/* Our History */}
-     <section className="bg-muted/30 py-16">
+     <section ref={addToRefs} className="bg-muted/30 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Journey</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -259,8 +268,7 @@ const About = () => {
           </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16">
+      <section ref={addToRefs} className="py-16">
           <div className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Join Our Mission</h2>
             <p className="mb-8 text-lg opacity-90">

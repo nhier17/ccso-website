@@ -14,61 +14,34 @@ import { Card, CardContent } from "@/components/ui/card";
 gsap.registerPlugin(ScrollTrigger);
 
 const Programs = () => {
-  const textRef = useRef(null);
-  const imgRef = useRef(null);
-  const programsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement[]> ([]);
+
+  sectionRef.current = [];
+
+  const addToRefs = (el:HTMLElement) => {
+    if(el && !sectionRef.current.includes(el)) {
+      sectionRef.current.push(el);
+    }
+  }
 
   useGSAP(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(textRef.current, {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.from(imgRef.current, {
-        opacity: 0,
-        x: -30,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: imgRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      programsRef.current.forEach((el, index) => {
-        if (el) {
-          gsap.from(el, {
+        sectionRef.current.forEach((section) => {
+          gsap.from(section, {
             opacity: 0,
-            y: 20,
+            y: 30,
             duration: 1,
-            delay: index * 0.2,
             ease: "power3.out",
             scrollTrigger: {
-              trigger: el,
-              start: "top 90%",
+              trigger: section,
+              start: "top 85%",
               toggleActions: "play none none reverse",
             },
           });
-        }
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
+        });
   }, []);
 
   return (
-        <div ref={sectionRef} className="py-16">
+        <div className="py-16">
         <section className="relative py-16">
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
           <div className="absolute inset-0 bg-[url('https://i.pinimg.com/736x/99/2b/ee/992beee6f85227231bc4b97728f437c8.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
@@ -81,7 +54,7 @@ const Programs = () => {
           </div>
       </section>
 
-        <section className="py-16">
+        <section ref={addToRefs} className="py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Approach</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -108,7 +81,7 @@ const Programs = () => {
         </section>
 
       {/* Detailed Programs */}
-      <section className="bg-muted/30 py-16">
+      <section ref={addToRefs} className="bg-muted/30 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Program Details</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -181,9 +154,10 @@ const Programs = () => {
           </Tabs>
       </section>
 
-        <section className="py-16">
-        <div className="text-start md:text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">How We Are Changing Lives</h2>
+        <section ref={addToRefs} className="py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">How We Are Changing Lives</h2>
+          <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
           <p className="text-lg text-gray-700 mt-2">
             Explore the projects that are transforming communities and restoring hope.
           </p>
@@ -215,7 +189,7 @@ const Programs = () => {
         </div>
       </section>
 
-        <section className="py-16 bg-primary text-white">
+        <section ref={addToRefs} className="py-16 bg-primary text-white">
           <div className="text-start md:text-center px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Make a Difference Today</h2>
             <p className="text-xl mb-8">

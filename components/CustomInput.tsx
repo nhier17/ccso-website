@@ -18,12 +18,15 @@ import {
 } from '@/components/ui/select';
 import { Control } from 'react-hook-form';
 import { Switch } from '@/components/ui/switch';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@radix-ui/react-label';
 
 export enum FormFieldType {
     INPUT = 'input',
     TEXTAREA = 'textarea',
     SELECT = 'select',
-    SWITCH = 'switch'
+    SWITCH = 'switch',
+    RADIO = 'radio'
 }
 
 interface CustomInputProps {
@@ -87,6 +90,36 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                 </FormControl>
                 </FormItem>
             );
+            case FormFieldType.RADIO:
+         return (
+           <FormControl>
+             <RadioGroup
+               value={field.value}
+               onValueChange={field.onChange}
+               disabled={props.disabled}
+               className="flex flex-col gap-3 sm:flex-row sm:gap-6"
+             >
+               {props.options?.map((option) => (
+                 <div
+                   key={option.value}
+                   className="flex items-center space-x-2 p-2 border rounded-md hover:border-primary cursor-pointer transition-colors"
+                 >
+                   <RadioGroupItem
+                     value={option.value}
+                     id={option.value}
+                   />
+                   <Label
+                     htmlFor={option.value}
+                     className={`cursor-pointer py-1 px-3 rounded-md border border-input peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all`}
+                   >
+                     {option.label}
+                   </Label>
+                 </div>
+               ))}
+             </RadioGroup>
+           </FormControl>
+         );
+              
         default:
             return null;
     }

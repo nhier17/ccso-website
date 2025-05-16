@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
@@ -14,7 +14,6 @@ const About = () => {
   const textRef = useRef(null);
   const imgRef = useRef(null);
   const btnRef = useRef(null);
-  const statsRef = useRef(null);
   const missionRef = useRef(null);
 
   useGSAP(() => {
@@ -54,23 +53,10 @@ const About = () => {
         toggleActions: "play none none reverse",
       },
     });
-    gsap.from(statsRef.current?.children || [], {
+    gsap.from(missionRef.current, {
       opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: statsRef.current,
-        start: "top 85%",
-        toggleActions: "play none none reverse",
-      },
-    });
-    gsap.from(missionRef.current?.children || [], {
-      opacity: 0,
-      x: -30,
-      duration: 0.8,
-      stagger: 0.3,
+      y: 20,
+      duration: 1,
       ease: "power3.out",
       scrollTrigger: {
         trigger: missionRef.current,
@@ -84,9 +70,13 @@ const About = () => {
     <div className="bg-gray-50">
       <section className="py-20 mt-8 container mx-auto">
         <div className="px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Get to know <span className="text-primary">CCSO</span>
-          </h2>
+        <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Get to know CCSO</h2>
+        <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+        <p className="mb-12 text-lg text-muted-foreground">
+          Get to know our organization, our mission, and the passionate team behind our work in South Sudan.
+        </p>
+      </div>
 
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div ref={imgRef} className="relative w-full md:w-1/2">
@@ -123,30 +113,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-6">
-          <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <h3 className="text-4xl font-bold mb-2">5+</h3>
-              <p className="text-lg">Years of Service</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-4xl font-bold mb-2">5000+</h3>
-              <p className="text-lg">Lives Impacted</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-4xl font-bold mb-2">20+</h3>
-              <p className="text-lg">Active Programs</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-4xl font-bold mb-2">3</h3>
-              <p className="text-lg">Regions Served</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
+      <section className="pb-6">
         <div className="px-6">
           <div ref={missionRef} className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-lg">

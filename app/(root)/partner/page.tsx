@@ -4,11 +4,11 @@ import { CheckCircle2 } from "lucide-react";
 const PartnerPage = () => {
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
-      <div className="px-4">
-        <div className="max-w-4xl">
-          <div className="text-start md:text-center mb-12">
+    <section className="relative py-16">
+      <div className="mx-auto max-w-5xl">
+          <div className="mx-auto text-center max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Partner with CCSO</h1>
+            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="text-lg text-gray-600 mb-8">
               Join us in creating sustainable impact in South Sudan through strategic partnerships
             </p>
@@ -51,11 +51,9 @@ const PartnerPage = () => {
             </div>
           </div>
 
-          {/* Partnership Form */}
           <PartnershipForm />
-        </div>
       </div>
-    </main>
+    </section>
   );
 };
 

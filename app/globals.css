@@ -117,22 +117,6 @@ body {
   .c-space {
     @apply sm:px-10 px-5;
   }
-  /* Auth */
-  .auth-container {
-    @apply relative flex flex-col-reverse text-light-100 sm:flex-row;
-  }
-
-  .auth-form {
-    @apply my-auto flex h-full min-h-screen flex-1 items-center bg-pattern bg-cover bg-top bg-dark-100 px-5 py-10;
-  }
-
-  .auth-box {
-    @apply gradient-vertical mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10;
-  }
-
-  .auth-image {
-    @apply sticky h-40 w-full sm:top-0 sm:h-screen sm:flex-1;
-  }
 
   /* Form */
   .form-btn {
@@ -158,7 +142,7 @@ body {
   }
 
   .field-btn {
-    @apply bg-primary px-5 py-2 min-h-12 rounded-lg shadow-dark-200 shadow-2xl flex justify-center items-center text-lg text-light-100 gap-3;
+    @apply bg-primary w-full px-5 py-2 min-h-12 rounded-lg shadow-dark-200 shadow-2xl flex justify-center items-center text-lg text-light-100 gap-3;
   }
 
   .shad-select-trigger {
@@ -171,5 +155,28 @@ body {
 
   .hero-section {
     @apply relative py-16 md:py-24 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-x-hidden !important;
+  }
+  
+}
+
+.africa-mask {
+  -webkit-mask-image: url('/icons/lakes.svg');
+  mask-image: url('/icons/lakes.svg');
+}
+
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out both;
   }
 }

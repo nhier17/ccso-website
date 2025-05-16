@@ -17,12 +17,14 @@ import axios from "axios";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CustomInput, { FormFieldType } from "../CustomInput";
 import { Loader2 } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 type FormData = z.infer<typeof donateSchema>;
 
 export default function DonateForm() {
   const [selectedTier, setSelectedTier] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [donationType, setDonationType] = useState('one-time')
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
@@ -137,14 +139,24 @@ export default function DonateForm() {
               />
               </div>
 
-              <div className="flex items-center space-x-2">
-                <CustomInput 
-                  control={form.control}
-                  name="isMonthly"
-                  fieldType={FormFieldType.SWITCH}
-                  label="Make this a monthly donation"
-                />
-              </div>
+             <div>
+              <CustomInput 
+                control={form.control}
+                name="donationType"
+                fieldType={FormFieldType.RADIO}
+                options={[
+                  { label: "One-time", value: "one-time" },
+                  { label: "Monthly", value: "monthly" },
+                  { label: "Quarterly", value: "quarterly" },
+                  { label: "Annually", value: "annually" },
+                ]}
+                label="Donation Type"
+                placeholder="Select donation type"
+                disabled={false}
+              />
+             
+          
+         </div>
             </div>
 
             <div className="space-y-4">

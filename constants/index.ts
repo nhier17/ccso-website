@@ -1,5 +1,4 @@
-import { HeartPulse, Droplet, BookOpen, HandHelping, Users, Globe, Target, Trophy } from "lucide-react";
-import { Program, Metric } from "@/types";
+
 
 export const navbarLinks = [
   { name: "Home", path: "/" },
@@ -151,7 +150,6 @@ export const footerLinks = {
   ],
 };
 
-
 //faqs
 export const faqs = [
   {
@@ -195,64 +193,6 @@ export const faqs = [
   },
 ];
 
-export const supportProcedures = {
-  education: {
-    title: "Sponsor A Student - Inspire the Future",
-    description:
-      "Help fund school supplies, teacher training, and scholarships for students in need. Your support ensures access to quality education for underprivileged children.",
-    steps: [
-      "Choose an education sponsorship package (e.g., school supplies, scholarships).",
-      "Donate through our secure payment portal or set up a recurring contribution.",
-      "Receive updates on the impact of your sponsorship, including student progress reports.",
-      "Participate in community engagement programs to understand local educational challenges.",
-      "Support adult literacy programs to empower parents and guardians.",
-      "Advocate for the education and welfare of the girl child through targeted initiatives.",
-    ],
-    image: "/images/edu.png",
-  },
-  water: {
-    title: "Water for Life - Support Sustainable Water Access",
-    description:
-      "Provide safe drinking water by funding wells, filtration systems, and sanitation programs. Clean water is essential for health and development.",
-    steps: [
-      "Select a water project to support (e.g., well drilling, sanitation training).",
-      "Contribute a one-time or recurring donation to fund clean water initiatives.",
-      "Track the progress of the project with updates and reports.",
-      "Engage in community awareness programs on hygiene and sanitation practices.",
-      "Support disaster preparedness initiatives to ensure water security during emergencies.",
-      "Collaborate with local leaders to identify and address water-related challenges.",
-    ],
-    image: "/images/water1.png",
-  },
-  food: {
-    title: "Cultivate Change - Support Food Independence",
-    description:
-      "Support agricultural training, food distribution, and sustainable farming initiatives to combat hunger and promote self-sufficiency.",
-    steps: [
-      "Choose a food security program (e.g., community farming, emergency food relief).",
-      "Donate to provide necessary resources like seeds, tools, and training.",
-      "Receive updates on how your contribution is helping communities achieve food sustainability.",
-      "Support the transfer of appropriate agricultural technologies to enhance food production.",
-      "Promote agro-business skills to ensure processing and marketing of agricultural products.",
-      "Encourage sustainable practices like irrigation, water conservation, and environmental protection.",
-    ],
-    image: "/images/food.png",
-  },
-  peace: {
-    title: "Promote Peace and Reconciliation",
-    description:
-      "Support initiatives that foster peace, reconciliation, and harmony among communities in South Sudan.",
-    steps: [
-      "Choose a peace-building program (e.g., community dialogues, conflict resolution workshops).",
-      "Donate to fund peace and reconciliation initiatives.",
-      "Receive updates on the progress and impact of peace-building activities.",
-      "Engage in community-led peace initiatives to address inter-ethnic conflicts.",
-      "Support the restoration of dignity and self-respect through reconciliation programs.",
-      "Advocate for grassroots participation in peace-building processes.",
-    ],
-    image: "/images/peace2.png",
-  },
-};
 
 export const completedProjects = [
   {
@@ -264,7 +204,7 @@ export const completedProjects = [
       "/images/food-project.jpg",
       "/images/food-project1.jpg",
     ],
-    location: "Lakes State",
+    location: "Rumbet East",
     category: "Food and Hygiene",
     overview:
       "Following devastating floods in Lakes State, thousands of families were left without food and clean water. CCSO responded swiftly by organizing an emergency food distribution program to ensure affected communities had immediate access to essential supplies.",
@@ -274,57 +214,40 @@ export const completedProjects = [
       "To continue strengthening food security efforts, CCSO is working on developing a **long-term agricultural resilience program**, enabling communities to grow their own food and reduce dependency on emergency aid.",
   },
   {
-    id: "clean-water-project",
-    title: "Clean Water Access Project",
-    description: "Installed 5 water purification stations in rural areas, benefiting over 10,000 people.",
-    imageSrc: [
-      "https://i.pinimg.com/736x/f9/f5/d8/f9f5d807b2b44dc6fc7ba815713d11c8.jpg",
-      "https://i.pinimg.com/736x/0b/8a/cc/0b8acc45bbe8361493f0b63219fe8c0a.jpg",
-      "https://i.pinimg.com/736x/b9/88/34/b988345e8dc613832ee02f4aa929ede2.jpg"
-    ],
-    location: "Rumbek Center",
-    category: "Food and Hygiene",
-    overview:
-      "Many rural communities in South Sudan suffer from limited access to clean drinking water, leading to high rates of waterborne diseases. This project aimed to **install five solar-powered water purification stations** in the most vulnerable areas.",
-    impact:
-      "Over **10,000 people** now have reliable access to safe drinking water. Health clinics reported a **35% decrease in waterborne diseases** within the first three months.",
-    futureGoals:
-      "CCSO plans to expand this initiative by installing **10 additional purification stations** and launching a **community-led water maintenance program** to ensure long-term sustainability.",
-  },
-  {
     id: "education-support",
-    title: "Education Support Program",
-    description: "Distributed learning materials and sponsored 200 students in remote villages.",
+    title: "Education Sponsorship & Support Program",
+    description:
+      "Through generous donations and sponsorships, CCSO has empowered hundreds of students in South Sudan to pursue and complete their education.",
     imageSrc: [
       "https://brokenchalk.org/wp-content/uploads/2023/06/South-Sudan_Oxfam-Girl-Education-Project.jpg",
       "https://images.squarespace-cdn.com/content/v1/622788d3e3ba772c3c93eb9c/6cf909a6-721b-4e0a-9724-a2b15add9e2a/Yambio+01.jpg",
     ],
-    location: "Yambio",
+    location: "Juba, Wau, Nairobi",
     category: "Education",
     overview:
-      "Many children in remote South Sudanese villages struggle to access education due to a lack of resources and school infrastructure. Our program focuses on providing **school supplies, scholarships, and teacher training**.",
+      "The Education Support Program by CCSO was launched to address the widespread educational gaps faced by South Sudanese children, especially those displaced or affected by conflict. With support from well-wishers and sponsors, we provide tuition assistance, essential school supplies, and mentoring to vulnerable students across South Sudan and neighboring regions.",
     impact:
-      "We distributed **1,000+ learning materials** and **sponsored 200 students**, enabling them to continue their education. Over **85% of sponsored students** successfully completed their academic year.",
+      "So far, CCSO has sponsored **over 200 students** to complete their primary, secondary, and tertiary education. We have distributed **1,000+ learning kits** and facilitated mentorships, with **85% of sponsored students** completing their academic year successfully.",
     futureGoals:
-      "CCSO is committed to **building two new schools in rural areas** and **expanding our scholarship program to reach 500 students annually**.",
+      "We aim to **build two fully equipped schools** in underserved rural areas and **expand our scholarship initiative** to reach **at least 500 students annually**, with a strong emphasis on supporting girls' education.",
   },
   {
-    id: "classroom-construction",
-    title: "Classroom Construction Initiative",
-    description: "Built modern classrooms, providing a safe learning environment for 300+ children.",
+    id: "church-construction",
+    title: "Church Construction Initiative",
+    description: "Constructed a permanent church structure in Mathiang, serving as a spiritual center and multifunctional space for over 300 community members.",
     imageSrc: [
       "/images/school-project.jpg",
       "/images/school-project3.jpg",
       "/images/school-project1.jpg",
     ],
-    location: "Rumbek East",
-    category: "Education",
+    location: "Mathiang",
+    category: "Evangelism",
     overview:
-      "To address the lack of educational infrastructure, CCSO initiated the construction of modern classrooms in rural areas. This project aimed to provide **safe and conducive learning spaces** for children who previously studied in overcrowded or open-air environments.",
+      "CCSO spearheaded the construction of a permanent church building in Mathiang to provide a dedicated place of worship, spiritual guidance, and community gathering. The project emerged from the need to replace temporary makeshift structures that were vulnerable to weather and lacked the capacity to serve the growing congregation.",
     impact:
-      "The project delivered **3 fully equipped classrooms**, benefitting **300+ children** and improving educational outcomes by ensuring year-round learning in safe conditions.",
+      "The new church building now accommodates over 300 congregants and doubles as a space for community events, prayer meetings, youth fellowship, and Sunday school activities. It strengthens the spiritual fabric of the community and provides a safe, dignified environment for faith-based programs.",
     futureGoals:
-      "CCSO plans to **construct additional classrooms** and **train more local educators** to further enhance access to quality education in underserved communities.",
+      "CCSO plans to furnish the church with essential interior fittings, expand its outreach programs, and support leadership training for local pastors and youth leaders to foster sustainable community development through faith.",
   },
   {
     id: "peace-awareness",
@@ -375,52 +298,6 @@ export const donationTiers = [
   },
 ];
 
-export const programs: Program[] = [
-  {
-    id: "healthcare",
-    icon: HeartPulse,
-    title: "Healthcare Support",
-    desc: "Providing medical assistance & awareness.",
-    longDesc: "Our healthcare program focuses on providing essential medical services, preventive care, and health education to underserved communities. We work with local healthcare providers and organize medical camps.",
-    stats: { beneficiaries: "5,000+", locations: "2", success: "90%" },
-    image: "https://i.pinimg.com/736x/c1/66/bb/c166bb210f5dbca72aec998b089f5019.jpg"
-  },
-  {
-    id: "water",
-    icon: Droplet,
-    title: "Clean Water Access",
-    desc: "Ensuring clean and safe drinking water.",
-    longDesc: "Through our water program, we build wells, install filtration systems, and educate communities about water conservation and sanitation practices to prevent waterborne diseases.",
-    stats: { wells: "5+", beneficiaries: "500+", villages: "10" },
-    image: "/images/water.png"
-  },
-  {
-    id: "education",
-    icon: BookOpen,
-    title: "Education Programs",
-    desc: "Supporting children's education & literacy.",
-    longDesc: "We believe education is key to breaking the cycle of poverty. Our program provides school supplies, builds classrooms, trains teachers, and offers scholarships to deserving students.",
-    stats: { students: "2,000+", schools: "2", graduates: "1,200+" },
-    image: "https://d1c337161ud3pr.cloudfront.net/bluedot/2016/02/03.3_Opinion-3_Big-2.jpg"
-  },
-  {
-    id: "community",
-    icon: HandHelping,
-    title: "Community Empowerment",
-    desc: "Skill training & self-reliance projects.",
-    longDesc: "Our community empowerment initiatives focus on vocational training, microfinance support, and leadership development to help communities become self-sustainable.",
-    stats: { trained: "3,000+", projects: "5", communities: "20" },
-    image: "https://borgenproject.org/wp-content/uploads/Women-Peacemakers.jpg"
-  }
-];
-
-export const impactMetrics: Metric[] = [
-  { icon: Users, number: "20,000+", label: "Lives Impacted" },
-  { icon: Globe, number: "4", label: "Payams" },
-  { icon: Target, number: "5", label: "Years of Service" },
-  { icon: Trophy, number: "20+", label: "Projects Completed" }
-];
-
 export const impactStats = [
   { number: "10K+", label: "Lives Impacted", color: "text-blue-600" },
   { number: "5+", label: "Projects Completed", color: "text-green-600" },
@@ -455,7 +332,6 @@ export const testimonials = [
   }
 ];
 
-
 //leaders 
 export const leaders = [
   {
@@ -468,13 +344,13 @@ export const leaders = [
     name: "Rebecca Achol Majak",
     role: "Deputy Chairperson",
     bio: "Rebecca supports the strategic direction of CCSO by collaborating closely with stakeholders and ensuring that the organization's initiatives align with community needs and development goals.",
-    image: "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
   },
   {
     name: "Hellena Ding Maker",
     role: "Secretary",
     bio: "Hellena oversees organizational communication, documentation, and record-keeping, ensuring smooth internal operations and transparent reporting at CCSO.",
-    image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "/images/leader5.jpg"
   },
   {
     name: "Abraham Nhier",
@@ -486,13 +362,13 @@ export const leaders = [
     name: "James Magok Chilim",
     role: "Information Officer",
     bio: "James leads CCSO’s information management efforts, ensuring accurate data collection, reporting, and community outreach to support informed decision-making and transparency.",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
   },
   {
     name: "Mary Atueny",
     role: "Finance Manager",
     bio: "Mary oversees the financial operations of CCSO, managing budgets, financial reporting, and compliance to ensure resources are used effectively and responsibly.",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
   }
 ];
 
@@ -501,32 +377,37 @@ export const history = [
   {
     year: "2019",
     title: "CCSO Is Founded",
-    description: "Rev. John Mading establishes CCSO to provide emergency relief to displaced persons in Western Lakes State."
+    description: "Rev. Joseph Maker Atot establishes CCSO,  aiming to restore dignity and hope to displaced and vulnerable communities through faith-based, community-driven development."
+  },
+  {
+    year: "2019",
+    title: "Education Initiative Begins",
+    description: "Start of our education program where various students receive scholarships and support for their education."
+  },
+  {
+    year: "2021",
+    title: "Peace-Building Focus",
+    description: "Our peace and reconciliation program is launched to foster dialogue and healing in conflict-affected communities, promoting unity and social cohesion."
   },
   {
     year: "2022",
-    title: "First Agricultural Program",
-    description: "Launch of our first sustainable agriculture program, training 200 farmers in improved techniques."
+    title: "Growth in Evangelism",
+    description: "We expand our evangelism efforts with the construction of Mathiang Church, reaching remote communities with the life-transforming message of the gospel."
   },
   {
     year: "2023",
-    title: "Education Initiative Begins",
-    description: "Start of our education program with the construction of our first school in Rumbek."
+    title: "Health awareness campaign",
+    description: "CCSO rolls out a comprehensive health awareness program focusing on HIV/AIDS education, reducing stigma, and improving health outcomes across local communities."
   },
   {
     year: "2024",
-    title: "Health Program Expansion",
-    description: "Implementation of mobile health clinics to reach remote communities without healthcare access."
-  },
-  {
-    year: "2024",
-    title: "Peace-Building Focus",
-    description: "Development of our peace and reconciliation program to address community conflicts."
+    title: "First Food Relief Program",
+    description: "In response to devastating floods, CCSO launches its first large-scale food relief initiative, delivering life-saving supplies to families in crisis."
   },
   {
     year: "2025",
-    title: "International Partnerships",
-    description: "Expansion of our work through key international partnerships and increased donor support."
+    title: "Global Partnerships Appeal",
+    description: "CCSO launches a global appeal for partnerships to expand its reach and impact, ensuring sustainable development and empowerment for communities in need."
   }
 ];
 
@@ -613,6 +494,28 @@ export const donate = {
     "$250 can sponsor a peace-building workshop"
   ]
 };
+export const donationFaqs = [
+    {
+      question: "Is my donation tax-deductible?",
+      answer: "Yes, CCSO is a registered nonprofit organization, and donations are tax-deductible in many countries. We provide tax receipts for all donations."
+    },
+    {
+      question: "How much of my donation goes directly to programs?",
+      answer: "At least 85% of all donations go directly to our programs in South Sudan, with the remainder covering essential administrative and fundraising costs."
+    },
+    {
+      question: "Can I specify how my donation is used?",
+      answer: "Yes, you can designate your donation for a specific program or initiative. Please include a note with your donation or select the appropriate option when donating online."
+    },
+    {
+      question: "Do you accept non-monetary donations?",
+      answer: "Yes, we accept in-kind donations that support our programs. Please contact us to discuss specific items or services you wish to donate."
+    },
+    {
+      question: "Can I see the impact of my donation?",
+      answer: "We provide regular updates on our programs and impact through our newsletter, website, and social media. Donors also receive annual impact reports."
+    }
+];
 //volunteer
 export const volunteer = {
   type: [
@@ -639,30 +542,34 @@ export const volunteer = {
     "Monitoring & Evaluation Assistants"
   ]
 };
-//
+//upcoming projects
 export const upcomingEvents = [
   {
-    title: "Annual Fundraising Gala",
+    title: "Borehole Drilling & Water Pans Construction",
     date: "October 15, 2025",
-    location: "Nairobi, Kenya",
-    description: "Join us for an evening of celebration, inspiration, and support for our work in South Sudan.",
-    image: "https://images.pexels.com/photos/3321797/pexels-photo-3321797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    location: "Cuecock, Pacong, Malengagok & Mathiang, Western Bahr Naam County",
+    description:
+      "CCSO is launching a 3-month initiative to drill boreholes and construct water pans in underserved communities. This project aims to improve access to clean and safe water, directly benefiting hundreds of families. We invite partners and donors to support this vital cause.",
+    image: "/images/water3.jpg"
   },
   {
-    title: "Virtual Information Session",
+    title: "Returnees Livelihoods Support Project (RLSP)",
     date: "November 5, 2025",
-    location: "Online - Zoom",
-    description: "Learn about our programs and impact in this informative virtual session with our team.",
-    image: "https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    location: "Diocese of Pacong, Rumbek East County, Lakes State",
+    description:
+      "This project supports returnees with essential livelihoods tools, vocational training, and economic empowerment. CCSO is committed to rebuilding lives and enhancing self-reliance. We're seeking donors and collaborators to join our mission.",
+    image: "/images/hood.jpg"
   },
   {
-    title: "Volunteer Training Workshop",
+    title: "Peace Training for Youths and Leaders",
     date: "December 10, 2025",
-    location: "Juba, South Sudan",
-    description: "Comprehensive training for new volunteers joining our field programs in South Sudan.",
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    location: "Rumbek Town, Western Lakes State",
+    description:
+      "CCSO is organizing peace training workshops targeting youth and community leaders to foster harmony and non-violent conflict resolution. Your support will help equip participants with tools for long-term peacebuilding.",
+    image: "/images/impact2.jpg"
   }
 ];
+
 
 //success testimonial
 export const successTestimonials = [
@@ -782,7 +689,7 @@ export const programStats = {
       label: "Peace Building",
       title: "Peace & Reconciliation",
       description: "We work to promote peace, reconciliation, and social cohesion in communities affected by conflict.",
-      image: "/images/peace3.jpeg",
+      image: "https://media.npr.org/assets/img/2018/11/07/gettyimages-1055768206_custom-e4a90867c4c88ac2e242bf0741f18e7aa322fc57.jpg?s=800&c=85&f=webp",
       features: [
         {
           title: "Conflict Resolution Training",
@@ -809,80 +716,164 @@ export const programStats = {
       ]
     }
   ]
-};
-// Sample blog data
+};  
+//blog posts
 export const blogPosts = [
   {
     id: 1,
-    title: "Bringing Clean Water to Rumbek Village",
-    excerpt: "After years of walking miles for clean water, the Rumbek community now has reliable access thanks to a sustainable water project.",
-    category: "health",
-    date: "April 15, 2025",
+    title: "Emergency Food Relief Reaches 1,500 Families in Lakes State",
+    excerpt: "CCSO responded swiftly to severe flooding in Rumbek East by distributing food to over 1,500 affected families.",
+    category: "food and hygiene",
+    date: "April 30, 2025",
     readTime: "5 min read",
-    image: "/images/water2.jpeg",
-    featured: true
+    image: "/images/food8.jpg",
+    featured: true,
+    content: `
+      <p>For generations, the women and children of Rumbek village spent hours each day walking miles to collect water from a distant, often contaminated source. This daily burden not only consumed valuable time but also contributed to widespread waterborne illnesses in the community.</p>
+      
+      <p>Through the generous support of our donors and partners, CCSO was able to implement a comprehensive water project in Rumbek. This initiative involved drilling a deep well, installing a solar-powered pump system, and constructing water distribution points throughout the village.</p>
+      
+      <h3>Community Involvement</h3>
+      <p>From the beginning, community members were actively involved in the project. Local leaders formed a water management committee responsible for overseeing construction, establishing usage guidelines, and collecting small maintenance fees to ensure sustainability.</p>
+      
+      <p>Community members contributed labor for construction, digging trenches for pipelines and helping build the water points. This participation created a sense of ownership and pride in the project.</p>
+      
+      <h3>Immediate Impact</h3>
+      <p>The impact of reliable water access was immediately apparent. Women and children no longer spent hours collecting water, allowing more time for education, income-generating activities, and family care. Waterborne diseases decreased dramatically, reducing medical expenses and improving overall health.</p>
+      
+      <p>The local school reported increased attendance, particularly among girls who previously missed classes due to water collection duties.</p>
+      
+      <h3>Long-Term Sustainability</h3>
+      <p>To ensure long-term success, CCSO provided technical training to community members for basic maintenance and repairs. The water management committee established a transparent financial system for collecting and managing maintenance funds.</p>
+      
+      <p>Regular monitoring visits by CCSO staff help identify and address any challenges before they become major issues.</p>
+      
+      <h3>Looking Forward</h3>
+      <p>The Rumbek water project serves as a model for our work in other communities. The combination of appropriate technology, community involvement, and sustainable management practices has created a lasting solution to a critical need.</p>
+      
+      <p>We are grateful to all who supported this project and continue to partner with us in bringing clean water to vulnerable communities across South Sudan.</p>
+    `
   },
   {
     id: 2,
-    title: "Empowering Farmers Through Sustainable Agriculture",
-    excerpt: "Our agricultural training program has helped local farmers increase crop yields by 50% using sustainable techniques.",
-    category: "agriculture",
-    date: "March 28, 2025",
+    title: "Peace Program Engages Over 5,000 for Reconciliation",
+    excerpt: "Our Peace and Reconciliation initiative has successfully brought together over 5,000 individuals for dialogue and healing.",
+    category: "peace",
+    date: "April 20, 2025",
     readTime: "4 min read",
-    image: "/images/agri.jpg"
+    image: "/images/peace-project.jpg",
+    content: `
+      <p>CCSO’s Peace and Reconciliation Program has fostered dialogue across divided communities by hosting forums, workshops, and community gatherings aimed at restoring trust and harmony.</p>
+      <p>Participants shared personal stories of conflict, loss, and hope, creating an environment of mutual understanding and healing. Through traditional dispute resolution methods and modern peacebuilding strategies, we helped rebuild fractured relationships.</p>
+      <p>The engagement of youth, women, and elders was crucial to this success, ensuring inclusivity and long-lasting peace outcomes.</p>
+    `
   },
   {
     id: 3,
-    title: "New School Opens Doors to 300 Children",
-    excerpt: "The opening of a new school in Wau County provides educational opportunities to hundreds of children who previously had no access.",
+    title: "Education Support Empowers Over 200 South Sudanese Students",
+    excerpt: "From tuition to learning kits, our sponsorship program has helped hundreds of vulnerable students pursue their dreams.",
     category: "education",
-    date: "March 10, 2025",
+    date: "March 30, 2025",
     readTime: "6 min read",
-    image: "https://images.pexels.com/photos/8466781/pexels-photo-8466781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://brokenchalk.org/wp-content/uploads/2023/06/South-Sudan_Oxfam-Girl-Education-Project.jpg",
+    content: `
+      <p>Access to education is life-changing. CCSO provided school fees, uniforms, and essential learning materials to over 200 students, many of whom had dropped out due to poverty.</p>
+      <p>We collaborated with local schools to monitor academic progress and address barriers to learning, such as child labor and early marriage. Girls received additional mentorship and menstrual hygiene kits.</p>
+      <p>Parents expressed renewed hope for their children's future as school attendance improved and dropout rates declined.</p>
+    `
   },
   {
     id: 4,
-    title: "Youth Peace Ambassadors Program Launches",
-    excerpt: "A new initiative engages young people in peace-building activities across communities affected by conflict.",
-    category: "peace",
-    date: "February 22, 2025",
-    readTime: "3 min read",
-    image: "https://images.pexels.com/photos/6647024/pexels-photo-6647024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: "Church Built in Mathiang Becomes Community Hub",
+    excerpt: "More than 300 residents now have a spiritual home and space for youth gatherings, Sunday school, and community events.",
+    category: "evangelism",
+    date: "March 15, 2025",
+    readTime: "4 min read",
+    image: "/images/school-project.jpg",
+    content: `
+      <p>CCSO supported the construction of a church in Mathiang village, which now serves as a multipurpose center for worship, youth engagement, and community meetings.</p>
+      <p>Residents volunteered time and materials for construction, while church leaders developed a schedule for weekly services and community outreach events.</p>
+      <p>This project has strengthened spiritual life and social bonds within the village, creating a safe space for dialogue, learning, and growth.</p>
+    `
   },
   {
     id: 5,
-    title: "Mobile Health Clinic Reaches Remote Villages",
-    excerpt: "Our mobile health team provided medical care to over 500 people in remote villages with limited healthcare access.",
-    category: "health",
-    date: "February 15, 2025",
-    readTime: "4 min read",
-    image: "https://images.pexels.com/photos/3376799/pexels-photo-3376799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: "Communities Face Urgent Flood and Food Crises",
+    excerpt: "Ongoing floods and food shortages have devastated several regions. We're working to deliver emergency aid—but we need your help.",
+    category: "emergency",
+    date: "March 1, 2025",
+    readTime: "5 min read",
+    image: "/images/floods3.jpg",
+    content: `
+      <p>Severe flooding in multiple counties has displaced families, destroyed farmland, and disrupted food supply chains. CCSO’s rapid response teams are on the ground delivering life-saving assistance.</p>
+      <p>Food packs, clean water, and shelter materials are being distributed to the most affected areas. We're also assessing long-term recovery needs including crop rehabilitation and water infrastructure repairs.</p>
+      <p>Your support is critical in reaching more families and preventing further suffering during this crisis.</p>
+    `
   },
   {
     id: 6,
-    title: "Community Leaders Trained in Conflict Resolution",
-    excerpt: "Twenty community leaders completed intensive training in mediation and conflict resolution techniques.",
-    category: "peace",
-    date: "January 30, 2025",
-    readTime: "5 min read",
-    image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: "Education Crisis: Help Us Get More Kids in School",
+    excerpt: "Thousands of displaced or impoverished children remain out of school. Join our mission to change that.",
+    category: "education",
+    date: "February 20, 2025",
+    readTime: "4 min read",
+    image: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg",
+    content: `
+      <p>Barriers to education such as displacement, poverty, and gender inequality have left thousands of South Sudanese children without access to learning.</p>
+      <p>CCSO is working with local communities to identify out-of-school children and provide them with scholarships, school materials, and psychosocial support.</p>
+      <p>Your donations help us expand our reach and ensure every child has the opportunity to learn and thrive.</p>
+    `
   },
   {
     id: 7,
-    title: "Adult Literacy Program Changes Lives",
-    excerpt: "Our adult literacy program has helped 120 adults learn to read and write, opening new opportunities.",
-    category: "education",
-    date: "January 18, 2025",
-    readTime: "4 min read",
-    image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: "Sowing Seeds of Hope: Supporting Local Farmers",
+    excerpt: "CCSO is helping families bounce back from food insecurity with sustainable agriculture and seed distributions.",
+    category: "agriculture",
+    date: "January 25, 2025",
+    readTime: "3 min read",
+    image: "https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    content: `
+      <p>With funding from our partners, CCSO has launched a program to support smallholder farmers with drought-resistant seeds, tools, and training in sustainable farming practices.</p>
+      <p>Farmers have already begun harvesting improved yields, boosting food security and income in their communities.</p>
+      <p>We believe that investing in agriculture is key to building resilience and ensuring long-term development in South Sudan.</p>
+    `
+  }
+];
+
+
+// current issues
+export const currentIssues = [
+  {
+    id: 1,
+    title: "Flood Crisis",
+    description:
+      "Heavy rains have displaced thousands, destroyed homes, and cut off vital infrastructure. Urgent support is needed to provide shelter, food, and medical aid to the affected families.",
+    progress: 35,
+    status: "Urgent",
+    iconColor: "red",
+    buttonText: "Help Now",
+    img: "/images/floods3.jpg"
   },
   {
-    id: 8,
-    title: "Seed Distribution Boosts Food Security",
-    excerpt: "A recent seed distribution initiative has helped 300 farming families prepare for the growing season.",
-    category: "agriculture",
-    date: "January 5, 2025",
-    readTime: "3 min read",
-    image: "https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    id: 15,
+    title: "Food Security Crisis",
+    description:
+      "Communities are struggling with hunger due to failed harvests, rising food prices, and limited access to supplies. Your support can help deliver emergency food packages and sustainable solutions.",
+    progress: 5,
+    status: "Critical",
+    iconColor: "orange",
+    buttonText: "Support Project",
+    img: "/images/food8.jpg"
+  },
+  {
+    id: 3,
+    title: "Education Support",
+    description:
+      "Many children are out of school due to poverty, displacement, or lack of resources. Help us provide learning materials, school fees, and safe learning environments to secure their future.",
+    progress: 5,
+    status: "Important",
+    iconColor: "yellow",
+    buttonText: "Contribute",
+    img: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg"
   }
 ];
