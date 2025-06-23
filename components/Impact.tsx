@@ -2,7 +2,7 @@
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import type { Options } from "@splidejs/splide";
+import type { Options } from "@splidejs/react-splide";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Button } from "@/components/ui/button";
@@ -168,9 +168,6 @@ export const Impact = () => {
                   </div>
 
                   <div className="relative z-10 max-w-2xl p-8 text-left">
-                    <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
-                      Success Story
-                    </span>
                     <h3 className="text-3xl font-bold mb-4 text-white">{story.title}</h3>
                     <p className="text-lg mb-6 text-white/90">{story.description}</p>
                     <Button 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -8,8 +8,14 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FOCUS_AREAS, programStats, completedProjects } from "@/constants";
-import { Card, CardContent } from "@/components/ui/card";
+import { programStats, completedProjects } from "@/constants";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getColorClasses } from "@/lib/utils";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, ArrowRight } from "lucide-react";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +47,7 @@ const Programs = () => {
   }, []);
 
   return (
-        <div className="py-16">
+        <div>
         <section className="relative py-16">
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
           <div className="absolute inset-0 bg-[url('https://i.pinimg.com/736x/99/2b/ee/992beee6f85227231bc4b97728f437c8.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
@@ -55,104 +61,112 @@ const Programs = () => {
       </section>
 
         <section ref={addToRefs} className="py-16">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Approach</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="mb-12 text-lg text-muted-foreground">
               We take a holistic approach to community development, addressing interconnected challenges through integrated programs.
             </p>
           </div>
-
-          <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {FOCUS_AREAS.map((area) => (
-              <Card key={area.id} className="border-none shadow-md transition-all hover:shadow-lg">
-                <CardContent className="flex flex-col items-center p-6 text-center">
-                  <div className="relative h-48 w-full">
-                    <Image src={area.img} alt={area.title} fill className="object-cover rounded-lg" />
+        <div className="space-y-16">
+          {programStats.map((project, index) => {
+            const colors = getColorClasses(project.color);
+            return (
+              <div key={project.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h3 className="mb-2 text-lg font-medium">{area.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {area.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <Card className={`border-0 bg-gradient-to-br ${colors.gradient} shadow-lg`}>
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${colors.bg}`}>
+                          <project.icon className={`h-6 w-6 ${colors.text}`} />
+                        </div>
+                        <Badge variant="secondary" className={colors.badge}>
+                          {project.status}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-2xl mb-2">{project.title}</CardTitle>
+                      <div className="flex items-center text-sm text-gray-600 dark:text-gray-300 mb-4">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {project.location}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <p className="text-gray-700 dark:text-gray-200">
+                        {project.longDescription}
+                      </p>
+
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            Progress to Goal
+                          </span>
+                          <span className={`text-sm font-bold ${colors.text}`}>
+                            {project.impact.progress}%
+                          </span>
+                        </div>
+                        <Progress value={project.impact.progress} className="h-2" />
+                        <div className="flex items-center justify-between mt-1 text-xs text-gray-600 dark:text-gray-300">
+                          <span>{project.impact.current}</span>
+                          <span>{project.impact.goal}</span>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4">
+                        {project.stats.map((stat, i) => (
+                          <div key={i} className="text-center">
+                            <div className={`text-lg font-bold ${colors.text}`}>
+                              {stat.value}
+                            </div>
+                            <div className="text-xs text-gray-600 dark:text-gray-300">
+                              {stat.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                          Key Program Goals
+                        </h4>
+                        <ul className="space-y-1">
+                          {project.outcomes.map((outcome, i) => (
+                            <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                              <span className="text-green-500 mr-2 mt-1">•</span>
+                              {outcome}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <Button asChild className="bg-primary text-white hover:bg-primary/90">
+                          <Link href="/donate" className="flex items-center">
+                            Support This Project
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                        <Button asChild variant="outline">
+                          <Link href={`/blog?category=${project.id}`}>Read Success Stories</Link>
+                        </Button>
+              </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         </section>
-
-      {/* Detailed Programs */}
-      <section ref={addToRefs} className="bg-muted/30 py-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Program Details</h2>
-            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-            <p className="mb-12 text-lg text-muted-foreground">
-              Learn more about our key initiatives and how they're making a difference.
-            </p>
-          </div>
-
-          <Tabs defaultValue="agriculture" className="max-w-5xl">
-            <TabsList
-              className="mb-8 grid w-full grid-cols-2 gap-2 md:grid-cols-4"
-            >
-              {programStats.items.map((item) => (
-                <TabsTrigger key={item.id} value={item.id}>
-                  {item.title}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            {programStats.items.map((item) => ( 
-              <TabsContent key={item.id} value={item.id} className="rounded-xl border bg-card p-6 shadow-sm">
-            <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-2xl font-semibold">{item.title}</h3>
-              <p className="mb-4 text-muted-foreground">{item.description}</p>
-              
-              <div className="mb-6 space-y-4">
-                {item.features.map((feature, index) => (
-                  <div key={index}>
-                    <h4 className="mb-1 font-medium">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                <Button asChild className="bg-primary text-white hover:bg-primary/90">
-                  <Link href="/contact">Get Involved</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href={`/blog?category=${item.id}`}>Read Success Stories</Link>
-                </Button>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="relative aspect-video overflow-hidden rounded-lg">
-                <Image 
-                  src={item.image}
-                  alt={`${item.label} initiatives`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              
-              <div className="rounded-lg bg-muted/50 p-4">
-                <h4 className="mb-2 text-sm font-medium">Program Goal</h4>
-                <ul className="space-y-2 text-sm">
-                  {item.impact.map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="mr-2 mt-1 text-primary">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          </TabsContent>
-          ))}
-          </Tabs>
-      </section>
 
         <section ref={addToRefs} className="py-16">
         <div className="mx-auto max-w-3xl text-center">

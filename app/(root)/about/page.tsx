@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, Clock, Award } from "lucide-react";
+import { HeartHandshake, Clock, Award, Shield } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
@@ -269,20 +269,39 @@ const About = () => {
       </section>
 
       <section ref={addToRefs} className="py-16">
-          <div className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Join Our Mission</h2>
-            <p className="mb-8 text-lg opacity-90">
-              Together, we can continue bringing hope and transformation to communities across South Sudan.
+      <div className="rounded-2xl bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 p-8">
+          <div className="text-center mb-8">
+            <Shield className="h-12 w-12 text-green-600 dark:text-green-400 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              Accountability & Transparency
+            </h2>
+            <p className="text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+              We believe in complete transparency with our donors and communities. Our financial records are audited annually, and we provide regular impact reports showing exactly how donations are used.
             </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/donate">Make a Donation</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent hover:bg-primary-foreground/10">
-                <Link href="/get-involved">Get Involved</Link>
-              </Button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">85%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Direct Program Funding</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">10%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Administrative Costs</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">5%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Fundraising Expenses</div>
             </div>
           </div>
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-center mt-8">
+            <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-white hover:text-primary transition-all">
+              <Link href="/donate">Make a Donation</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all">
+              <Link href="/get-involved">Get Involved</Link>
+            </Button>
+          </div>
+        </div>
       </section>
     </div>
   );

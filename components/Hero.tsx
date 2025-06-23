@@ -29,9 +29,23 @@ export const Hero = () => {
               variant="outline"
               asChild
             >
-              <Link href="/get-involved">Get Involved</Link>
+              <Link href="/about">Learn Our Story</Link>
             </Button>
           </div>
+          <div className="mt-8 flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300">
+              <div className="flex items-center space-x-1">
+                <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                <span>100% Transparent</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                <span>Indigenous Led</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <div className="h-2 w-2 rounded-full bg-orange-500"></div>
+                <span>Community Driven</span>
+              </div>
+            </div>
         </div>
 
         <div className="relative w-full aspect-[3/4] africa-mask">

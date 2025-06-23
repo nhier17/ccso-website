@@ -4,7 +4,7 @@ import Features from "@/components/Features";
 import { Hero } from "@/components/Hero";
 import { Impact } from "@/components/Impact";
 import Projects from "@/components/AlertBanner";
-
+import Testtimonials from "@/components/Testtimonials";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Features />
       <Projects />
       <Impact />
+      <Testtimonials />
       <CTA />
       </>
   );

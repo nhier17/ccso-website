@@ -71,6 +71,16 @@ const CTA = () => {
           <p className="mt-4 text-lg text-gray-700">
             Your support can transform lives. Whether through donations, volunteering, or partnerships, you can help us create a resilient and self-reliant South Sudan.
           </p>
+          <div className="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <div className="text-lg font-bold text-blue-600 dark:text-blue-400">85%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Direct Program Funding</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-orange-600 dark:text-orange-400">15%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Administrative Costs</div>
+            </div>
+          </div>
           <div ref={btnRef} className="mt-6 flex justify-center lg:justify-start gap-4">
             <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all" asChild>
               <Link href="/donate">Donate Now</Link>

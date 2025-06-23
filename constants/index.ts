@@ -1,4 +1,4 @@
-
+import { Droplets, Sprout, Handshake, Heart, GraduationCap } from "lucide-react";
 
 export const navbarLinks = [
   { name: "Home", path: "/" },
@@ -132,14 +132,15 @@ export const impactStories = [
 // constants/footerLinks.js
 export const footerLinks = {
   quickLinks: [
-    { title: "About Us", url: "#about" },
-    { title: "Programs", url: "#programs" },
-    { title: "Get Involved", url: "#get-involved" },
-    { title: "Contact Us", url: "#contact" },
+    { title: "About Us", url: "/about" },
+    { title: "Programs", url: "/programs" },
+    { title: "Get Involved", url: "/get-involved" },
+    { title: "Blog", url: "/blog" },
+    { title: "Donate", url: "/donate" },
+    { title: "Contact Us", url: "/contact" },
   ],
   contactLinks: [
-    { title: "Rumbek", icon: "/icons/map-pin.svg" },
-    { title: "Lakes State", icon: "/icons/map-pin.svg" },
+    { title: "Rumbek, Lakes State", icon: "/icons/map-pin.svg" },
     { title: "+211 920 528 714", icon: "/icons/phone.svg" },
     { title: "bishop.pacong@gmail.com", icon: "/icons/mail.svg" },
   ],
@@ -587,136 +588,139 @@ export const successTestimonials = [
   }
 ];
 //program stats
-export const programStats = {
-  title: "Program Details",
-  description: "Learn more about our key initiatives and how they're making a difference.",
-  items: [
+export const programStats = [
     {
-      id: "agriculture",
-      label: "Agriculture",
-      title: "Food Security",
-      description: "Our agricultural programs help communities achieve food security through sustainable farming methods, training, and resources.",
-      image: "/images/impact5.png",
-      features: [
-        {
-          title: "Sustainable Farming Training",
-          description: "Training farmers in climate-smart agricultural techniques adapted to South Sudan's challenging environment."
-        },
-        {
-          title: "Seed and Tool Distribution",
-          description: "Providing quality seeds, tools, and resources to help farmers increase their yields."
-        },
-        {
-          title: "Water Management",
-          description: "Implementing irrigation systems and water management techniques to mitigate the impact of droughts."
-        },
-        {
-          title: "Market Access Support",
-          description: "Helping farmers connect to markets and increase their income from agricultural products."
-        }
+      id: 'clean-water',
+      icon: Droplets,
+      title: 'Clean Water Access Initiative',
+      description: 'Building sustainable water points and training communities in maintenance to ensure long-term access to clean, safe drinking water.',
+      longDescription: 'Our flagship program addresses the critical water crisis in Western Lakes State. We construct boreholes, hand pumps, and water storage systems while training local technicians for maintenance. Each water point serves 300-500 people and includes hygiene education programs.',
+      impact: {
+        current: '100 people served',
+        goal: '1,000 people by 2025',
+        progress: 2,
+      },
+      location: 'Rumbek East, Rumbek Center',
+      status: 'Active',
+      color: 'blue',
+      image: '/images/water.png',
+      stats: [
+        { label: 'Water Points Built', value: '2' },
+        { label: 'Communities Served', value: '2' },
+        { label: 'Maintenance Technicians Trained', value: '15' },
       ],
-      impact: [
-        "500+ farmers to be trained in sustainable techniques",
-        "50% average increase in crop yields",
-        "10+ communities to be achieved improved food security",
-        "AIM: water management systems implementation"
-      ]
+      outcomes: [
+        'Reduce waterborne diseases by 70% in served communities',
+        'Increase children attendance in school by 45%',
+        'Save 3-4 hours daily previously spent fetching water',
+      ],
     },
     {
-      id: "education",
-      label: "Education",
-      title: "Education",
-      description: "We believe education is the foundation for sustainable development and work to increase access to quality education.",
-      image: "/images/partner.png",
-      features: [
-        {
-          title: "School Infrastructure",
-          description: "Building and rehabilitating schools in underserved communities to create safe learning environments."
-        },
-        {
-          title: "Teacher Training",
-          description: "Training and supporting teachers to improve the quality of education."
-        },
-        {
-          title: "Adult Literacy Programs",
-          description: "Providing literacy classes for adults to improve their skills and livelihood opportunities."
-        },
-        {
-          title: "Educational Materials",
-          description: "Supplying textbooks, school supplies, and learning materials to students and schools."
-        }
+      id: 'agriculture',
+      icon: Sprout,
+      title: 'Agricultural Empowerment Program',
+      description: 'Training farmers in sustainable agriculture techniques, providing seeds and tools, and establishing cooperatives for food security.',
+      longDescription: 'We empower smallholder farmers with modern agricultural techniques while respecting traditional knowledge. Our program includes seed distribution, tool provision, irrigation training, and cooperative formation for better market access.',
+      impact: {
+        current: '200 farmers trained',
+        goal: '5,000 farmers by 2025',
+        progress: 5,
+      },
+      location: 'Rumbek East',
+      status: 'Expanding',
+      color: 'green',
+      image: '/images/food3.jpg',
+      stats: [
+        { label: 'Farmers Trained', value: '200' },
+        { label: 'Cooperatives Formed', value: '12' },
+        { label: 'Hectares Under Cultivation', value: '1,200' },
       ],
-      impact: [
-        "20+ school to be built or rehabilitated",
-        "1,000+ children to gain access to education",
-        "20 teachers to be trained in modern teaching methods",
-        "AIM: literacy programs for programs"
-      ]
+      outcomes: [
+        'Increase average crop yield by 85%',
+        'Improve food security for 8,500+ family members',
+        'Increase farmer income by 120% on average',
+      ],
     },
     {
-      id: "health",
-      label: "Health",
-      title: "Health & Sanitation",
-      description: "Our health initiatives improve access to basic healthcare services and promote better hygiene and sanitation practices.",
-      image: "/images/health1.JPEG",
-      features: [
-        {
-          title: "Mobile Health Clinics",
-          description: "Bringing essential healthcare services to remote communities with limited access."
-        },
-        {
-          title: "Clean Water Projects",
-          description: "Drilling wells and establishing clean water sources to prevent waterborne diseases."
-        },
-        {
-          title: "Hygiene Education",
-          description: "Teaching proper hygiene practices to prevent disease transmission."
-        },
-        {
-          title: "Maternal & Child Health",
-          description: "Supporting pregnant women and children through prenatal care and nutrition programs."
-        }
+      id: 'healthcare',
+      icon: Heart,
+      title: 'Healthcare & Wellness Program',
+      description: 'Mobile health clinics, maternal health programs, and community health education to improve wellness outcomes.',
+      longDescription: 'Our healthcare initiative brings medical services directly to remote communities through mobile clinics. We focus on maternal health, child nutrition, disease prevention, and training community health workers.',
+      impact: {
+        current: '100 consultations provided',
+        goal: '1,000 consultations by 2025',
+        progress: 5,
+      },
+      location: 'Remote Communities, Rumbek East',
+      status: 'Growing',
+      color: 'red',
+      image: '/images/health1.jpeg',
+      stats: [
+        { label: 'Medical Consultations', value: '100' },
+        { label: 'Community Health Workers', value: '10' },
+        { label: 'Maternal Health Sessions', value: '320' },
       ],
-      impact: [
-        "35 clean water wells to be established",
-        "8,000+ people to gain access to clean water",
-        "20 mobile health clinics to be conducted",
-        "50% reduction in waterborne diseases in target areas"
-      ]
+      outcomes: [
+        'Reduce maternal mortality by 40% in target areas',
+        'Decrease childhood malnutrition by 35%',
+        'Increase vaccination coverage to 78%',
+      ],
     },
     {
-      id: "peace",
-      label: "Peace Building",
-      title: "Peace & Reconciliation",
-      description: "We work to promote peace, reconciliation, and social cohesion in communities affected by conflict.",
-      image: "https://media.npr.org/assets/img/2018/11/07/gettyimages-1055768206_custom-e4a90867c4c88ac2e242bf0741f18e7aa322fc57.jpg?s=800&c=85&f=webp",
-      features: [
-        {
-          title: "Conflict Resolution Training",
-          description: "Training community leaders in conflict resolution and mediation skills."
-        },
-        {
-          title: "Interfaith Dialogue",
-          description: "Facilitating discussions between different faith communities to promote understanding and cooperation."
-        },
-        {
-          title: "Youth Peace Programs",
-          description: "Engaging young people in peace-building activities to prevent radicalization."
-        },
-        {
-          title: "Community Reconciliation",
-          description: "Organizing events and initiatives to heal divisions and build community cohesion."
-        }
+      id: 'education',
+      icon: GraduationCap,
+      title: 'Education & Skills Development',
+      description: 'Adult literacy programs, vocational training, and youth development initiatives to build community capacity.',
+      longDescription: 'We believe education is the foundation of sustainable development. Our programs include adult literacy classes, vocational skills training, youth leadership development, and scholarship support for promising students.',
+      impact: {
+        current: '100 graduates',
+        goal: '2,500 graduates by 2025',
+        progress: 5,
+      },
+      location: 'Juba, Wau, Nairobi, Uganda',
+      status: 'Active',
+      color: 'purple',
+      image: '/images/education.jpg',
+      stats: [
+        { label: 'Adult Literacy Graduates', value: '100' },
+        { label: 'Vocational Training Graduates', value: '100' },
+        { label: 'Youth Leaders Trained', value: '100' },
       ],
-      impact: [
-        "300+ community leaders to be trained in conflict resolution",
-        "15 inter-community peace agreements to be facilitated",
-        "1,000+ youth to be engaged in peace-building programs",
-        "AIM: 70% reduction in violent incidents in target communities"
-      ]
-    }
-  ]
-};  
+      outcomes: [
+        'Increase adult literacy rate from 15% to 65%',
+        'Increase youth employment rate by 60%',
+        'Increase women\'s participation in leadership roles by 100%',
+      ],
+    },
+    {
+      id: 'peacebuilding',
+      icon: Handshake,
+      title: 'Peace & Reconciliation Initiative',
+      description: 'Community dialogue programs, conflict resolution training, and inter-tribal reconciliation efforts.',
+      longDescription: 'In a region affected by conflict, we facilitate dialogue between communities, train local peace ambassadors, and support reconciliation processes. Our approach combines traditional conflict resolution with modern peacebuilding techniques.',
+      impact: {
+        current: '101 communities engaged',
+        goal: '50 communities by 2025',
+        progress: 20,
+      },
+      location: 'Conflict-Affected Areas, Rumbek',
+      status: 'Critical',
+      color: 'orange',
+      image: '/images/peace.jpg',
+      stats: [
+        { label: 'Peace Dialogues Facilitated', value: '78' },
+        { label: 'Peace Ambassadors Trained', value: '120' },
+        { label: 'Reconciliation Agreements', value: '15' },
+      ],
+      outcomes: [
+        'Reduce violent conflicts by 65% in target areas',
+        'Resume inter-community trade in 12 locations',
+        'Return displaced families to 8 communities',
+      ],
+    },
+  ];
+
 //blog posts
 export const blogPosts = [
   {
@@ -876,4 +880,28 @@ export const currentIssues = [
     buttonText: "Contribute",
     img: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg"
   }
+];
+
+export const testimonialsData = [
+  {
+    name: 'Mary Akuol',
+    role: 'Community Leader, Rumbek',
+    content: 'CCSO brought us clean water for the first time in decades. Our children no longer walk hours to fetch water, and they can now attend school regularly. This has transformed our entire community.',
+    avatar: 'https://images.pexels.com/photos/8090034/pexels-photo-8090034.jpeg?auto=compress&cs=tinysrgb&w=150',
+    rating: 5,
+  },
+  {
+    name: 'Joseph Marial',
+    role: 'Pacong',
+    content: 'The agricultural training I received from CCSO has doubled my harvest. I can now feed my family and sell surplus crops at the market. Their approach respects our traditional knowledge while teaching new techniques.',
+    avatar: 'https://images.pexels.com/photos/8090032/pexels-photo-8090032.jpeg?auto=compress&cs=tinysrgb&w=150',
+    rating: 5,
+  },
+  {
+    name: 'Sarah Aweng',
+    role: 'Mother of 4, Yirol',
+    content: 'The health education program saved my youngest child\'s life. CCSO taught us about nutrition and disease prevention. Their mobile clinic provides care when we need it most, with dignity and respect.',
+    avatar: 'https://images.pexels.com/photos/8090037/pexels-photo-8090037.jpeg?auto=compress&cs=tinysrgb&w=150',
+    rating: 5,
+  },
 ];
