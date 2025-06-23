@@ -629,7 +629,7 @@ export const programStats = [
       location: 'Rumbek East',
       status: 'Expanding',
       color: 'green',
-      image: '/images/food3.jpg',
+      image: '/images/food3.JPG',
       stats: [
         { label: 'Farmers Trained', value: '200' },
         { label: 'Cooperatives Formed', value: '12' },
