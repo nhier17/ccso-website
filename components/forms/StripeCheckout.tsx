@@ -150,7 +150,7 @@ export default function StripeCheckout({
     useEffect(() => {
         const fetchClientSecret = async () => {
             try {
-                const response = await axios.post('/api/create-payment-intent', {
+                const response = await axios.post('/api/stripe/create-payment-intent', {
                     amount,
                     frequency,
                     donorInfo
