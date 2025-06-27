@@ -15,7 +15,7 @@ export const config = {
             supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
         },
         resend: {
-            apiKey: process.env.NEXT_PUBLIC_RESEND_KEY!,
+            apiKey: process.env.RESEND_API_KEY!,
         }
 
     }
