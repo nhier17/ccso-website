@@ -1,6 +1,11 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { config } from "./config";
 
+if (!config.env.stripe.publishableKey) {
+  throw new Error("Missing Stripe publishable key");
+}
+
+
 export const stripePromise = loadStripe(config.env.stripe.publishableKey);
 
 // Helper to format amount for Stripe (converts dollars to cents)

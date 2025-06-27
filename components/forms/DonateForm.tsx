@@ -11,23 +11,18 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Form } from "@/components/ui/form";
 import { donationTiers } from "@/constants";
-import { formatAmountForStripe } from "@/lib/stripe";
 import { donateSchema } from "@/lib/utils";
-import axios from "axios";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CustomInput, { FormFieldType } from "../CustomInput";
 import { Loader2 } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import StripeCheckout from "./StripeCheckout";
 
 type FormData = z.infer<typeof donateSchema>;
 
 export default function DonateForm() {
   const [selectedTier, setSelectedTier] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [donationType, setDonationType] = useState('one-time')
+  const [showPayment, setShowPayment] = useState(false);
   const router = useRouter();
-  const stripe = useStripe();
-  const elements = useElements();
 
   const form = useForm<FormData>({
     resolver: zodResolver(donateSchema),
@@ -37,46 +32,14 @@ export default function DonateForm() {
       firstName: "",
       lastName: "",
       email: "",
-      isMonthly: false,
+      frequency: 'once',
     },
   });
 
   const onSubmit = async (values: FormData) => {  
     setIsLoading(true);
     try {
-      if (!stripe || !elements) throw new Error("Stripe is not initialized.");
-
-      // Create a payment intent
-      const response = await axios.post("/api/create-payment-intent", {
-        amount: formatAmountForStripe(values.amount, "USD"),
-        email: values.email,
-        name: `${values.firstName} ${values.lastName}`,
-        isMonthly: values.isMonthly,
-      });
-
-      if (!response.data.clientSecret) {
-        throw new Error("Network response was not ok");
-      }
-
-      const { clientSecret } = response.data;
-      // Confirm payment
-      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement)!,
-          billing_details: {
-            name: `${values.firstName} ${values.lastName}`,
-            email: values.email,
-          },
-        },
-      });
-
-      if (error) {
-        throw new Error(error.message);
-      }
-
-      if (paymentIntent.status === "succeeded") {
-        router.push("/donate/thank-you");
-      }
+      setShowPayment(true);
     } catch (error) {
       toast.error(
         "Error processing payment",
@@ -88,6 +51,35 @@ export default function DonateForm() {
       setIsLoading(false);
     }
   };
+
+  const selectedAmount = form.watch('amount');
+  const frequency = form.watch('frequency');
+  const formData = form.getValues();
+
+  if (showPayment) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold">Complete Your Donation</h2>
+          <Button 
+            variant="outline" 
+            onClick={() => setShowPayment(false)}
+          >
+            ← Back to Form
+          </Button>
+        </div>
+        <StripeCheckout
+          amount={selectedAmount}
+          frequency={frequency}
+          donorInfo={{
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <Form {...form}>
@@ -145,17 +137,16 @@ export default function DonateForm() {
                 name="donationType"
                 fieldType={FormFieldType.RADIO}
                 options={[
-                  { label: "One-time", value: "one-time" },
+                  { label: "One-time", value: "once" },
                   { label: "Monthly", value: "monthly" },
                   { label: "Quarterly", value: "quarterly" },
-                  { label: "Annually", value: "annually" },
+                  { label: "Annually", value: "yearly" },
                 ]}
                 label="Donation Type"
                 placeholder="Select donation type"
                 disabled={false}
               />
              
-          
          </div>
             </div>
 
@@ -183,10 +174,6 @@ export default function DonateForm() {
                  fieldType={FormFieldType.INPUT} 
                />
 
-              <div className="mt-4">
-              <Label>Card Details</Label>
-              <CardElement className="p-4 border rounded-md bg-gray-50" />
-              </div>
             </div>
 
             <Button
@@ -194,7 +181,7 @@ export default function DonateForm() {
           className="field-btn"
           disabled={isLoading}
         >
-          {isLoading ? <Loader2 className="animate-spin ml-2" /> : "Donate Now"}
+          {isLoading ? <Loader2 className="animate-spin ml-2" /> : "Continue to Payment"}
         </Button>
       </form>
     </Form>
