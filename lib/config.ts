@@ -11,7 +11,7 @@ export const config = {
             publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
         },
         supabase: {
-            supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL!,
+            supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_PROJECT_URL!,
             supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
         },
         resend: {
