@@ -72,7 +72,6 @@ const GetInvolved = () => {
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
     console.log("Newsletter signup:", email);
     setEmail("");
   };
@@ -86,7 +85,6 @@ const GetInvolved = () => {
 
   return (
     <div className="font-bebas-neue">
-      {/* Hero Section */}
       <section className="relative py-16">
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
           <div className="absolute inset-0 bg-[url('/images/support.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
@@ -275,7 +273,6 @@ const GetInvolved = () => {
           </Tabs>
       </section>
 
-          {/* Upcoming Events */}
       <section ref={addToRefs} className="py-16">
           <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Upcoming Events</h2>
@@ -361,7 +358,6 @@ const GetInvolved = () => {
         </div>
       </div>
 
-  {/* Testimonials */}
   <section ref={addToRefs} className="bg-muted/30 py-16">
           <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Volunteer Stories</h2>
