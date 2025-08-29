@@ -1,41 +1,37 @@
 import {
     Body,
-    Button,
     Container,
     Head,
-    Hr,
     Html,
     Img,
     Preview,
     Section,
     Text,
   } from "@react-email/components";
+  import { config } from "@/lib/config";
   
-  interface ThankYouEmailProps {
-    firstName?: string;
-    amount?: number;
-    frequency?: string;
+  interface ContactFormProps {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
   }
   
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = config.env.baseUrl;
   
   export const EmailTemplate = ({
-    firstName,
-    amount,
-    frequency = 'once',
-  }: ThankYouEmailProps) => {
-    const readableFrequency =
-      frequency === 'once'
-        ? 'one-time'
-        : frequency.charAt(0).toUpperCase() + frequency.slice(1);
+    name,
+    email,
+    subject,
+    message,
+  }: ContactFormProps) => {
   
     return (
       <Html>
         <Head />
-        <Preview>Thank you for your donation to CCSO 🙏</Preview>
+        <Preview>A message from {name}</Preview>
         <Body style={main}>
           <Container style={container}>
-            <Section style={section}>
               <Img
                 src={`${baseUrl}/icons/logo.webp`}
                 width="60"
@@ -43,82 +39,61 @@ import {
                 alt="CCSO"
                 style={{ margin: '0 auto', borderRadius: '100%' }}
               />
-              <Text style={greeting}>Dear {firstName},</Text>
-              <Text style={paragraph}>
-                Thank you for your generous <strong>{readableFrequency}</strong> donation of{' '}
-                <strong>${amount?.toFixed(2)}</strong> to <strong>Christ Compassion Service Organization (CCSO)</strong>.
-              </Text>
-              <Text style={paragraph}>
-                Your support brings hope and healing to vulnerable communities affected by floods, poverty, and conflict.
-              </Text>
-              <Button style={button} href="https://ccso.org/donate">
-                Donate Again
-              </Button>
-              <Hr />
-              <Text style={footer}>
-                Christ Compassion Service Organization | Rumbek, Lakes State.
-              </Text>
-            </Section>
+
+          <Text style={title}>You have a new message from {name}</Text>
+        <Section style={section}>
+          <Text style={text}><strong>Name:</strong> {name}</Text>
+          <Text style={text}><strong>Email:</strong> {email}</Text>
+          <Text style={text}><strong>Subject:</strong> {subject}</Text>
+          <Text style={text}><strong>Message:</strong> {message}</Text>
+        </Section>
+
+        <Text style={footer}>
+          This message was sent from the contact form on {baseUrl} website.
+        </Text>
           </Container>
         </Body>
       </Html>
     );
   };
   
-  EmailTemplate.PreviewProps = {
-    firstName: 'John Doe',
-    amount: 50,
-    frequency: 'monthly',
-  } as ThankYouEmailProps;
-  
   
   // Inline styles mimicking Tailwind
   const main = {
     backgroundColor: '#ffffff',
-    color: '#1f2937',
-    fontFamily: 'Inter, sans-serif',
+    color: '#24292e',
+    fontFamily:
+      '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
   };
   
   const container = {
-    maxWidth: '600px',
+    maxWidth: '480px',
     margin: '0 auto',
-    padding: '32px 24px',
+    padding: '20px 0 48px',
+  };
+  
+  const title = {
+    fontSize: '24px',
+    lineHeight: 1.25,
+  };
+  
+  const text = {
+    margin: '0 0 10px 0',
+    textAlign: 'left' as const,
   };
   
   const section = {
     padding: '24px',
-    border: '1px solid #e5e7eb',
-    borderRadius: '0.5rem',
-    backgroundColor: '#f9fafb',
-  };
-  
-  const greeting = {
-    fontSize: '20px',
-    fontWeight: '600',
-    marginBottom: '12px',
-  };
-  
-  const paragraph = {
-    fontSize: '16px',
-    lineHeight: '1.625',
-    margin: '12px 0',
-  };
-  
-  const button = {
-    display: 'inline-block',
-    fontSize: '14px',
-    backgroundColor: '#2563eb',
-    color: '#ffffff',
-    padding: '12px 24px',
-    borderRadius: '0.5rem',
-    textDecoration: 'none',
-    marginTop: '16px',
+    border: 'solid 1px #dedede',
+    borderRadius: '5px',
+    textAlign: 'center' as const,
   };
   
   const footer = {
+    color: '#6a737d',
     fontSize: '12px',
-    color: '#6b7280',
-    marginTop: '32px',
     textAlign: 'center' as const,
+    marginTop: '60px',
   };
+  
   

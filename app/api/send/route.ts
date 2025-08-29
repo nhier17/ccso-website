@@ -1,27 +1,35 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse, NextRequest } from 'next/server';
 import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
 import { config } from '@/lib/config';
+import { render } from '@react-email/components';
 
 const resend = new Resend(config.env.resend.apiKey);
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-    const body = await req.body;
-    const { firstName, amount, frequency, email } = body;
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { name, email, subject, message } = body;
+
+    const emailHtml = await render(
+      EmailTemplate({ name, email, subject, message })
+    );
+
   const { data, error } = await resend.emails.send({
-    from: 'CCSO <bishop.pacong@gmail.com>',
-    to: email,
-    subject: 'Thank you for your donation',
-    react: EmailTemplate({
-        firstName,
-        amount,
-        frequency,
-    }),
+    from: 'CCSO <onboarding@resend.dev>',
+    to: ['nhiermaker17@gmail.com'],
+    subject: `New Contact: ${subject}`,
+    html: emailHtml,
   });
 
   if (error) {
-    return res.status(400).json(error);
+    console.log(error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  res.status(200).json(data);
-};
+  return NextResponse.json(data);
+} catch (error) {
+  console.error(error);
+  return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+}
+}

@@ -5,7 +5,6 @@ import UseAlert from "@/hooks/useAlert";
 import  Alert from "@/components/Alert";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { addressInfo, faqs } from "@/constants";
@@ -17,7 +16,6 @@ const Contact = () => {
   return (
     <div>
       {alert.show && <Alert {...alert} />}
-    {/* Hero Section */}
     <section className="relative py-16">
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1056553/pexels-photo-1056553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
@@ -32,10 +30,8 @@ const Contact = () => {
       </div>
     </section>
 
-    {/* Contact Details and Form */}
     <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-          {/* Contact Information */}
           <div>
             <h2 className="mb-6 text-3xl font-bold tracking-tight">Get in Touch</h2>
             
@@ -77,7 +73,6 @@ const Contact = () => {
             </div>
           </div>
           
-          {/* Contact Form */}
           <div>
             <h2 className="mb-6 text-3xl font-bold tracking-tight">Send Us a Message</h2>
             <Card>
@@ -89,7 +84,6 @@ const Contact = () => {
         </div>
     </section>
 
-    {/* FAQ Section */}
     <section className="bg-muted/30 py-16">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
@@ -111,7 +105,6 @@ const Contact = () => {
         </div>
     </section>
 
-    {/* Newsletter Signup */}
     <section className="py-16">
         <div className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
           <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay Connected</h2>

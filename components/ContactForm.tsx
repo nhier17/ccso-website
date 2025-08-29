@@ -1,26 +1,27 @@
 "use client";
  
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import UseAlert from "@/hooks/useAlert";
 import CustomInput, { FormFieldType } from "./CustomInput";
 import { FaLocationArrow } from "react-icons/fa6";
+import { sendEmail } from "@/lib/resend";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 
 const schema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
   email: z.string().email({ message: "Invalid email address" }),
+  subject: z.string().min(1, { message: "Subject is required" }),
   message: z.string().min(1, { message: "Message is required" }),
 });
 
 const ContactForm = () => {
-  const { showAlert, hideAlert } = UseAlert();
   const [loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof schema>>({
@@ -28,6 +29,7 @@ const ContactForm = () => {
       defaultValues: {
         name: "",
         email: "",
+        subject: "",
         message: "",
       },
     });
@@ -36,28 +38,15 @@ const ContactForm = () => {
       setLoading(true);
   
       try {
-        await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-          {
-            from_name: data.name,
-            to_name: "Abraham Nhier",
-            from_email: data.email,
-            to_email: "abrahamnhier97@gmail.com",
-            message: data.message,
-          },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
-        );
-        showAlert({
-          text: "Thank you for your message 😃",
-          type: "success",
-        });
-        form.reset();
+        const response = await sendEmail(data);
+        if (response) {
+          toast.success("Message sent successfully");
+          form.reset();
+        }
       } catch (error) {
         console.error(error);
       } finally {
         setLoading(false);
-        setTimeout(() => hideAlert(false), 3000);
       }
     };
 
@@ -79,6 +68,13 @@ const ContactForm = () => {
           placeholder="jane.doe@example.com"
         />
         <CustomInput 
+          fieldType={FormFieldType.INPUT}
+          control={form.control}
+          name="subject"
+          label="Subject"
+          placeholder="Subject"
+        />
+        <CustomInput 
           fieldType={FormFieldType.TEXTAREA}
           control={form.control}
           name="message"
@@ -90,7 +86,7 @@ const ContactForm = () => {
           className="field-btn"
           disabled={loading}
         >
-          {loading ? 'Sending...' : 'Send Message'}
+          {loading ? <Loader2 className="size-5 animate-spin" /> : 'Send Message'}
           <FaLocationArrow className="size-5" />
         </Button>
       </form>
