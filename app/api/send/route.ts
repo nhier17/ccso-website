@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
   const { data, error } = await resend.emails.send({
     from: 'CCSO <onboarding@resend.dev>',
     to: ['nhiermaker17@gmail.com'],
+    replyTo: email,
     subject: `New Contact: ${subject}`,
     html: emailHtml,
   });
