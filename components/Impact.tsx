@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { impactStories } from "@/constants";
 import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MapPin, Users, Droplet, Heart } from "lucide-react";
+import { MapPin, Users, Heart, HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
 // Register GSAP plugins
@@ -39,26 +39,26 @@ interface ImpactStat {
 const impactStats: ImpactStat[] = [
   {
     icon: Users,
-    value: 50000,
-    label: "Lives Impacted",
-    suffix: "+",
-  },
-  {
-    icon: Droplet,
-    value: 100,
-    label: "Water Wells Built",
+    value: 1000,
+    label: "Individuals Reached",
     suffix: "+",
   },
   {
     icon: MapPin,
-    value: 25,
+    value: 6,
     label: "Communities Served",
-    suffix: "",
+    suffix: "+",
   },
   {
+    icon: HeartHandshake,
+    value: 120,
+    label: "Households Benefited",
+    suffix: "+",
+  },
+  { 
     icon: Heart,
-    value: 200,
-    label: "Active Volunteers",
+    value: 10,
+    label: "Community Volunteers",
     suffix: "+",
   },
 ];
@@ -128,10 +128,11 @@ export const Impact = () => {
       <div className="px-4">
         <div ref={textRef}>
         <div className="mx-auto max-w-3xl text-center">
-        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Making Real Impact</h2>
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Impact So Far</h2>
         <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
         <p className="mb-12 text-lg text-muted-foreground">
-          Through our programs, we have empowered thousands of families, provided clean water to communities, and promoted peace in conflict-affected areas. Every donation helps us create more success stories.
+        Every initiative we lead is rooted in community partnership and focused on restoring
+        lives, dignity, and resilience in conflict-affected communities across South Sudan.
         </p>
       </div>
         </div>
@@ -154,7 +155,9 @@ export const Impact = () => {
             </div>
           ))}
         </div>
-
+        <h3 className="text-2xl font-semibold mb-4">
+          Stories From the Communities We Serve
+        </h3>
         <div ref={sliderRef} className="shadow-2xl rounded-2xl overflow-hidden bg-white">
           <Splide options={splideOptions}>
             {impactStories.map((story, index) => (
@@ -189,7 +192,7 @@ export const Impact = () => {
             asChild
             size="lg"
           >
-            <Link href="/donate">Support Our Mission</Link>
+            <Link href="/donate">Support this Work</Link>
           </Button>
         </div>
       </div>

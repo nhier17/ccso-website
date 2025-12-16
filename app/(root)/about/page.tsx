@@ -86,7 +86,7 @@ const About = () => {
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">About CCSO</h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              Get to know our organization, our mission, and the passionate team behind our work in South Sudan.
+              Learn how CCSO is restoring dignity, rebuilding communities, and responding to urgent humanitarian needs across South Sudan.
             </p>
           </div>
         </div>
@@ -105,19 +105,42 @@ const About = () => {
             
             <div>
               <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
-              <div ref={textRef} className="space-y-4 text-gray-700 leading-relaxed">
+            <div ref={textRef} className="space-y-6 text-gray-700 leading-relaxed">
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  Who We Are
+                </h3>
                 <p>
-                  CCSO was founded in response to the pressing needs of communities in Lakes State, South Sudan. Although the Government of the Republic of South Sudan is now operational, many regions still lack access to basic services due to the infancy of state structures.
+                  CCSO was founded in response to the pressing humanitarian and development
+                  needs of communities in Lakes State, South Sudan. Despite the establishment
+                  of the Republic of South Sudan, many regions continue to face limited access
+                  to basic services due to fragile institutions and prolonged hardship.
                 </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  Why We Began
+                </h3>
                 <p>
-                Recognizing these challenges, the idea for CCSO was initiated by Bishop Joseph Maker Atot, Bishop of Pacong Diocese and a respected community leader in Rumbek East County. His vision was to create an indigenous organization that could act as a vehicle for sustainable development and empowerment, working alongside the government to reach underserved populations.
-              </p>
-              <p>
-                After extensive consultations with county authorities, local leaders, and the South Sudanese diaspora, the idea was warmly received. CCSO was officially formed as a non-governmental organization committed to supplementing government efforts and strengthening community resilience.
-              </p>
-              <p>
-                Today, CCSO supports ongoing initiatives in agriculture, education, health, and peace-building across various regions in Lakes State, guided by Christian values of compassion, service, and dignity for all.
-              </p>
+                  Recognizing these challenges, CCSO was initiated by Bishop Joseph Maker Atot,
+                  Bishop of Pacong Diocese and a respected community leader in Rumbek East
+                  County. His vision was to establish a locally rooted organization capable of
+                  driving sustainable development and empowering underserved communities in
+                  partnership with local authorities.
+                </p>
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  Our Commitment Today
+                </h3>
+                <p>
+                  Following extensive consultations with county authorities, community
+                  leaders, and the South Sudanese diaspora, CCSO was formally established as a
+                  non-governmental organization. Today, we implement programs in agriculture,
+                  education, health, and peacebuilding—guided by Christian values of
+                  compassion, service, and dignity for all.
+                </p>
+              </div>
             </div>
           </div>
           </div>
@@ -128,7 +151,7 @@ const About = () => {
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Foundation</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
             <p className="mb-12 text-lg text-muted-foreground">
-              Learn about the principles that guide our work.
+              Our work is guided by clear principles that shape every program and partnership.
             </p>
           </div>
 
@@ -276,29 +299,29 @@ const About = () => {
               Accountability & Transparency
             </h2>
             <p className="text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
-              We believe in complete transparency with our donors and communities. Our financial records are audited annually, and we provide regular impact reports showing exactly how donations are used.
+              We are committed to accountability, integrity, and responsible stewardship. Our financial records are independently reviewed, and we share regular impact updates so donors and communities clearly understand how resources are used.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">85%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Direct Program Funding</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Programs & Community Impact</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">10%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Administrative Costs</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Operations & Administration</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">5%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Fundraising Expenses</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Fundraising & Outreach</div>
             </div>
           </div>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-center mt-8">
             <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-white hover:text-primary transition-all">
-              <Link href="/donate">Make a Donation</Link>
+              <Link href="/donate">Support Our Work</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all">
-              <Link href="/get-involved">Get Involved</Link>
+              <Link href="/get-involved">Partner with Us</Link>
             </Button>
           </div>
         </div>

@@ -51,10 +51,10 @@ const AlertBanner = () => {
   return (
     <section ref={sectionRef} className="py-16">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Urgent Needs</h2>
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Urgent Humanitarian Needs</h2>
         <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
         <p className="mb-12 text-lg text-muted-foreground">
-          These critical issues require immediate attention and support.
+          Responding to immediate crises while laying the foundation for long-term recovery in Lakes State, South Sudan.
         </p>
       </div>
 

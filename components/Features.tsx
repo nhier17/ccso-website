@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FOCUS_AREAS } from "@/constants";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +50,7 @@ const Features = () => {
         <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Focus Areas</h2>
         <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
         <p className="mb-12 text-lg text-muted-foreground">
-          CCSO's focus areas are designed to address the most pressing needs of communities in Lakes State, South Sudan. These initiatives are tailored to support vulnerable populations and promote sustainable development.
+          Addressing the most urgent needs and building long-term resilience in vulnerable communities across Lakes State, South Sudan.
         </p>
       </div>
 
@@ -72,7 +73,10 @@ const Features = () => {
             </div>
             <div className="p-6">
             <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
-            <p className="text-dark-200 leading-relaxed">{area.description}</p>
+            <p className="text-dark-200 leading-snug">{area.description}</p>
+            </div>
+            <div className="p-6">
+            <Link href="/programs" className="w-full text-primary underline cursor-pointer">Lean More</Link>
             </div>
           </div>
         ))}

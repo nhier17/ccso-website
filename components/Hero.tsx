@@ -8,11 +8,11 @@ export const Hero = () => {
       <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-6 relative">
         <div className="text-center lg:text-left max-w-2xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Building a Resilient and Self-Relient{" "}
+            Restoring Hope and Dignity in{" "}
             <span className="text-primary">South Sudan</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            Empowering communities through faith, compassion, and sustainable development.
+CCSO is a community-driven humanitarian organization providing rehabilitation, emergency relief, and long-term recovery for vulnerable communities affected by conflict, displacement, and poverty across South Sudan
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -21,7 +21,7 @@ export const Hero = () => {
               size="lg"
               asChild
             >
-              <Link href="/donate">Donate Now</Link>
+              <Link href="/donate">Support our work</Link>
             </Button>
             <Button
               className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all"
@@ -29,7 +29,7 @@ export const Hero = () => {
               variant="outline"
               asChild
             >
-              <Link href="/about">Learn Our Story</Link>
+              <Link href="/about">Partner with us</Link>
             </Button>
           </div>
           <div className="mt-8 flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300">

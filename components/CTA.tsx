@@ -62,14 +62,14 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 py-16 mt-8">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-16 mt-8">
       <div className="px-6 flex flex-col lg:flex-row items-center gap-12">
         <div ref={textRef} className="lg:w-1/2 text-start md:text-center lg:text-left">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Join Us in <span className="text-primary">Building a Better Future</span>.
+            Help Restore <span className="text-primary">Lives and Hope in South Sudan</span>.
           </h2>
           <p className="mt-4 text-lg text-gray-700">
-            Your support can transform lives. Whether through donations, volunteering, or partnerships, you can help us create a resilient and self-reliant South Sudan.
+            Your support helps families recover from crisis, children stay in school, and communities rebuild with dignity. Together, we can bring lasting hope to those most affected by conflict and hardship.
           </p>
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div>

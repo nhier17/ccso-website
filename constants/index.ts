@@ -15,37 +15,39 @@ export const FOCUS_AREAS = [
     id: 1,
     title: "Food Security",
     description:
-      "Enhancing agricultural skills and technologies to ensure food security.",
+      "Helping families grow reliable food through sustainable farming and climate-smart agriculture.",
     img: "/images/food4.JPG",
   },
   {
     id: 2,
     title: "Health & Hygiene",
     description:
-      "Promoting hygiene, sanitation, and access to safe drinking water.",
+      "Improving health by expanding access to clean water, sanitation, and community health education.",
     img: "/images/health.jpg",
   },
   {
     id: 3,
     title: "Peace & Reconciliation",
-    description: "Building peace and reconciliation among communities.",
+    description:
+      "Building peaceful communities through dialogue, reconciliation, and local peacebuilding efforts.",
     img: "/images/peace.jpg",
   },
   {
     id: 4,
     title: "Education",
     description:
-      "Empowering communities through education and adult literacy programs.",
+      "Expanding access to education, literacy, and youth mentorship for long-term opportunity.",
     img: "/images/education.jpg",
   },
   {
     id: 5,
-    title: "Empowerment",
+    title: "Community Empowerment",
     description:
-      "Restoring dignity and self-respect through community-driven development.",
+      "Equipping communities with skills, leadership, and locally driven development solutions.",
     img: "/images/empower.jpg",
   },
 ];
+
 
 //quick links
 export const quickLinks = [
@@ -97,36 +99,36 @@ export const contactLinks = [
 ];
 
 export const impactStories = [
-  {
-    image: "/images/impact4.jpg",
-    title: "Evangelism and Spiritual Growth",
-    description:
-      "Through our evangelism programs, we have reached over 10,000 individuals, spreading the message of hope, love, and faith.",
-  },
-  {
-    image: "/images/impact.jpg",
-    title: "Clean Water Initiative",
-    description:
-      "We aim to provid access to clean and safe drinking water for over 1,000 families in Lakes State.",
-  },
-  {
-    image: "/images/impact2.jpg",
-    title: "Education for All",
-    description:
-      "We aim to support children with quality education, school supplies, and scholarships.",
-  },
-  {
-    image: "/images/impact3.jpg",
-    title: "Cultural Enrichment and Peacebuilding",
-    description:
-      "We have organized cultural events and peacebuilding workshops that bring together diverse communities.",
-  },
-  {
-    image: "/images/impact5.png",
-    title: "Sustainable Agriculture",
-    description:
-      "We aim to train farmers in sustainable farming techniques, including crop diversification, irrigation, and soil conservation.",
-  },
+{
+  image: "/images/impact4.jpg",
+  title: "Renewed Hope and Spiritual Growth",
+  description:
+    "Community members have found renewed hope, faith, and connection through local evangelism efforts that foster healing, reconciliation, and spiritual encouragement.",
+},
+{
+  image: "/images/impact.jpg",
+  title: "Access to Clean and Safe Water",
+  description:
+    "Families now have reliable access to clean drinking water, reducing waterborne illness and easing the daily burden faced by women and children.",
+},
+{
+  image: "/images/impact2.jpg",
+  title: "Children Staying in School",
+  description:
+    "Children who were once at risk of dropping out are now learning in safer, more supportive environments with access to essential school materials.",
+},
+{
+  image: "/images/impact3.jpg",
+  title: "Communities Rebuilding Trust",
+  description:
+    "Formerly divided communities are coming together through dialogue and shared cultural spaces, strengthening understanding and peaceful coexistence.",
+},
+{
+  image: "/images/impact5.png",
+  title: "Stronger Livelihoods Through Farming",
+  description:
+    "Smallholder farmers are improving harvests and household stability through practical farming knowledge that strengthens food security.",
+}
 ];
 
 // constants/footerLinks.js
@@ -338,77 +340,78 @@ export const leaders = [
   {
     name: "Bishop Joseph Maker Atot",
     role: "Founder & Executive Director",
-    bio: "As Founder and Executive Director, Bishop Joseph Maker Atot provides visionary leadership, drawing on his deep experience in ministry and community development to guide CCSO's mission across South Sudan.",
-    image: "/images/leader1.jpg"
+    bio: "Bishop Joseph Maker Atot provides strategic and spiritual leadership for CCSO, drawing on decades of ministry and community engagement to guide the organization’s mission across South Sudan.",
+    image: "/images/leader1.jpg",
   },
   {
     name: "Rebecca Achol Majak",
     role: "Deputy Chairperson",
-    bio: "Rebecca supports the strategic direction of CCSO by collaborating closely with stakeholders and ensuring that the organization's initiatives align with community needs and development goals.",
-    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
+    bio: "Rebecca supports CCSO’s strategic direction by working with partners and stakeholders to ensure programs respond effectively to community priorities and development goals.",
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png",
   },
   {
     name: "Hellena Ding Maker",
     role: "Secretary",
-    bio: "Hellena oversees organizational communication, documentation, and record-keeping, ensuring smooth internal operations and transparent reporting at CCSO.",
-    image: "/images/leader5.jpg"
+    bio: "Hellena coordinates organizational communication and documentation, supporting smooth operations, accountability, and transparent reporting across CCSO’s programs.",
+    image: "/images/leader5.jpg",
   },
   {
     name: "Abraham Nhier",
-    role: "IT and Software Development",
-    bio: "Abraham manages CCSO’s technology initiatives, developing digital solutions that enhance communication, data management, and program efficiency across the organization.",
-    image: "/images/leader3.JPEG"
+    role: "IT & Software Development",
+    bio: "Abraham leads CCSO’s digital systems and technology initiatives, strengthening communication, data management, and operational efficiency across programs.",
+    image: "/images/leader3.JPEG",
   },
   {
     name: "James Magok Chilim",
     role: "Information Officer",
-    bio: "James leads CCSO’s information management efforts, ensuring accurate data collection, reporting, and community outreach to support informed decision-making and transparency.",
-    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
+    bio: "James manages information and reporting processes at CCSO, supporting accurate data collection, community outreach, and evidence-based decision-making.",
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png",
   },
   {
     name: "Mary Atueny",
     role: "Finance Manager",
-    bio: "Mary oversees the financial operations of CCSO, managing budgets, financial reporting, and compliance to ensure resources are used effectively and responsibly.",
-    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png"
-  }
+    bio: "Mary oversees CCSO’s financial planning and reporting, ensuring responsible resource management, compliance, and accountability across all initiatives.",
+    image: "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_960_720.png",
+  },
 ];
+
 
 //history 
 export const history = [
   {
     year: "2019",
     title: "CCSO Is Founded",
-    description: "Rev. Joseph Maker Atot establishes CCSO,  aiming to restore dignity and hope to displaced and vulnerable communities through faith-based, community-driven development."
+    description: "CCSO was established to respond to urgent humanitarian and development needs through faith-driven, community-led action in South Sudan."
   },
   {
     year: "2019",
     title: "Education Initiative Begins",
-    description: "Start of our education program where various students receive scholarships and support for their education."
+    description: "CCSO launched its first education initiatives, supporting vulnerable learners with school materials and assistance to improve access to education."
   },
   {
     year: "2021",
     title: "Peace-Building Focus",
-    description: "Our peace and reconciliation program is launched to foster dialogue and healing in conflict-affected communities, promoting unity and social cohesion."
+    description: "CCSO expanded its work to include peacebuilding and dialogue initiatives aimed at strengthening social cohesion in conflict-affected communities."
   },
   {
     year: "2022",
     title: "Growth in Evangelism",
-    description: "We expand our evangelism efforts with the construction of Mathiang Church, reaching remote communities with the life-transforming message of the gospel."
+    description: "CCSO strengthened its evangelism efforts by expanding outreach programs that promote hope, reconciliation, and spiritual growth"
   },
   {
     year: "2023",
     title: "Health awareness campaign",
-    description: "CCSO rolls out a comprehensive health awareness program focusing on HIV/AIDS education, reducing stigma, and improving health outcomes across local communities."
+    description: "CCSO conducted community health awareness campaigns focused on disease prevention, hygiene education, and improved health outcomes."
   },
   {
     year: "2024",
     title: "First Food Relief Program",
-    description: "In response to devastating floods, CCSO launches its first large-scale food relief initiative, delivering life-saving supplies to families in crisis."
+    description: "In response to rising food insecurity, CCSO launched emergency food distribution to support families affected by crisis and displacement."
   },
   {
     year: "2025",
     title: "Global Partnerships Appeal",
-    description: "CCSO launches a global appeal for partnerships to expand its reach and impact, ensuring sustainable development and empowerment for communities in need."
+    description: "CCSO initiated global partnership efforts to expand resources, strengthen programs, and scale sustainable community impact."
   }
 ];
 
@@ -849,38 +852,39 @@ export const blogPosts = [
 export const currentIssues = [
   {
     id: 1,
-    title: "Flood Crisis",
-    description:
-      "Heavy rains have displaced thousands, destroyed homes, and cut off vital infrastructure. Urgent support is needed to provide shelter, food, and medical aid to the affected families.",
+    title: "Flood Crisis Response",
+description:
+  "Seasonal floods are displacing families, destroying homes, and cutting off access to basic services. CCSO is providing emergency relief, shelter support, and essential supplies to help communities survive and recover.",
     progress: 35,
     status: "Urgent",
     iconColor: "red",
-    buttonText: "Help Now",
-    img: "/images/floods3.jpg"
+    buttonText: "Support Flood Response",
+    img: "/images/floods3.jpg",
   },
   {
-    id: 15,
+    id: 2,
     title: "Food Security Crisis",
-    description:
-      "Communities are struggling with hunger due to failed harvests, rising food prices, and limited access to supplies. Your support can help deliver emergency food packages and sustainable solutions.",
+description:
+  "Conflict and climate shocks have pushed many families into severe hunger. CCSO is responding with urgent food support while helping households stabilize and rebuild resilience.",
     progress: 5,
     status: "Critical",
     iconColor: "orange",
-    buttonText: "Support Project",
-    img: "/images/food8.jpg"
+    buttonText: "Help Fight Hunger",
+    img: "/images/food8.jpg",
   },
   {
     id: 3,
     title: "Education Support",
-    description:
-      "Many children are out of school due to poverty, displacement, or lack of resources. Help us provide learning materials, school fees, and safe learning environments to secure their future.",
+description:
+  "Displacement and poverty are forcing many children out of school. CCSO is helping vulnerable learners stay in education through school support and safe learning environments.",
     progress: 5,
     status: "Important",
     iconColor: "yellow",
-    buttonText: "Contribute",
-    img: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg"
-  }
+    buttonText: "Support Education",
+    img: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg",
+  },
 ];
+
 
 export const testimonialsData = [
   {
