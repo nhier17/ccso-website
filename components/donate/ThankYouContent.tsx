@@ -28,7 +28,7 @@ export default function ThankYouContent() {
                 <CheckCircle className="h-12 w-12 text-green-600 dark:text-green-400" />
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl mb-4">
-                Thank You for Your <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Generosity</span>
+                Thank You for Your <span className="bg-linear-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Generosity</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
                 Your donation has been successfully processed and will directly impact communities in South Sudan.
@@ -38,7 +38,7 @@ export default function ThankYouContent() {
               </Badge>
             </div>
             <Card className="border-0 shadow-lg mb-12">
-              <CardHeader className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
+              <CardHeader className="bg-linear-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
                 <CardTitle className="flex items-center">
                   <Heart className="h-6 w-6 text-red-500 mr-2" />
                   Donation Summary
@@ -131,7 +131,7 @@ export default function ThankYouContent() {
                 </CardContent>
               </Card>
             </div>
-            <Card className="border-0 bg-gradient-to-r from-orange-50 to-blue-50 dark:from-orange-950 dark:to-blue-950 shadow-lg mb-12">
+            <Card className="border-0 bg-linear-to-r from-orange-50 to-blue-50 dark:from-orange-950 dark:to-blue-950 shadow-lg mb-12">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                   Share Your Impact
@@ -152,7 +152,7 @@ export default function ThankYouContent() {
               </CardContent>
             </Card>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="border-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-0 bg-linear-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <Heart className="h-12 w-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
@@ -169,7 +169,7 @@ export default function ThankYouContent() {
                 </CardContent>
               </Card>
   
-              <Card className="border-0 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-0 bg-linear-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <Users className="h-12 w-12 text-green-600 dark:text-green-400 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
@@ -186,7 +186,7 @@ export default function ThankYouContent() {
                 </CardContent>
               </Card>
   
-              <Card className="border-0 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-0 bg-linear-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <Mail className="h-12 w-12 text-orange-600 dark:text-orange-400 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">

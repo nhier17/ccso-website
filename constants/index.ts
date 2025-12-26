@@ -1,4 +1,10 @@
-import { Droplets, Sprout, Handshake, Heart, GraduationCap } from "lucide-react";
+import {
+   Droplets, 
+   Sprout, 
+   Handshake, 
+   Heart, 
+   GraduationCap 
+  } from "lucide-react";
 
 export const navbarLinks = [
   { name: "Home", path: "/" },
@@ -15,39 +21,38 @@ export const FOCUS_AREAS = [
     id: 1,
     title: "Food Security",
     description:
-      "Helping families grow reliable food through sustainable farming and climate-smart agriculture.",
+      "Supporting sustainable farming and climate-smart food production.",
     img: "/images/food4.JPG",
   },
   {
     id: 2,
     title: "Health & Hygiene",
     description:
-      "Improving health by expanding access to clean water, sanitation, and community health education.",
+      "Improving health through clean water, sanitation, and community education.",
     img: "/images/health.jpg",
   },
   {
     id: 3,
     title: "Peace & Reconciliation",
     description:
-      "Building peaceful communities through dialogue, reconciliation, and local peacebuilding efforts.",
+      "Strengthening social cohesion through dialogue and peacebuilding.",
     img: "/images/peace.jpg",
   },
   {
     id: 4,
     title: "Education",
     description:
-      "Expanding access to education, literacy, and youth mentorship for long-term opportunity.",
+      "Expanding access to education, literacy, and youth mentorship.",
     img: "/images/education.jpg",
   },
   {
     id: 5,
     title: "Community Empowerment",
     description:
-      "Equipping communities with skills, leadership, and locally driven development solutions.",
+      "Building skills, leadership, and locally driven development solutions.",
     img: "/images/empower.jpg",
   },
 ];
-
 
 //quick links
 export const quickLinks = [
@@ -99,37 +104,38 @@ export const contactLinks = [
 ];
 
 export const impactStories = [
-{
-  image: "/images/impact4.jpg",
-  title: "Renewed Hope and Spiritual Growth",
-  description:
-    "Community members have found renewed hope, faith, and connection through local evangelism efforts that foster healing, reconciliation, and spiritual encouragement.",
-},
-{
-  image: "/images/impact.jpg",
-  title: "Access to Clean and Safe Water",
-  description:
-    "Families now have reliable access to clean drinking water, reducing waterborne illness and easing the daily burden faced by women and children.",
-},
-{
-  image: "/images/impact2.jpg",
-  title: "Children Staying in School",
-  description:
-    "Children who were once at risk of dropping out are now learning in safer, more supportive environments with access to essential school materials.",
-},
-{
-  image: "/images/impact3.jpg",
-  title: "Communities Rebuilding Trust",
-  description:
-    "Formerly divided communities are coming together through dialogue and shared cultural spaces, strengthening understanding and peaceful coexistence.",
-},
-{
-  image: "/images/impact5.png",
-  title: "Stronger Livelihoods Through Farming",
-  description:
-    "Smallholder farmers are improving harvests and household stability through practical farming knowledge that strengthens food security.",
-}
+  {
+    image: "/images/impact4.jpg",
+    title: "Renewed Hope and Spiritual Growth",
+    description:
+      "Through community-led evangelism, individuals and families are finding renewed hope, healing, and spiritual encouragement in the midst of hardship.",
+  },
+  {
+    image: "/images/impact.jpg",
+    title: "Access to Clean and Safe Water",
+    description:
+      "Reliable access to clean water is reducing illness and easing the daily burden faced by women and children in underserved communities.",
+  },
+  {
+    image: "/images/impact2.jpg",
+    title: "Children Staying in School",
+    description:
+      "Children once at risk of dropping out are now learning in safer, more supportive environments with access to essential school materials.",
+  },
+  {
+    image: "/images/impact3.jpg",
+    title: "Communities Rebuilding Trust",
+    description:
+      "Dialogue and cultural engagement are helping formerly divided communities rebuild trust, understanding, and peaceful coexistence.",
+  },
+  {
+    image: "/images/impact5.png",
+    title: "Stronger Livelihoods Through Farming",
+    description:
+      "Smallholder farmers are improving harvests and household stability through practical, community-based farming practices.",
+  },
 ];
+
 
 // constants/footerLinks.js
 export const footerLinks = {
@@ -275,31 +281,36 @@ export const completedProjects = [
 
 export const donationTiers = [
   {
-    amount: 30,
+    amount: 25,
     title: "Community Builder",
-    description: "Provides clean water to a family for one month",
-    impact: "Helps 1 family access clean water",
+    anchor: "Be the reason a family has clean water this month",
+    impactMonthly: "Provides clean water to one family every month",
+    impactOnce: "Provides emergency clean water support for a family",
   },
   {
     amount: 50,
     title: "Hope Provider",
-    description: "Feeds a family for a week",
-    impact: "Supports 1 family with essential nutrition",
+    anchor: "Give a family stability and dignity every month",
+    impactMonthly: "Feeds and supports a vulnerable family monthly",
+    impactOnce: "Provides food assistance to a family in crisis",
     recommended: true,
   },
   {
     amount: 100,
     title: "Future Maker",
-    description: "Sponsors a child's education for one month",
-    impact: "Enables 1 child to attend school",
+    anchor: "Change a child’s future, month after month",
+    impactMonthly: "Sponsors a child’s education and learning materials",
+    impactOnce: "Supports a child’s education for one month",
   },
   {
     amount: 250,
     title: "Village Champion",
-    description: "Helps build sustainable farming projects",
-    impact: "Empowers an entire community",
+    anchor: "Help an entire community rise sustainably",
+    impactMonthly: "Funds long-term farming & livelihood projects",
+    impactOnce: "Kickstarts a community development initiative",
   },
 ];
+
 
 export const impactStats = [
   { number: "10K+", label: "Lives Impacted", color: "text-blue-600" },
@@ -309,31 +320,34 @@ export const impactStats = [
 ];
 
 export const campaigns = [
-  { name: "Water Wells Project", progress: 5, goal: "10,000", raised: "500" },
-  { name: "Education Program", progress: 10, goal: "50,000", raised: "5,000" },
-  { name: "Healthcare Initiative", progress: 5, goal: "200,000", raised: "5,000" },
+  {
+    id: "water",
+    name: "Water Wells Project",
+    raised: 500,
+    goal: 10000,
+    featured: true,
+    impact: "Provides clean drinking water to entire villages",
+    urgency: "Dry season approaching",
+  },
+  {
+    id: "education",
+    name: "Education Program",
+    raised: 5000,
+    goal: 50000,
+    impact: "Keeps children in school and supports teachers",
+    urgency: "School term ongoing",
+  },
+  {
+    id: "healthcare",
+    name: "Healthcare Initiative",
+    raised: 5000,
+    goal: 200000,
+    impact: "Delivers essential medical care to remote communities",
+    urgency: "Medical supplies running low",
+  },
 ];
 
-export const testimonials = [
-  {
-    quote: "CCSO's work has transformed communities. Their dedication to sustainable development is inspiring.",
-    author: "Jane Smith",
-    role: "Corporate Partner",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-  },
-  {
-    quote: "Being a volunteer with CCSO has been life-changing. The impact we make is real and measurable.",
-    author: "John Davis",
-    role: "Volunteer",
-    image: "https://randomuser.me/api/portraits/men/3.jpg"
-  },
-  {
-    quote: "Their transparent approach and effective use of resources made us confident in our partnership.",
-    author: "Sarah Johnson",
-    role: "Foundation Director",
-    image: "https://randomuser.me/api/portraits/women/6.jpg"
-  }
-];
+
 
 //leaders 
 export const leaders = [
@@ -476,27 +490,27 @@ export const partnerWithUs = {
 };
 //donate
 export const donate = {
-  type: [
-    {
-      title: "One-Time Donation", 
-      desc: "Make a single contribution to support our programs and initiatives."
-    },
-    {
-      title: "Monthly Giving",
-      desc: "Become a regular supporter with a monthly donation to help us plan for the future."
-    },
-    {
-      title: "Sponsor a project",
-      desc: "Fund a specific program or initiative aligned with your interests."
-    }
-  ],
-  benefits: [
-    "$25 can provide school supplies for a child",
-    "$25 can provide school supplies for a child",
-    "$50 can support a farmer with seeds and tools",
-    "$100 can help provide clean water access",
-    "$250 can sponsor a peace-building workshop"
-  ]
+type: [
+  {
+    title: "Monthly Giving (Most Impact)",
+    desc: "Provide consistent support that allows communities to plan, grow, and thrive long-term."
+  },
+  {
+    title: "One-Time Donation",
+    desc: "Make an immediate impact where it’s needed most today."
+  },
+  {
+    title: "Sponsor a Program",
+    desc: "Directly support a specific initiative aligned with your passion."
+  }
+],
+benefits: [
+  "$25 provides school supplies for one child",
+  "$50 supports a farmer with seeds and tools",
+  "$100 helps provide clean water access",
+  "$250 sponsors a peace-building workshop",
+  "$500 supports a community health outreach"
+]
 };
 export const donationFaqs = [
     {
@@ -592,137 +606,137 @@ export const successTestimonials = [
 ];
 //program stats
 export const programStats = [
-    {
-      id: 'clean-water',
-      icon: Droplets,
-      title: 'Clean Water Access Initiative',
-      description: 'Building sustainable water points and training communities in maintenance to ensure long-term access to clean, safe drinking water.',
-      longDescription: 'Our flagship program addresses the critical water crisis in Western Lakes State. We construct boreholes, hand pumps, and water storage systems while training local technicians for maintenance. Each water point serves 300-500 people and includes hygiene education programs.',
-      impact: {
-        current: '100 people served',
-        goal: '1,000 people by 2025',
-        progress: 2,
-      },
-      location: 'Rumbek East, Rumbek Center',
-      status: 'Active',
-      color: 'blue',
-      image: '/images/water.png',
-      stats: [
-        { label: 'Water Points Built', value: '2' },
-        { label: 'Communities Served', value: '2' },
-        { label: 'Maintenance Technicians Trained', value: '15' },
-      ],
-      outcomes: [
-        'Reduce waterborne diseases by 70% in served communities',
-        'Increase children attendance in school by 45%',
-        'Save 3-4 hours daily previously spent fetching water',
-      ],
+  {
+    id: 1,
+    slug: "clean-water",
+    icon: Droplets,
+    title: "Clean Water Access Initiative",
+    shortDescription:
+      "Building sustainable water points and training communities to ensure long-term access to clean, safe drinking water.",
+    location: "Rumbek East, Rumbek Center",
+    status: "Active",
+    color: "blue",
+    image: "/images/water.png",
+
+    impact: {
+      currentLabel: "People Served",
+      currentValue: 100,
+      goalLabel: "Target by 2025",
+      goalValue: 1000,
+      progress: 10,
     },
-    {
-      id: 'agriculture',
-      icon: Sprout,
-      title: 'Agricultural Empowerment Program',
-      description: 'Training farmers in sustainable agriculture techniques, providing seeds and tools, and establishing cooperatives for food security.',
-      longDescription: 'We empower smallholder farmers with modern agricultural techniques while respecting traditional knowledge. Our program includes seed distribution, tool provision, irrigation training, and cooperative formation for better market access.',
-      impact: {
-        current: '200 farmers trained',
-        goal: '5,000 farmers by 2025',
-        progress: 5,
-      },
-      location: 'Rumbek East',
-      status: 'Expanding',
-      color: 'green',
-      image: '/images/food3.JPG',
-      stats: [
-        { label: 'Farmers Trained', value: '200' },
-        { label: 'Cooperatives Formed', value: '12' },
-        { label: 'Hectares Under Cultivation', value: '1,200' },
-      ],
-      outcomes: [
-        'Increase average crop yield by 85%',
-        'Improve food security for 8,500+ family members',
-        'Increase farmer income by 120% on average',
-      ],
+
+    highlights: [
+      { label: "Water Points Built", value: "2" },
+      { label: "Communities Served", value: "2" },
+    ],
+  },
+
+  {
+    id: 2,
+    slug: "agriculture",
+    icon: Sprout,
+    title: "Agricultural Empowerment Program",
+    shortDescription:
+      "Equipping farmers with sustainable agriculture skills, tools, and cooperative support to strengthen food security.",
+    location: "Rumbek East",
+    status: "Expanding",
+    color: "green",
+    image: "/images/food3.JPG",
+
+    impact: {
+      currentLabel: "Farmers Trained",
+      currentValue: 200,
+      goalLabel: "Target by 2025",
+      goalValue: 5000,
+      progress: 5,
     },
-    {
-      id: 'healthcare',
-      icon: Heart,
-      title: 'Healthcare & Wellness Program',
-      description: 'Mobile health clinics, maternal health programs, and community health education to improve wellness outcomes.',
-      longDescription: 'Our healthcare initiative brings medical services directly to remote communities through mobile clinics. We focus on maternal health, child nutrition, disease prevention, and training community health workers.',
-      impact: {
-        current: '100 consultations provided',
-        goal: '1,000 consultations by 2025',
-        progress: 5,
-      },
-      location: 'Remote Communities, Rumbek East',
-      status: 'Growing',
-      color: 'red',
-      image: '/images/health1.jpeg',
-      stats: [
-        { label: 'Medical Consultations', value: '100' },
-        { label: 'Community Health Workers', value: '10' },
-        { label: 'Maternal Health Sessions', value: '320' },
-      ],
-      outcomes: [
-        'Reduce maternal mortality by 40% in target areas',
-        'Decrease childhood malnutrition by 35%',
-        'Increase vaccination coverage to 78%',
-      ],
+
+    highlights: [
+      { label: "Farmers Trained", value: "200" },
+      { label: "Cooperatives Formed", value: "12" },
+    ],
+  },
+
+  {
+    id: 3,
+    slug: "healthcare",
+    icon: Heart,
+    title: "Healthcare & Wellness Program",
+    shortDescription:
+      "Delivering essential healthcare through mobile clinics, maternal health services, and community education.",
+    location: "Remote Communities, Rumbek East",
+    status: "Growing",
+    color: "red",
+    image: "/images/health1.jpeg",
+
+    impact: {
+      currentLabel: "Consultations",
+      currentValue: 100,
+      goalLabel: "Target by 2025",
+      goalValue: 1000,
+      progress: 10,
     },
-    {
-      id: 'education',
-      icon: GraduationCap,
-      title: 'Education & Skills Development',
-      description: 'Adult literacy programs, vocational training, and youth development initiatives to build community capacity.',
-      longDescription: 'We believe education is the foundation of sustainable development. Our programs include adult literacy classes, vocational skills training, youth leadership development, and scholarship support for promising students.',
-      impact: {
-        current: '100 graduates',
-        goal: '2,500 graduates by 2025',
-        progress: 5,
-      },
-      location: 'Juba, Wau, Nairobi, Uganda',
-      status: 'Active',
-      color: 'purple',
-      image: '/images/education.jpg',
-      stats: [
-        { label: 'Adult Literacy Graduates', value: '100' },
-        { label: 'Vocational Training Graduates', value: '100' },
-        { label: 'Youth Leaders Trained', value: '100' },
-      ],
-      outcomes: [
-        'Increase adult literacy rate from 15% to 65%',
-        'Increase youth employment rate by 60%',
-        'Increase women\'s participation in leadership roles by 100%',
-      ],
+
+    highlights: [
+      { label: "Consultations", value: "100" },
+      { label: "Health Workers Trained", value: "10" },
+    ],
+  },
+
+  {
+    id: 4,
+    slug: "education",
+    icon: GraduationCap,
+    title: "Education & Skills Development",
+    shortDescription:
+      "Expanding access to literacy, vocational training, and youth development opportunities.",
+    location: "Juba, Wau, Rumbek",
+    status: "Active",
+    color: "purple",
+    image: "/images/education.jpg",
+
+    impact: {
+      currentLabel: "Graduates",
+      currentValue: 100,
+      goalLabel: "Target by 2025",
+      goalValue: 2500,
+      progress: 4,
     },
-    {
-      id: 'peacebuilding',
-      icon: Handshake,
-      title: 'Peace & Reconciliation Initiative',
-      description: 'Community dialogue programs, conflict resolution training, and inter-tribal reconciliation efforts.',
-      longDescription: 'In a region affected by conflict, we facilitate dialogue between communities, train local peace ambassadors, and support reconciliation processes. Our approach combines traditional conflict resolution with modern peacebuilding techniques.',
-      impact: {
-        current: '101 communities engaged',
-        goal: '50 communities by 2025',
-        progress: 20,
-      },
-      location: 'Conflict-Affected Areas, Rumbek',
-      status: 'Critical',
-      color: 'orange',
-      image: '/images/peace.jpg',
-      stats: [
-        { label: 'Peace Dialogues Facilitated', value: '78' },
-        { label: 'Peace Ambassadors Trained', value: '120' },
-        { label: 'Reconciliation Agreements', value: '15' },
-      ],
-      outcomes: [
-        'Reduce violent conflicts by 65% in target areas',
-        'Resume inter-community trade in 12 locations',
-        'Return displaced families to 8 communities',
-      ],
+
+    highlights: [
+      { label: "Literacy Graduates", value: "100" },
+      { label: "Youth Trained", value: "100" },
+    ],
+  },
+
+  {
+    id: 5,
+    slug: "peacebuilding",
+    icon: Handshake,
+    title: "Peace & Reconciliation Initiative",
+    shortDescription:
+      "Supporting dialogue, reconciliation, and local peacebuilding in conflict-affected communities.",
+    location: "Conflict-Affected Areas, Rumbek",
+    status: "Critical",
+    color: "orange",
+    image: "/images/peace.jpg",
+
+    impact: {
+      currentLabel: "Communities Engaged",
+      currentValue: 20,
+      goalLabel: "Target by 2025",
+      goalValue: 50,
+      progress: 40,
     },
-  ];
+
+    highlights: [
+      { label: "Peace Dialogues", value: "78" },
+      { label: "Agreements Reached", value: "15" },
+    ],
+  },
+];
+
 
 //blog posts
 export const blogPosts = [
@@ -853,8 +867,8 @@ export const currentIssues = [
   {
     id: 1,
     title: "Flood Crisis Response",
-description:
-  "Seasonal floods are displacing families, destroying homes, and cutting off access to basic services. CCSO is providing emergency relief, shelter support, and essential supplies to help communities survive and recover.",
+    description:
+      "Seasonal floods have displaced families, destroyed homes, and cut off access to essential services. CCSO is delivering emergency shelter, relief supplies, and recovery support.",
     progress: 35,
     status: "Urgent",
     iconColor: "red",
@@ -864,8 +878,8 @@ description:
   {
     id: 2,
     title: "Food Security Crisis",
-description:
-  "Conflict and climate shocks have pushed many families into severe hunger. CCSO is responding with urgent food support while helping households stabilize and rebuild resilience.",
+    description:
+      "Conflict and climate shocks have pushed households into severe hunger. CCSO is providing urgent food assistance while supporting recovery and resilience.",
     progress: 5,
     status: "Critical",
     iconColor: "orange",
@@ -875,8 +889,8 @@ description:
   {
     id: 3,
     title: "Education Support",
-description:
-  "Displacement and poverty are forcing many children out of school. CCSO is helping vulnerable learners stay in education through school support and safe learning environments.",
+    description:
+      "Displacement and poverty are forcing children out of school. CCSO is helping vulnerable learners stay in education through targeted school support.",
     progress: 5,
     status: "Important",
     iconColor: "yellow",
@@ -885,6 +899,27 @@ description:
   },
 ];
 
+
+export const testimonials = [
+  {
+    quote: "CCSO's work has transformed communities. Their dedication to sustainable development is inspiring.",
+    author: "Jane Smith",
+    role: "Corporate Partner",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+  },
+  {
+    quote: "Being a volunteer with CCSO has been life-changing. The impact we make is real and measurable.",
+    author: "John Davis",
+    role: "Volunteer",
+    image: "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    quote: "Their transparent approach and effective use of resources made us confident in our partnership.",
+    author: "Sarah Johnson",
+    role: "Foundation Director",
+    image: "https://randomuser.me/api/portraits/women/6.jpg"
+  }
+];
 
 export const testimonialsData = [
   {

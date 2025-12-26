@@ -19,7 +19,7 @@ const BlogDetailsPage = async ({ params }: { params: { id: string } }) => {
     <div>
     <section className="relative py-16">
       <div className="absolute inset-0 z-0">
-        <div className="h-full w-full bg-gradient-to-b from-black/60 to-black/30"></div>
+        <div className="h-full w-full bg-linear-to-b from-black/60 to-black/30"></div>
         <Image 
           src={post.image}
           alt={post.title} 

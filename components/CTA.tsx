@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -10,9 +11,9 @@ import { Button } from "./ui/button";
 gsap.registerPlugin(ScrollTrigger);
 
 const CTA = () => {
-  const textRef = useRef(null);
-  const imgRef = useRef(null);
-  const btnRef = useRef(null);
+  const textRef = useRef<HTMLDivElement | null>(null);
+  const imgRef = useRef<HTMLDivElement | null>(null);
+  const btnRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     gsap.from(textRef.current, {
@@ -40,7 +41,7 @@ const CTA = () => {
       },
     });
 
-    const btnAnimation = gsap.from(btnRef.current, {
+    gsap.from(btnRef.current, {
       opacity: 0,
       y: 20,
       duration: 1,
@@ -53,50 +54,69 @@ const CTA = () => {
         toggleActions: "play none none reverse",
       },
     });
-
-    // Ensure buttons are clickable after animation
-    btnAnimation.eventCallback("onComplete", () => {
-      gsap.set(btnRef.current, { pointerEvents: "auto" });
-    });
-
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 mt-8">
+    <section className="bg-linear-to-b from-gray-50 to-white section-padding">
       <div className="px-6 flex flex-col lg:flex-row items-center gap-12">
+
         <div ref={textRef} className="lg:w-1/2 text-start md:text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Help Restore <span className="text-primary">Lives and Hope in South Sudan</span>.
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            Your Gift Can Restore{" "}
+            <span className="text-primary">Lives and Hope in South Sudan</span>
           </h2>
+
           <p className="mt-4 text-lg text-gray-700">
-            Your support helps families recover from crisis, children stay in school, and communities rebuild with dignity. Together, we can bring lasting hope to those most affected by conflict and hardship.
+            Your support helps families recover from crisis, keeps children in
+            school, and empowers communities to rebuild with dignity and peace.
           </p>
-          <div className="grid grid-cols-2 gap-4 mt-4">
+
+          <p className="mt-3 text-sm text-gray-600 italic">
+            💛 Just <strong>$25</strong> can help provide clean water or school
+            supplies to a family in need.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-6 max-w-sm mx-auto lg:mx-0">
             <div>
-              <div className="text-lg font-bold text-blue-600 dark:text-blue-400">85%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Direct Program Funding</div>
+              <div className="text-lg font-bold text-primary">85%</div>
+              <div className="text-sm text-gray-600">
+                Direct Program Funding
+              </div>
             </div>
             <div>
-              <div className="text-lg font-bold text-orange-600 dark:text-orange-400">15%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Administrative Costs</div>
+              <div className="text-lg font-bold text-amber-500">15%</div>
+              <div className="text-sm text-gray-600">
+                Operations & Accountability
+              </div>
             </div>
           </div>
-          <div ref={btnRef} className="mt-6 flex justify-center lg:justify-start gap-4">
-            <Button className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all" asChild>
-              <Link href="/donate">Donate Now</Link>
+
+          <div
+            ref={btnRef}
+            className="mt-8 flex justify-center lg:justify-start gap-4"
+          >
+            <Button
+              className="bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all"
+              asChild
+            >
+              <Link href="/donate">Help a Family Today</Link>
             </Button>
-            <Button asChild className="border-primary border-[2px] text-primary bg-white hover:bg-primary hover:text-white transition-all">
-              <Link href="/partner">Partner with Us</Link>
+
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-white transition-all"
+            >
+              <Link href="/partner">Become a Partner</Link>
             </Button>
           </div>
         </div>
 
-        <div ref={imgRef} className="relative w-full lg:w-1/2">
+        <div ref={imgRef} className="relative w-full h-[40vh]">
           <Image
             alt="Community Impact"
             src="/images/impact.jpg"
-            width={600}
-            height={600}
+            fill
             className="rounded-lg shadow-lg object-cover"
           />
         </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="relative py-6 md:py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative py-6 md:py-16 bg-linear-to-b from-white to-gray-50 overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-6 relative">
         <div className="text-center lg:text-left max-w-2xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -24,7 +24,7 @@ CCSO is a community-driven humanitarian organization providing rehabilitation, e
               <Link href="/donate">Support our work</Link>
             </Button>
             <Button
-              className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all"
+              className="border-primary border-2 text-primary hover:bg-primary hover:text-white transition-all"
               size="lg"
               variant="outline"
               asChild
@@ -48,7 +48,7 @@ CCSO is a community-driven humanitarian organization providing rehabilitation, e
             </div>
         </div>
 
-        <div className="relative w-full aspect-[3/4] africa-mask">
+        <div className="relative w-full aspect-3/4 africa-mask">
           <Image src="/images/edu.png" alt="education" fill className="object-cover" />
         </div>
       </div>

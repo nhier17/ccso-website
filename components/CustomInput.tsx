@@ -19,7 +19,7 @@ import {
 import { Control } from 'react-hook-form';
 import { Switch } from '@/components/ui/switch';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Label } from '@radix-ui/react-label';
+import { Label } from '@/components/ui/label';
 
 export enum FormFieldType {
     INPUT = 'input',

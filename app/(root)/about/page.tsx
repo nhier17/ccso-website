@@ -78,8 +78,8 @@ const About = () => {
 
   return (
     <div>
-      <section className="relative py-16">
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
+      <section className="relative section-padding">
+        <div className="absolute inset-0 z-0 bg-linear-to-r from-primary/10 to-primary/5">
           <div className="absolute inset-0 bg-[url('/images/relief.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +92,7 @@ const About = () => {
         </div>
       </section>
 
-      <section ref={addToRefs} className="py-16">
+      <section ref={addToRefs} className="section-padding">
           <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
             <div ref={imgRef} className="relative aspect-square overflow-hidden rounded-xl shadow-xl">
               <Image 
@@ -146,7 +146,7 @@ const About = () => {
           </div>
       </section>
 
-      <section ref={addToRefs} className="bg-muted/30 py-16">
+      <section ref={addToRefs} className="bg-muted/30 section-padding">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Foundation</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -162,7 +162,7 @@ const About = () => {
               <TabsTrigger value="values">Values</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="mission" className="rounded-xl border bg-card p-8 shadow-sm">
+            <TabsContent value="mission" className="rounded-xl border bg-card p-8 shadow-xs">
               <div className="flex flex-col items-center text-center">
                 <HeartHandshake className="mb-6 h-16 w-16 text-primary/80" />
                 <h3 className="mb-4 text-2xl font-semibold">Our Mission</h3>
@@ -172,7 +172,7 @@ const About = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="vision" className="rounded-xl border bg-card p-8 shadow-sm">
+            <TabsContent value="vision" className="rounded-xl border bg-card p-8 shadow-xs">
               <div className="flex flex-col items-center text-center">
                 <Award className="mb-6 h-16 w-16 text-primary/80" />
                 <h3 className="mb-4 text-2xl font-semibold">Our Vision</h3>
@@ -183,7 +183,7 @@ const About = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="values" className="rounded-xl border bg-card p-8 shadow-sm">
+            <TabsContent value="values" className="rounded-xl border bg-card p-8 shadow-xs">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="rounded-lg bg-muted/50 p-6">
                   <h4 className="mb-2 text-lg font-medium">Equality</h4>
@@ -227,18 +227,18 @@ const About = () => {
           </Tabs>
       </section>
       
-      <section ref={addToRefs} className="py-16">
+      <section ref={addToRefs} className="section-padding">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-            <p className="mb-12 text-lg text-muted-foreground">
+            <p className="mb-4 text-lg text-muted-foreground">
               Meet the dedicated individuals leading our mission in South Sudan.
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {leaders.map((member, index) => (
-              <Card key={index} className="overflow-hidden">
+              <Card key={index} className="overflow-hidden p-0">
                 <div className="relative h-64 w-full">
                   <Image 
                     src={member.image}
@@ -257,11 +257,11 @@ const About = () => {
           </div>
       </section>
 
-     <section ref={addToRefs} className="bg-muted/30 py-16">
+     <section ref={addToRefs} className="section-padding bg-muted/30">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Journey</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-            <p className="mb-12 text-lg text-muted-foreground">
+            <p className="mb-4 text-lg text-muted-foreground">
               Key milestones in our organization's history.
             </p>
           </div>
@@ -291,8 +291,8 @@ const About = () => {
           </div>
       </section>
 
-      <section ref={addToRefs} className="py-16">
-      <div className="rounded-2xl bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 p-8">
+      <section ref={addToRefs} className="section-padding">
+      <div className="rounded-2xl bg-linear-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 p-8">
           <div className="text-center mb-8">
             <Shield className="h-12 w-12 text-green-600 dark:text-green-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -320,7 +320,7 @@ const About = () => {
             <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-white hover:text-primary transition-all">
               <Link href="/donate">Support Our Work</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all">
+            <Button asChild size="lg" variant="outline" className="border-primary border-2 text-primary hover:bg-primary hover:text-white transition-all">
               <Link href="/get-involved">Partner with Us</Link>
             </Button>
           </div>

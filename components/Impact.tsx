@@ -6,7 +6,7 @@ import type { Options } from "@splidejs/react-splide";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Button } from "@/components/ui/button";
-import { impactStories } from "@/constants";
+import { completedProjects, impactStories } from "@/constants";
 import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MapPin, Users, Heart, HeartHandshake } from "lucide-react";
@@ -124,7 +124,7 @@ export const Impact = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white text-dark-100 py-20 mt-8">
+    <section className="bg-linear-to-b from-gray-50 to-white text-dark-100 section-padding">
       <div className="px-4">
         <div ref={textRef}>
         <div className="mx-auto max-w-3xl text-center">
@@ -144,7 +144,7 @@ export const Impact = () => {
           {impactStats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center"
+              className="bg-white rounded-xl p-6 shadow-md text-center"
             >
               <stat.icon className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-3xl md:text-4xl font-bold mb-2">
@@ -155,30 +155,30 @@ export const Impact = () => {
             </div>
           ))}
         </div>
-        <h3 className="text-2xl font-semibold mb-4">
+        <h3 className="text-2xl font-semibold mb-4 text-center">
           Stories From the Communities We Serve
         </h3>
         <div ref={sliderRef} className="shadow-2xl rounded-2xl overflow-hidden bg-white">
           <Splide options={splideOptions}>
-            {impactStories.map((story, index) => (
+            {completedProjects.map((story, index) => (
               <SplideSlide key={index}>
-                <div className="relative h-[500px] flex items-center justify-center">
+                <div className="relative h-[420px] flex items-center justify-center">
                   <div
                     className="absolute inset-0 bg-cover bg-center w-full h-full"
-                    style={{ backgroundImage: `url(${story.image})` }}
+                    style={{ backgroundImage: `url(${story.imageSrc[0]})` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-black/70 to-black/40"></div>
                   </div>
 
                   <div className="relative z-10 max-w-2xl p-8 text-left">
                     <h3 className="text-3xl font-bold mb-4 text-white">{story.title}</h3>
                     <p className="text-lg mb-6 text-white/90">{story.description}</p>
-                    <Button 
-                    variant="link"
-                      className="text-white h-auto p-0"
+                    <Link 
+                     href={`/programs/details/${story.id}`}
+                      className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:underline"
                     >
                       Read Full Story
-                    </Button>
+                    </Link>
                   </div>
                 </div>
               </SplideSlide>
@@ -192,7 +192,7 @@ export const Impact = () => {
             asChild
             size="lg"
           >
-            <Link href="/donate">Support this Work</Link>
+            <Link href="/donate">Support Community Impact</Link>
           </Button>
         </div>
       </div>

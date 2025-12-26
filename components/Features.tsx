@@ -45,11 +45,11 @@ const Features = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative mt-8 py-16 bg-gray-50 px-4">
+    <section ref={sectionRef} className="section-padding bg-gray-50 px-4 mt-8">
          <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Focus Areas</h2>
         <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-        <p className="mb-12 text-lg text-muted-foreground">
+        <p className="mb-10 text-base text-muted-foreground">
           Addressing the most urgent needs and building long-term resilience in vulnerable communities across Lakes State, South Sudan.
         </p>
       </div>
@@ -71,12 +71,15 @@ const Features = () => {
                 className="object-cover"
               />
             </div>
-            <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
+            <div className="p-5">
+            <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
             <p className="text-dark-200 leading-snug">{area.description}</p>
             </div>
-            <div className="p-6">
-            <Link href="/programs" className="w-full text-primary underline cursor-pointer">Lean More</Link>
+            <div className="p-5">
+            <Link href="/programs"
+             className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+            Lean More
+            </Link>
             </div>
           </div>
         ))}

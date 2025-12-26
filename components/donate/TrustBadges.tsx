@@ -25,6 +25,7 @@ export default function TrustBadges() {
         },
       ];
     return (
+      <div className="py-16">
         <Card>
         <CardContent className="p-6">
           <h3 className="font-semibold mb-4">Why Donate to CCSO?</h3>
@@ -47,5 +48,6 @@ export default function TrustBadges() {
           </div>
         </CardContent>
       </Card>
+      </div>
     );
 }

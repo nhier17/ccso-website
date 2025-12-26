@@ -24,8 +24,8 @@ export default function BlogPage() {
   
     return (
         <div>
-        <section className="relative py-16">
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
+        <section className="relative section-padding">
+          <div className="absolute inset-0 z-0 bg-linear-to-r from-primary/10 to-primary/5">
             <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
           </div>
             <div className="mx-auto max-w-3xl text-center">
@@ -37,7 +37,7 @@ export default function BlogPage() {
         </section>
   
         {featuredPost && (
-          <section className="py-16">
+          <section className="section-padding">
               <div className="mx-auto max-w-5xl overflow-hidden rounded-xl">
                 <div className="grid gap-6 md:grid-cols-5 md:gap-12">
                   <div className="relative aspect-video md:col-span-3 md:aspect-auto md:h-full">
@@ -77,7 +77,7 @@ export default function BlogPage() {
           </section>
         )}
   
-        <section className="py-16">
+        <section className="section-padding">
             <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 md:flex-row">
               <Tabs 
                 value={selectedCategory} 
@@ -106,7 +106,7 @@ export default function BlogPage() {
             </div>
         </section>
   
-        <section className="py-16">
+        <section className="section-padding">
             {filteredPosts.length > 0 ? (
               <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredPosts.map((post) => (
@@ -168,7 +168,7 @@ export default function BlogPage() {
             )}
         </section>
   
-        <section className="bg-muted/30 py-16">
+        <section className="bg-muted/30 section-padding">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight">Subscribe to Our Newsletter</h2>
               <p className="mb-8 text-lg text-muted-foreground">

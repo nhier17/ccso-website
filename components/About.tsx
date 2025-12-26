@@ -87,7 +87,7 @@ const About = () => {
                 height={350}
                 className="rounded-lg shadow-xl object-cover"
               />
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/20 rounded-lg"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-transparent to-black/20 rounded-lg"></div>
             </div>
 
             <div ref={textRef} className="text-center md:text-left md:w-1/2">
@@ -104,7 +104,7 @@ const About = () => {
                     Donate Now
                   </Link>
                 </Button>
-                <Button className="border-primary border-[2px] text-primary hover:bg-primary hover:text-white transition-all px-6 py-3" size="lg" variant="outline" asChild>
+                <Button className="border-primary border-2 text-primary hover:bg-primary hover:text-white transition-all px-6 py-3" size="lg" variant="outline" asChild>
                   <Link href="/programs">Sponsor a Program</Link>
                 </Button>
               </div>

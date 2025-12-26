@@ -5,25 +5,30 @@ import TrustBadges from "@/components/donate/TrustBadges";
 import RecurringInfo from "@/components/donate/RecurringInfo";
 import ImpactTiers from "@/components/donate/ImpactTiers";
 import { donationFaqs } from "@/constants";
-import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function DonatePage() {
   return (
     <main className="min-h-screen">
       <section className="bg-primary text-white py-16">
         <div className="px-2 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Make a Difference Today
-          </h1>
-          <p className="text-xl md:text-2xl max-w-2xl">
-            Your donation helps build a resilient and self-reliant South Sudan,
-            one community at a time.
-          </p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          Your Gift Today Can Save and Restore Lives
+        </h1>
+
+        <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+          Every donation directly funds clean water, healthcare, education, and
+          peacebuilding for families affected by conflict in South Sudan.
+        </p>
         </div>
       </section>
 
       <section className="py-16">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div className="mt-16">
+          <ImpactTiers />
+        </div>
+
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 py-16">
           <div className="lg:col-span-2">
             <DonateForm />
           </div>
@@ -32,10 +37,6 @@ export default function DonatePage() {
             <TrustBadges />
             <RecurringInfo />
           </div>
-        </div>
-
-        <div className="mt-16">
-          <ImpactTiers />
         </div>
       </section>
       
@@ -48,16 +49,25 @@ export default function DonatePage() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-4xl gap-6">
-            {donationFaqs.map((faq, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-semibold">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <div className="mx-auto max-w-4xl">
+        <Accordion type="single" collapsible className="space-y-4">
+          {donationFaqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`faq-${index}`}
+              className="rounded-xl border bg-card px-4 shadow-xs"
+            >
+              <AccordionTrigger className="group flex w-full items-center justify-between py-4 text-left text-lg font-semibold hover:no-underline">
+                <span>{faq.question}</span>
+              </AccordionTrigger>
+
+              <AccordionContent className="pb-4 text-muted-foreground text-base">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
       </section>
     </main>
   );

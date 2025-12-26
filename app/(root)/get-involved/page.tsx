@@ -70,12 +70,6 @@ const GetInvolved = () => {
     });
   }, []);
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Newsletter signup:", email);
-    setEmail("");
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -85,19 +79,43 @@ const GetInvolved = () => {
 
   return (
     <div className="font-bebas-neue">
-      <section className="relative py-16">
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/10 to-primary/5">
-          <div className="absolute inset-0 bg-[url('/images/support.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-        </div>
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">Get Involved</h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Join us in making a difference in the lives of vulnerable communities across South Sudan. There are many ways to get involved!
-            </p>
-          </div>
-      </section>
+    <section className="relative section-padding">
+      <div className="absolute inset-0 z-0 bg-linear-to-r from-primary/15 to-primary/5">
+        <div className="absolute inset-0 bg-[url('/images/support.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+      </div>
 
-      <section ref={addToRefs} className="py-16">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+        <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+          Make a Lasting Impact
+        </span>
+
+        <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">
+          Your Support Changes Lives in South Sudan
+        </h1>
+
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
+          Choose how you want to help — whether through monthly giving, one-time support,
+          or partnering with us to strengthen communities.
+        </p>
+
+          <div className="mt-8 flex items-center mx-auto max-w-2xl space-x-4 text-sm text-gray-600">
+            <div className="flex items-center space-x-1">
+              <div className="h-2 w-2 rounded-full bg-green-500"></div>
+              <span>Secure donations</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+              <span>Transparent use of funds</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <div className="h-2 w-2 rounded-full bg-orange-500"></div>
+              <span>Real community impact</span>
+            </div>
+            </div>
+      </div>
+    </section>
+
+      <section ref={addToRefs} className="section-padding">
           <div ref={textRef} className="mx-auto max-w-3xl text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Ways to Support Our Mission</h2>
             <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
@@ -108,12 +126,14 @@ const GetInvolved = () => {
 
           <Tabs defaultValue="donate" className="mx-auto max-w-4xl">
             <TabsList className="mb-8 grid w-full grid-cols-3 gap-2">
-              <TabsTrigger value="donate">Donate</TabsTrigger>
+              <TabsTrigger value="donate" className="font-semibold">
+                Donate <span className="ml-1 text-xs text-primary">(Most Impact)</span>
+              </TabsTrigger>
               <TabsTrigger value="volunteer">Volunteer</TabsTrigger>
               <TabsTrigger value="partner">Partner With Us</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="donate" className="rounded-xl border bg-card p-6 shadow-sm">
+            <TabsContent value="donate" className="rounded-xl border bg-card p-6 shadow-xs">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <h3 className="mb-4 flex items-center text-2xl font-semibold">
@@ -135,9 +155,15 @@ const GetInvolved = () => {
                     ))}
                   </div>
                   
-                  <Button asChild className="bg-primary text-white hover:bg-primary/90">
-                    <Link href="/donate">Donate Now</Link>
-                  </Button>
+               <Button asChild className="bg-primary text-white hover:bg-primary/90">
+                  <Link href="/donate">
+                    Start Monthly Support
+                  </Link>
+                </Button>
+
+                <p className="mt-2 text-xs text-muted-foreground">
+                  You can choose one-time or custom amounts on the next page
+                </p>
                 </div>
                 
                 <div className="space-y-6">
@@ -148,6 +174,10 @@ const GetInvolved = () => {
                       fill
                       className="object-cover"
                     />
+                    <div className="absolute bottom-3 left-3 rounded bg-white/90 px-3 py-1 text-xs font-medium text-primary">
+                      Real impact. Real communities.
+                    </div>
+
                   </div>
                   
                   <div className="rounded-lg bg-muted/50 p-4">
@@ -165,7 +195,7 @@ const GetInvolved = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="volunteer" className="rounded-xl border bg-card p-6 shadow-sm">
+            <TabsContent value="volunteer" className="rounded-xl border bg-card p-6 shadow-xs">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <h3 className="mb-4 flex items-center text-2xl font-semibold">
@@ -219,7 +249,7 @@ const GetInvolved = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="partner" className="rounded-xl border bg-card p-6 shadow-sm">
+            <TabsContent value="partner" className="rounded-xl border bg-card p-6 shadow-xs">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <h3 className="mb-4 flex items-center text-2xl font-semibold">
@@ -273,152 +303,114 @@ const GetInvolved = () => {
           </Tabs>
       </section>
 
-      <section ref={addToRefs} className="py-16">
-          <div ref={textRef} className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Upcoming Events</h2>
-            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-            <p className="mb-12 text-lg text-muted-foreground">
-              Join us at upcoming events to learn more about our work and meet our team.
-            </p>
-          </div>
+      <section ref={addToRefs} className="section-padding bg-muted/40">
+      <div ref={textRef} className="mx-auto max-w-3xl text-center mb-12">
+        <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
+          Current Campaigns
+        </h2>
+        <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+        <p className="text-lg text-muted-foreground">
+          Your support moves these life-changing projects closer to completion.
+        </p>
+      </div>
 
-          <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {upcomingEvents.map((event, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="relative h-40 w-full">
-                  <Image 
-                    src={event.image}
-                    alt={event.title} 
-                    fill
-                    className="object-cover"
-                  />
+      <div className="mx-auto max-w-5xl space-y-8">
+        {campaigns.map((campaign) => {
+          const progress = Math.round(
+            (campaign.raised / campaign.goal) * 100
+          );
+          const remaining = campaign.goal - campaign.raised;
+
+          return (
+            <Card
+              key={campaign.id}
+              className={`p-6 transition-all ${
+                campaign.featured
+                  ? "border-primary ring-2 ring-primary bg-white"
+                  : "bg-white"
+              }`}
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div className="space-y-2">
+                  {campaign.featured && (
+                    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                      Most Urgent
+                    </span>
+                  )}
+                  <h3 className="text-xl font-semibold">
+                    {campaign.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {campaign.impact}
+                  </p>
+                  <p className="text-sm text-orange-600 font-medium">
+                    {campaign.urgency}
+                  </p>
                 </div>
-                <CardContent className="p-6">
-                  <div className="mb-3 flex items-center text-sm text-muted-foreground">
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {event.date}
+                <div className="w-full md:max-w-xs space-y-3">
+                  <div className="flex justify-between text-sm font-medium">
+                    <span>${campaign.raised.toLocaleString()} raised</span>
+                    <span className="text-primary">
+                      ${remaining.toLocaleString()} needed
+                    </span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold">{event.title}</h3>
-                  <p className="mb-1 text-sm font-medium">{event.location}</p>
-                  <p className="mb-4 text-sm text-muted-foreground">{event.description}</p>
-                  <Button variant="outline" className="w-full bg-primary text-white">
-                    <Link href="/donate">Donate now</Link>
+                  <Progress value={progress} className="h-2" />
+                  <Button
+                    asChild
+                    className="w-full bg-primary text-white hover:bg-primary/90"
+                  >
+                    <Link href={`/donate?campaign=${campaign.id}`}>
+                      Support This Campaign
+                    </Link>
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-      </section>
-
-      <section ref={addToRefs} className="py-16 bg-gray-50">
-        <div ref={textRef} className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Current Campaigns
-          </h2>
-          <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-        </div>
-        <div className="space-y-8">
-            {campaigns.map((campaign, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex justify-between mb-2">
-                  <h3 className="text-xl font-semibold">{campaign.name}</h3>
-                  <span className="text-primary">${campaign.raised} / ${campaign.goal}</span>
                 </div>
-                <Progress value={campaign.progress} className="h-2" />
-                <p className="text-sm text-gray-600 mt-2">{campaign.progress}% of goal reached</p>
               </div>
-            ))}
-          </div>
+            </Card>
+          );
+        })}
+      </div>
       </section>
 
-      <div className="flex flex-col lg:flex-row items-center gap-12 py-20">
-        <div className="relative w-full lg:w-1/2">
-          <Image
-            ref={imgRef}
-            src="/images/impact.jpg"
-            alt="Why Get Involved"
-            width={600}
-            height={600}
-            className="rounded-lg shadow-lg object-cover"
-          />
-        </div>
+    <section ref={addToRefs} className="section-padding">
+      <div
+        ref={textRef}
+        className="mx-auto max-w-4xl rounded-2xl bg-primary p-8 text-center text-white shadow-xl md:p-12"
+      >
+        <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+          Turn Compassion Into Action Today
+        </h2>
+        <p className="mx-auto mb-6 max-w-2xl text-lg opacity-90">
+          Your support helps deliver clean water, healthcare, education, and peace
+          to communities rebuilding their lives in South Sudan.
+        </p>
+        <p className="mb-8 text-sm opacity-80">
+          ✔ Transparent programs · ✔ Community-led impact · ✔ Secure donations
+        </p>
 
-        <div ref={textRef} className="lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl font-bold text-gray-900">
-            Why Your Support Matters
-          </h2>
-          <p className="mt-4 text-lg text-gray-700">
-            Your involvement directly helps provide education, clean water, and
-            community empowerment programs for those in need. Every contribution,
-            whether through time, resources, or advocacy, creates lasting positive change.
-          </p>
-          <Button className="mt-6 bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-all">
-            Learn More
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-white text-primary hover:bg-gray-100"
+          >
+            <Link href="/donate">
+              Donate Now
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-white text-black hover:bg-white/10"
+          >
+            <Link href="/partner">
+              Partner With Us
+            </Link>
           </Button>
         </div>
       </div>
-
-  <section ref={addToRefs} className="bg-muted/30 py-16">
-          <div ref={textRef} className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Volunteer Stories</h2>
-            <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-            <p className="mb-12 text-lg text-muted-foreground">
-              Hear from those who have volunteered with us about their experiences and impact.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-            {successTestimonials.map((testimonial, index) => (
-              <Card className="overflow-hidden" key={index}>
-                <CardContent className="p-6">
-                  <div className="mb-6 flex items-center space-x-4">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-full">
-                      <Image 
-                      src={testimonial.img}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <MessageSquare className="h-8 w-8 text-primary/40" />
-                  <p className="text-muted-foreground">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-            ))}
-          </div>
-      </section>
-
-      <section ref={addToRefs} className="py-16 md:py-24">
-          <div ref={textRef} className="mx-auto max-w-3xl rounded-xl bg-primary p-8 text-center text-white md:p-12">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Ready to Make a Difference?</h2>
-            <p className="mb-8 text-lg opacity-90">
-              Your skills, time, and resources can help transform lives in South Sudan. Join us today!
-            </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/donate">Donate Now</Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-transparent hover:bg-primary-foreground/10"
-              >
-                <Link href="/contact">
-                Contact Us
-                </Link>
-              </Button>
-            </div>
-          </div>
-      </section>
+    </section>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+    <section className="min-h-screen bg-linear-to-b from-gray-50 to-white py-16">
         <div className="mb-16">
           <Splide options={splideOptions}>
             {(Array.isArray(project.imageSrc) ? project.imageSrc : [project.imageSrc]).map((image, index) => (
@@ -59,7 +59,6 @@ const ProjectDetails = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Main Content */}
           <div className="md:col-span-2 space-y-12">
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Overview</h2>
@@ -81,7 +80,6 @@ const ProjectDetails = () => {
             </section>
           </div>
 
-          {/* Sidebar */}
           <div className="md:col-span-1">
             <div className="bg-white rounded-xl p-6 shadow-lg sticky top-4">
               <h3 className="text-xl font-semibold mb-6">Support This Project</h3>

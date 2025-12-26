@@ -14,19 +14,19 @@ const VolunteerPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-xs">
               <h3 className="font-semibold text-lg mb-2">Make an Impact</h3>
               <p className="text-gray-600">
                 Directly contribute to improving lives in South Sudanese communities
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-xs">
               <h3 className="font-semibold text-lg mb-2">Gain Experience</h3>
               <p className="text-gray-600">
                 Develop new skills and get hands-on experience in community development
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-xs">
               <h3 className="font-semibold text-lg mb-2">Cultural Exchange</h3>
               <p className="text-gray-600">
                 Immerse yourself in South Sudanese culture and traditions

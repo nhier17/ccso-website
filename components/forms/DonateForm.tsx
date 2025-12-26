@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,7 +31,7 @@ export default function DonateForm() {
       firstName: "",
       lastName: "",
       email: "",
-      frequency: 'once',
+      frequency: 'monthly',
     },
   });
 
@@ -60,7 +59,14 @@ export default function DonateForm() {
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Complete Your Donation</h2>
+          <h2 className="text-2xl font-bold">
+            You’re Supporting Lives in South Sudan
+          </h2>
+
+          <p className="text-sm text-muted-foreground">
+            Your {frequency === "monthly" ? "monthly" : "one-time"} donation will directly
+            support families affected by conflict.
+          </p>
           <Button 
             variant="outline" 
             onClick={() => setShowPayment(false)}
@@ -83,6 +89,12 @@ export default function DonateForm() {
 
   return (
     <Form {...form}>
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-2">
+          Make an Impact Today
+        </h2>
+        <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
+      </div>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -108,8 +120,10 @@ export default function DonateForm() {
                       )}
                     </div>
                     <div className="text-2xl font-bold mb-2">${tier.amount}</div>
-                    <p className="text-sm text-gray-600 mb-2">{tier.description}</p>
-                    <p className="text-xs text-primary">{tier.impact}</p>
+                    <p className="text-sm text-gray-600 mb-2">{tier.anchor}</p>
+                    <p className="text-xs text-primary">
+                      {frequency === "monthly" ? tier.impactMonthly : tier.impactOnce}
+                    </p>
                   </Card>
                 ))}
               </div>
@@ -134,7 +148,7 @@ export default function DonateForm() {
              <div>
               <CustomInput 
                 control={form.control}
-                name="donationType"
+                name="frequency"
                 fieldType={FormFieldType.RADIO}
                 options={[
                   { label: "One-time", value: "once" },
@@ -142,13 +156,13 @@ export default function DonateForm() {
                   { label: "Quarterly", value: "quarterly" },
                   { label: "Annually", value: "yearly" },
                 ]}
-                label="Donation Type"
-                placeholder="Select donation type"
+                label="Donation Frequency"
+                placeholder="Select donation frequency"
                 disabled={false}
               />
              
          </div>
-            </div>
+          </div>
 
             <div className="space-y-4">
               <CustomInput 
@@ -173,17 +187,24 @@ export default function DonateForm() {
                  placeholder="Enter your email" 
                  fieldType={FormFieldType.INPUT} 
                />
-
             </div>
 
-            <Button
+          <Button
           type="submit"
           className="field-btn"
           disabled={isLoading}
         >
-          {isLoading ? <Loader2 className="animate-spin ml-2" /> : "Continue to Payment"}
+          {isLoading ? (
+            <Loader2 className="animate-spin ml-2" />
+          ) : (
+            frequency === "monthly" ? "Start Monthly Impact" : "Complete Donation"
+          )}
         </Button>
+
+        <p className="text-xs text-muted-foreground text-center mt-2">
+          🔒 Secure payment • Cancel recurring donations anytime • Tax-deductible where applicable
+        </p>
       </form>
     </Form>
-  );
+   ) ;
 }
