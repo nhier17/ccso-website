@@ -145,5 +145,3 @@ export const formatAmountFromStripe = (amount: number, currency: string): number
   }
   return zeroDecimalCurrency ? amount : Math.round(amount) / 100;
 };
-
-

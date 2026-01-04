@@ -3,7 +3,28 @@ import {
    Sprout, 
    Handshake, 
    Heart, 
-   GraduationCap 
+   GraduationCap ,
+   Brain,
+   Scale,
+   Shield,
+   Users,
+   Cpu,
+   BookOpen,
+   Store,
+   Truck,
+   Baby,
+   Zap,
+   Wrench,
+   Leaf,
+   Target,
+   TrendingUp,
+   Globe,
+   Award,
+   Briefcase,
+   HeartHandshake,
+   MessageSquare,
+   Laptop,
+   Calendar,
   } from "lucide-react";
 
 export const navbarLinks = [
@@ -15,44 +36,6 @@ export const navbarLinks = [
   { name: "Contact Us", path: "/contact" },
 ];
 
-// constants/focusAreas.ts
-export const FOCUS_AREAS = [
-  {
-    id: 1,
-    title: "Food Security",
-    description:
-      "Supporting sustainable farming and climate-smart food production.",
-    img: "/images/food4.JPG",
-  },
-  {
-    id: 2,
-    title: "Health & Hygiene",
-    description:
-      "Improving health through clean water, sanitation, and community education.",
-    img: "/images/health.jpg",
-  },
-  {
-    id: 3,
-    title: "Peace & Reconciliation",
-    description:
-      "Strengthening social cohesion through dialogue and peacebuilding.",
-    img: "/images/peace.jpg",
-  },
-  {
-    id: 4,
-    title: "Education",
-    description:
-      "Expanding access to education, literacy, and youth mentorship.",
-    img: "/images/education.jpg",
-  },
-  {
-    id: 5,
-    title: "Community Empowerment",
-    description:
-      "Building skills, leadership, and locally driven development solutions.",
-    img: "/images/empower.jpg",
-  },
-];
 
 //quick links
 export const quickLinks = [
@@ -103,41 +86,43 @@ export const contactLinks = [
   },
 ];
 
-export const impactStories = [
+//address
+export const addressInfo = [
   {
-    image: "/images/impact4.jpg",
-    title: "Renewed Hope and Spiritual Growth",
-    description:
-      "Through community-led evangelism, individuals and families are finding renewed hope, healing, and spiritual encouragement in the midst of hardship.",
+    icon: "/icons/map-pin.svg",
+    title: "South Sudan Office",
+    details: [
+      "Lakes State",
+      "Rumbek Center, South Sudan"
+    ]
   },
   {
-    image: "/images/impact.jpg",
-    title: "Access to Clean and Safe Water",
-    description:
-      "Reliable access to clean water is reducing illness and easing the daily burden faced by women and children in underserved communities.",
+    icon: "/icons/mail.svg",
+    title: "Email",
+    details: [
+      "bishop.pacong@gmail.com",
+      "bishop.pacong@gmail.com"
+    ]
   },
   {
-    image: "/images/impact2.jpg",
-    title: "Children Staying in School",
-    description:
-      "Children once at risk of dropping out are now learning in safer, more supportive environments with access to essential school materials.",
+    icon: "/icons/phone.svg",
+    title: "Phone",
+    details: [
+      "+211 920 528 714",
+      "+254 724 396 190"
+    ]
   },
   {
-    image: "/images/impact3.jpg",
-    title: "Communities Rebuilding Trust",
-    description:
-      "Dialogue and cultural engagement are helping formerly divided communities rebuild trust, understanding, and peaceful coexistence.",
-  },
-  {
-    image: "/images/impact5.png",
-    title: "Stronger Livelihoods Through Farming",
-    description:
-      "Smallholder farmers are improving harvests and household stability through practical, community-based farming practices.",
-  },
+    icon: "/icons/clock.svg",
+    title: "Office Hours",
+    details: [
+      "Monday - Friday: 8:00 AM - 5:00 PM",
+      "Saturday: 9:00 AM - 1:00 PM"
+    ]
+  }
 ];
 
-
-// constants/footerLinks.js
+// footer links
 export const footerLinks = {
   quickLinks: [
     { title: "About Us", url: "/about" },
@@ -158,6 +143,50 @@ export const footerLinks = {
     { icon: "/icons/instagram.svg", url: "#" },
   ],
 };
+
+// focus areas
+export const FOCUS_AREAS = [
+  {
+    id: 1,
+    title: "Food Security",
+    description:
+      "Supporting sustainable farming and climate-smart food production.",
+    img: "/images/food4.JPG",
+    slug: "food-security",
+  },
+  {
+    id: 2,
+    title: "Health & Hygiene",
+    description:
+      "Improving health through clean water, sanitation, and community education.",
+    img: "/images/health.jpg",
+    slug: "health-hygiene",
+  },
+  {
+    id: 3,
+    title: "Peace & Reconciliation",
+    description:
+      "Strengthening social cohesion through dialogue and peacebuilding.",
+    img: "/images/peace.jpg",
+    slug: "peace-reconciliation",
+  },
+  {
+    id: 4,
+    title: "Education",
+    description:
+      "Expanding access to education, literacy, and youth mentorship.",
+    img: "/images/education.jpg",
+    slug: "education",
+  },
+  {
+    id: 5,
+    title: "Community Empowerment",
+    description:
+      "Building skills, leadership, and locally driven development solutions.",
+    img: "/images/empower.jpg",
+    slug: "community-empowerment",
+  },
+];
 
 //faqs
 export const faqs = [
@@ -213,14 +242,23 @@ export const completedProjects = [
       "/images/food-project.jpg",
       "/images/food-project1.jpg",
     ],
-    location: "Rumbet East",
+    location: "Rumbek East",
     category: "Food and Hygiene",
+    budget: "$10,000",
     overview:
       "Following devastating floods in Lakes State, thousands of families were left without food and clean water. CCSO responded swiftly by organizing an emergency food distribution program to ensure affected communities had immediate access to essential supplies.",
     impact:
       "This project directly impacted **1,500+ families**, providing them with nutritious food packs. Through strong community partnerships, we ensured timely and effective aid distribution to the most affected areas.",
     futureGoals:
       "To continue strengthening food security efforts, CCSO is working on developing a **long-term agricultural resilience program**, enabling communities to grow their own food and reduce dependency on emergency aid.",
+    achievements: [
+      "Distributed 1,000 kg of food supplies to affected families",
+      "Reduced acute malnutrition rates by 40% in target communities",
+      "Established 3 community food distribution committees",
+      "Reached 100% of targeted households within 2 weeks",
+      "Collaborated with 5 local community organizations"
+    ],
+    sustainability: "Established community-led food committees to manage future distributions"
   },
   {
     id: "education-support",
@@ -233,12 +271,21 @@ export const completedProjects = [
     ],
     location: "Juba, Wau, Nairobi",
     category: "Education",
+    budget: "$20,000 annually",
     overview:
       "The Education Support Program by CCSO was launched to address the widespread educational gaps faced by South Sudanese children, especially those displaced or affected by conflict. With support from well-wishers and sponsors, we provide tuition assistance, essential school supplies, and mentoring to vulnerable students across South Sudan and neighboring regions.",
     impact:
       "So far, CCSO has sponsored **over 200 students** to complete their primary, secondary, and tertiary education. We have distributed **1,000+ learning kits** and facilitated mentorships, with **85% of sponsored students** completing their academic year successfully.",
     futureGoals:
       "We aim to **build two fully equipped schools** in underserved rural areas and **expand our scholarship initiative** to reach **at least 500 students annually**, with a strong emphasis on supporting girls' education.",
+    achievements: [
+      "50+ students sponsored through full academic cycles",
+      "95% graduation rate among sponsored high school students",
+      "15 university graduates produced from the program",
+      "1,000+ learning kits distributed annually",
+      "Established 3 after-school tutoring centers"
+    ],
+    sustainability: "Alumni network providing mentorship and community leadership"
   },
   {
     id: "church-construction",
@@ -251,12 +298,21 @@ export const completedProjects = [
     ],
     location: "Mathiang",
     category: "Evangelism",
+    budget: "$10,000",
     overview:
       "CCSO spearheaded the construction of a permanent church building in Mathiang to provide a dedicated place of worship, spiritual guidance, and community gathering. The project emerged from the need to replace temporary makeshift structures that were vulnerable to weather and lacked the capacity to serve the growing congregation.",
     impact:
       "The new church building now accommodates over 300 congregants and doubles as a space for community events, prayer meetings, youth fellowship, and Sunday school activities. It strengthens the spiritual fabric of the community and provides a safe, dignified environment for faith-based programs.",
     futureGoals:
       "CCSO plans to furnish the church with essential interior fittings, expand its outreach programs, and support leadership training for local pastors and youth leaders to foster sustainable community development through faith.",
+    achievements: [
+      "Completed 400 sqm church building with seating for 300+",
+      "Installed solar-powered lighting system for evening services",
+      "Constructed adjacent community hall for multi-purpose use",
+      "Trained 10 local builders in construction skills",
+      "Established community maintenance committee"
+    ],
+    sustainability: "Community-owned and managed with local leadership structure"
   },
   {
     id: "peace-awareness",
@@ -269,54 +325,50 @@ export const completedProjects = [
     ],
     location: "Pacong",
     category: "Peace and Reconciliation",
+    budget: "$5,000",
     overview:
       "Recognizing the urgent need for conflict resolution, CCSO launched a peace awareness program to **foster reconciliation and social cohesion** in communities affected by inter-ethnic conflicts.",
     impact:
-      "Over **5,000 people** participated in peace dialogues and reconciliation workshops, leading to **reduced community tensions** and stronger social bonds.",
+      "Over **500 people** participated in peace dialogues and reconciliation workshops, leading to **reduced community tensions** and stronger social bonds.",
     futureGoals:
       "CCSO is committed to **expanding peace awareness programs** across other conflict-affected regions and **training local peace ambassadors** to sustain long-term harmony.",
-  },
+    achievements: [
+      "Facilitated 78 successful peace dialogues between conflicting groups",
+      "Trained 45 community peace ambassadors",
+      "Reduced conflict incidents by 75% in target areas",
+      "Established 12 community peace committees",
+      "Created early warning systems in 8 villages"
+    ],
+    sustainability: "Community peace committees continue mediation work independently"
+  }
 ];
 
-
-export const donationTiers = [
-  {
-    amount: 25,
-    title: "Community Builder",
-    anchor: "Be the reason a family has clean water this month",
-    impactMonthly: "Provides clean water to one family every month",
-    impactOnce: "Provides emergency clean water support for a family",
-  },
-  {
-    amount: 50,
-    title: "Hope Provider",
-    anchor: "Give a family stability and dignity every month",
-    impactMonthly: "Feeds and supports a vulnerable family monthly",
-    impactOnce: "Provides food assistance to a family in crisis",
-    recommended: true,
-  },
-  {
-    amount: 100,
-    title: "Future Maker",
-    anchor: "Change a child’s future, month after month",
-    impactMonthly: "Sponsors a child’s education and learning materials",
-    impactOnce: "Supports a child’s education for one month",
-  },
-  {
-    amount: 250,
-    title: "Village Champion",
-    anchor: "Help an entire community rise sustainably",
-    impactMonthly: "Funds long-term farming & livelihood projects",
-    impactOnce: "Kickstarts a community development initiative",
-  },
-];
-
-
-export const impactStats = [
-  { number: "10K+", label: "Lives Impacted", color: "text-blue-600" },
-  { number: "5+", label: "Projects Completed", color: "text-green-600" },
-  { number: "25+", label: "Communities Reached", color: "text-orange-600" },
-  { number: "20K+", label: "Aid Delivered", color: "text-purple-600" },
+//values
+export const valuesData = [
+   {
+     title: "Equality & Justice",
+     description: "Promoting a society where everyone is treated equally without discrimination on grounds of ethnicity, age, religion or disability.",
+     icon: Scale,
+     color: "from-primary to-blue-500"
+   },
+   {
+     title: "Transparency & Accountability",
+     description: "Operating with honesty and transparency, ensuring accountability to communities and stakeholders in all our work.",
+     icon: Shield,
+     color: "from-blue-500 to-green-500"
+   },
+   {
+     title: "Grassroots Participation",
+     description: "Encouraging community participation and involvement at grassroots level in decision-making processes.",
+     icon: Users,
+     color: "from-green-500 to-yellow-500"
+   },
+   {
+     title: "Indigenous Wisdom",
+     description: "Recognizing and complementing local experience and wisdom as the foundation for sustainable development.",
+     icon: Brain,
+     color: "from-purple-500 to-pink-500"
+   }
 ];
 
 export const campaigns = [
@@ -346,8 +398,6 @@ export const campaigns = [
     urgency: "Medical supplies running low",
   },
 ];
-
-
 
 //leaders 
 export const leaders = [
@@ -429,41 +479,6 @@ export const history = [
   }
 ];
 
-//address
-export const addressInfo = [
-  {
-    icon: "/icons/map-pin.svg",
-    title: "South Sudan Office",
-    details: [
-      "Lakes State",
-      "Rumbek Center, South Sudan"
-    ]
-  },
-  {
-    icon: "/icons/mail.svg",
-    title: "Email",
-    details: [
-      "bishop.pacong@gmail.com",
-      "bishop.pacong@gmail.com"
-    ]
-  },
-  {
-    icon: "/icons/phone.svg",
-    title: "Phone",
-    details: [
-      "+211 920 528 714",
-      "+254 724 396 190"
-    ]
-  },
-  {
-    icon: "/icons/clock.svg",
-    title: "Office Hours",
-    details: [
-      "Monday - Friday: 8:00 AM - 5:00 PM",
-      "Saturday: 9:00 AM - 1:00 PM"
-    ]
-  }
-];
 
 //why partner with us 
 export const partnerWithUs = {
@@ -488,6 +503,99 @@ export const partnerWithUs = {
     "Access to broader networks and resources"
   ]
 };
+
+//why partner with us 
+export const whyPartnerwithus = [
+    {
+      icon: Users,
+      title: "Local Expertise",
+      description: "Deep community connections and cultural understanding",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Shield,
+      title: "Proven Track Record",
+      description: "5+ years of successful community development",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: TrendingUp,
+      title: "Scalable Impact",
+      description: "Models that can expand across South Sudan",
+      color: "from-orange-500 to-amber-500"
+    },
+    {
+      icon: Globe,
+      title: "Global Standards",
+      description: "Transparent operations and international best practices",
+      color: "from-purple-500 to-pink-500"
+    }
+  ]
+
+  //areas of collaboration 
+  export const areas = [
+      {
+        title: "Education & Skills",
+        description: "Literacy programs, vocational training, and youth development",
+        icon: Award,
+        color: "bg-blue-100 text-blue-700"
+      },
+      {
+        title: "Healthcare",
+        description: "Mobile clinics, maternal health, and disease prevention",
+        icon: HeartHandshake,
+        color: "bg-red-100 text-red-700"
+      },
+      {
+        title: "Water & Sanitation",
+        description: "Clean water access and hygiene education",
+        icon: Zap,
+        color: "bg-cyan-100 text-cyan-700"
+      },
+      {
+        title: "Peace Building",
+        description: "Conflict resolution and community reconciliation",
+        icon: Shield,
+        color: "bg-orange-100 text-orange-700"
+      },
+      {
+        title: "Agriculture",
+        description: "Food security and sustainable farming",
+        icon: TrendingUp,
+        color: "bg-green-100 text-green-700"
+      },
+      {
+        title: "Economic Empowerment",
+        description: "Micro-enterprise and livelihood programs",
+        icon: Briefcase,
+        color: "bg-purple-100 text-purple-700"
+      }
+  ];
+
+  //next steps 
+  export const nextSteps = [
+      {
+        step: "1",
+        title: "Initial Review",
+        description: "We'll review your inquiry within 48 hours"
+      },
+      {
+        step: "2",
+        title: "Discovery Call",
+        description: "Schedule a video call to discuss possibilities"
+      },
+      {
+        step: "3",
+        title: "Proposal Development",
+        description: "We'll create a tailored partnership proposal"
+      },
+      {
+        step: "4",
+        title: "Agreement & Launch",
+        description: "Finalize terms and begin collaboration"
+      }
+  ];
+
 //donate
 export const donate = {
 type: [
@@ -512,6 +620,48 @@ benefits: [
   "$500 supports a community health outreach"
 ]
 };
+
+//donate tiers
+export const donationTiers = [
+  {
+    amount: 25,
+    title: "Community Builder",
+    anchor: "Be the reason a family has clean water this month",
+    impactMonthly: "Provides clean water to one family every month",
+    impactOnce: "Provides emergency clean water support for a family",
+  },
+  {
+    amount: 50,
+    title: "Hope Provider",
+    anchor: "Give a family stability and dignity every month",
+    impactMonthly: "Feeds and supports a vulnerable family monthly",
+    impactOnce: "Provides food assistance to a family in crisis",
+    recommended: true,
+  },
+  {
+    amount: 100,
+    title: "Future Maker",
+    anchor: "Change a child’s future, month after month",
+    impactMonthly: "Sponsors a child’s education and learning materials",
+    impactOnce: "Supports a child’s education for one month",
+  },
+  {
+    amount: 250,
+    title: "Village Champion",
+    anchor: "Help an entire community rise sustainably",
+    impactMonthly: "Funds long-term farming & livelihood projects",
+    impactOnce: "Kickstarts a community development initiative",
+  },
+];
+
+export const presetTierMapping = {
+  "Water Guardian": 25,
+  "Agricultural Empowerment": 50,
+  "Health Advocate": 100,
+  "Community Builder": 250,
+};
+
+//donate faqs
 export const donationFaqs = [
     {
       question: "Is my donation tax-deductible?",
@@ -534,6 +684,68 @@ export const donationFaqs = [
       answer: "We provide regular updates on our programs and impact through our newsletter, website, and social media. Donors also receive annual impact reports."
     }
 ];
+
+//what happens next 
+export const whatNext = [
+    {
+      step: 1,
+      title: "Funds Deployed",
+      description: "Your donation is immediately allocated to priority programs",
+      icon: Zap,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      step: 2,
+      title: "Community Implementation",
+      description: "Local leaders coordinate training and resource distribution",
+      icon: Users,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      step: 3,
+      title: "Impact Creation",
+      description: "Real change happens in communities through sustainable programs",
+      icon: TrendingUp,
+      color: "from-orange-500 to-amber-500"
+    }
+ ];
+
+ //share on social
+ export const platforms = [
+    { name: "Twitter", color: "bg-blue-500 hover:bg-blue-600" },
+    { name: "Facebook", color: "bg-blue-700 hover:bg-blue-800" },
+    { name: "LinkedIn", color: "bg-blue-600 hover:bg-blue-700" },
+    { name: "Instagram", color: "bg-pink-600 hover:bg-pink-700" }
+ ];
+
+ //stay connected 
+ export const items = [
+    {
+      title: "Monthly Giving",
+      description: "Create lasting impact with automatic monthly donations",
+      icon: Calendar,
+      color: "from-blue-500 to-cyan-500",
+      buttonText: "Set Up Monthly",
+      href: "/donate?recurring=true"
+    },
+    {
+      title: "Volunteer",
+      description: "Share your skills and time with our communities",
+      icon: Heart,
+      color: "from-green-500 to-emerald-500",
+      buttonText: "Explore Opportunities",
+      href: "/volunteer"
+    },
+    {
+      title: "Impact Stories",
+      description: "See how donations transform lives in South Sudan",
+      icon: Target,
+      color: "from-orange-500 to-amber-500",
+      buttonText: "Read Stories",
+      href: "/blog"
+    }
+  ];
+
 //volunteer
 export const volunteer = {
   type: [
@@ -560,6 +772,128 @@ export const volunteer = {
     "Monitoring & Evaluation Assistants"
   ]
 };
+
+//volunteer roles 
+export const volunteerRoles = [
+    {
+      title: "On-Site Field Volunteer",
+      location: "South Sudan",
+      duration: "3-12 months",
+      description: "Work directly with communities on education, health, or agriculture projects",
+      requirements: ["Relevant degree", "Cross-cultural experience", "Physical fitness"],
+      icon: Globe,
+      color: "from-primary to-blue-500"
+    },
+    {
+      title: "Remote Professional",
+      location: "Remote",
+      duration: "Flexible",
+      description: "Provide expertise in areas like marketing, IT, fundraising, or research",
+      requirements: ["Professional experience", "Reliable internet", "10+ hours/week"],
+      icon: Laptop,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Short-Term Team",
+      location: "South Sudan",
+      duration: "2-4 weeks",
+      description: "Join specialized teams for medical missions, construction, or training",
+      requirements: ["Team player", "Specific skills", "Travel readiness"],
+      icon: Users,
+      color: "from-purple-500 to-pink-500"
+    }
+  ];
+
+//volunteer benefits 
+export const volunteerBenefits =[
+    {
+      title: "Make an Impact",
+      description: "Directly contribute to improving lives in South Sudanese communities",
+      icon: HeartHandshake,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Gain Experience",
+      description: "Develop new skills and get hands-on experience in community development",
+      icon: GraduationCap,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Cultural Exchange",
+      description: "Immerse yourself in South Sudanese culture and traditions",
+      icon: Globe,
+      color: "from-orange-500 to-amber-500"
+    },
+    {
+      title: "Career Growth",
+      description: "Build your resume with meaningful international experience",
+      icon: Briefcase,
+      color: "from-purple-500 to-pink-500"
+    }
+];
+
+//skills needed
+ export const skills = [
+      { skill: "Medical Professionals", urgency: "High", color: "bg-red-100 text-red-700" },
+      { skill: "Teachers & Trainers", urgency: "High", color: "bg-blue-100 text-blue-700" },
+      { skill: "Agriculture Experts", urgency: "Medium", color: "bg-green-100 text-green-700" },
+      { skill: "IT & Data Specialists", urgency: "Medium", color: "bg-purple-100 text-purple-700" },
+      { skill: "Fundraising Experts", urgency: "High", color: "bg-orange-100 text-orange-700" },
+      { skill: "Construction Engineers", urgency: "Medium", color: "bg-amber-100 text-amber-700" },
+  ];
+
+//volunteer steps 
+export const steps = [
+   {
+     step: "1",
+     title: "Apply",
+     description: "Complete our online application form",
+     icon: MessageSquare,
+     color: "from-blue-500 to-cyan-500"
+   },
+   {
+     step: "2",
+     title: "Interview",
+     description: "Virtual interview with our team",
+     icon: Users,
+     color: "from-green-500 to-emerald-500"
+   },
+   {
+     step: "3",
+     title: "Orientation",
+     description: "Comprehensive training and preparation",
+     icon: GraduationCap,
+     color: "from-orange-500 to-amber-500"
+   },
+   {
+     step: "4",
+     title: "Deploy",
+     description: "Begin your volunteer service",
+     icon: Globe,
+     color: "from-purple-500 to-pink-500"
+   }
+];
+
+//what to expect
+export const whatToExpect = [
+    {
+      title: "Quick Response",
+      description: "We review applications within 5 business days"
+    },
+    {
+      title: "Support Provided",
+      description: "Training, accommodation, and local support included"
+    },
+    {
+      title: "Flexible Options",
+      description: "Remote and on-site opportunities available"
+    },
+    {
+      title: "Cultural Preparation",
+      description: "Comprehensive orientation before deployment"
+    }
+];
+
 //upcoming projects
 export const upcomingEvents = [
   {
@@ -617,19 +951,78 @@ export const programStats = [
     status: "Active",
     color: "blue",
     image: "/images/water.png",
+    duration: "Since 2024",
+    annualBudget: "$120,000",
+    fundingGoal: "$200,000",
+    fundingProgress: 60,
 
     impact: {
       currentLabel: "People Served",
-      currentValue: 100,
-      goalLabel: "Target by 2025",
-      goalValue: 1000,
-      progress: 10,
+      currentValue: 2,
+      goalLabel: "Target by 2026",
+      goalValue: 10,
+      progress: 5,
     },
 
     highlights: [
       { label: "Water Points Built", value: "2" },
       { label: "Communities Served", value: "2" },
     ],
+
+    overview: "Our Clean Water Initiative focuses on providing sustainable water solutions through community-led approaches. Each water point includes training local committees for maintenance and hygiene education to ensure long-term sustainability.",
+
+    objectives: [
+      "Provide clean water access to 100 people by 2026",
+      "Reduce waterborne diseases by 70% in target communities",
+      "Train 5 local technicians in water point maintenance",
+      "Establish 10 community water management committees",
+      "Reduce women's water collection time by 80%"
+    ],
+
+    approach: [
+      {
+        title: "Community-Led Implementation",
+        description: "Local communities identify locations and participate in construction",
+        icon: Users
+      },
+      {
+        title: "Sustainable Technology",
+        description: "locally repairable hand pumps",
+        icon: Cpu
+      },
+      {
+        title: "Hygiene Education",
+        description: "Comprehensive water, sanitation, and hygiene training",
+        icon: Shield
+      },
+      {
+        title: "Local Capacity Building",
+        description: "Training community members in maintenance and management",
+        icon: BookOpen
+      }
+    ],
+
+    stories: [
+      {
+        title: "Maria's Daily Journey",
+        description: "How a solar-powered borehole transformed life for a mother of five",
+        impact: "Reduced water collection time from 4 hours to 15 minutes daily",
+        image: "/images/water-story1.jpg"
+      },
+      {
+        title: "Community Ownership Success",
+        description: "Local water committee successfully maintains borehole for 2+ years",
+        impact: "Zero breakdowns with community-funded maintenance fund",
+        image: "/images/water-story2.jpg"
+      }
+    ],
+
+    fundingNeeds: [
+      { amount: "$50", description: "Provides water purification tablets for 1 family for 6 months" },
+      { amount: "$150", description: "Trains 1 community member in basic water point maintenance" },
+      { amount: "$500", description: "Installs handwashing station at a community water point" },
+      { amount: "$2000", description: "Funds construction materials for a new hand-dug well" }
+    ]
   },
 
   {
@@ -639,50 +1032,178 @@ export const programStats = [
     title: "Agricultural Empowerment Program",
     shortDescription:
       "Equipping farmers with sustainable agriculture skills, tools, and cooperative support to strengthen food security.",
-    location: "Rumbek East",
     status: "Expanding",
     color: "green",
     image: "/images/food3.JPG",
+    duration: "Since 2024",
+    annualBudget: "$180,000",
+    fundingGoal: "$250,000",
+    fundingProgress: 5,
 
     impact: {
       currentLabel: "Farmers Trained",
       currentValue: 200,
       goalLabel: "Target by 2025",
-      goalValue: 5000,
+      goalValue: 500,
       progress: 5,
     },
 
     highlights: [
       { label: "Farmers Trained", value: "200" },
       { label: "Cooperatives Formed", value: "12" },
+      { label: "Acres Cultivated", value: "450" },
     ],
+
+    overview: "We promote climate-smart agriculture through farmer field schools, seed multiplication programs, and cooperative development to build resilient food systems in South Sudan's challenging environment.",
+
+    objectives: [
+      "Train 1,000 farmers in sustainable agriculture by 2025",
+      "Increase crop yields by 150% for participating farmers",
+      "Establish 50 farmer cooperatives with market linkages",
+      "Create 6 community seed banks for climate-resilient varieties",
+      "Reduce post-harvest losses by 60% through improved storage"
+    ],
+
+    approach: [
+      {
+        title: "Farmer Field Schools",
+        description: "Hands-on training in climate-resilient farming techniques",
+        icon: GraduationCap
+      },
+      {
+        title: "Seed Multiplication",
+        description: "Local production of improved, climate-adapted seeds",
+        icon: Leaf
+      },
+      {
+        title: "Cooperative Development",
+        description: "Building farmer groups for collective marketing",
+        icon: Users
+      },
+      {
+        title: "Market Linkages",
+        description: "Connecting farmers to local and regional markets",
+        icon: Store
+      }
+    ],
+
+    stories: [
+      {
+        title: "Samuel's Harvest Miracle",
+        description: "From one bag of maize to surplus for his family and community",
+        impact: "Increased yield from 150kg to 850kg per acre",
+        image: "/images/agri-story1.jpg"
+      },
+      {
+        title: "Women's Cooperative Success",
+        description: "How 15 women transformed vegetable farming into a thriving business",
+        impact: "Increased household income by 300% for member families",
+        image: "/images/agri-story2.jpg"
+      }
+    ],
+
+    fundingNeeds: [
+      { amount: "$30", description: "Provides improved seeds for one farmer for a season" },
+      { amount: "$100", description: "Equips a farmer with basic tools (hoe, machete, watering can)" },
+      { amount: "$400", description: "Funds a farmer field school session for 25 farmers" },
+      { amount: "$1000", description: "Establishes a community seed bank with 10 varieties" }
+    ]
   },
 
-  {
-    id: 3,
-    slug: "healthcare",
-    icon: Heart,
-    title: "Healthcare & Wellness Program",
-    shortDescription:
-      "Delivering essential healthcare through mobile clinics, maternal health services, and community education.",
-    location: "Remote Communities, Rumbek East",
-    status: "Growing",
-    color: "red",
-    image: "/images/health1.jpeg",
-
-    impact: {
-      currentLabel: "Consultations",
-      currentValue: 100,
-      goalLabel: "Target by 2025",
-      goalValue: 1000,
-      progress: 10,
+{
+  id: 3,
+  slug: "healthcare",
+  icon: Heart,
+  title: "Healthcare & Wellness Program",
+  shortDescription: "Aiming to deliver essential healthcare through mobile clinics, maternal health services, and community education.",
+  longDescription: "Our proposed Healthcare & Wellness Program seeks funding to bring essential medical services to remote communities through mobile clinics, maternal and child health centers, and community health worker networks. We plan to focus on preventive care, maternal health, and disease prevention in areas with limited access to medical facilities. This program is designed but requires funding to launch.",
+  location: "Remote Communities, Rumbek East, Yirol",
+  status: "Planning",
+  color: "red",
+  image: "/images/health1.jpeg",
+  duration: "Proposed for 2024",
+  annualBudget: "$220,000",
+  fundingGoal: "$220,000",
+  fundingProgress: 5, 
+  
+  impact: {
+    currentLabel: "Funding Required",
+    currentValue: 11000, 
+    goalLabel: "Target to Launch",
+    goalValue: 220000, 
+    progress: 5,
+  },
+  
+  highlights: [
+    { label: "Target Communities", value: "8" },
+    { label: "Mobile Clinics Planned", value: "2" },
+    { label: "Health Workers to Train", value: "30" },
+    { label: "Lives to Impact", value: "15,000" },
+  ],
+  
+  overview: "This is a proposed program that urgently needs funding to launch. We have conducted needs assessments, developed comprehensive plans, and identified partner communities ready for implementation. Your support will enable us to start saving lives and improving health outcomes in some of South Sudan's most underserved areas.",
+  
+  objectives: [
+    "Provide 10,000 medical consultations in the first year",
+    "Reduce maternal mortality by 30% in target areas within 2 years",
+    "Train 30 community health workers in basic healthcare",
+    "Achieve 70% vaccination coverage for children under 5",
+    "Establish 2 maternal waiting homes near health facilities"
+  ],
+  
+  approach: [
+    {
+      title: "Mobile Health Units",
+      description: "Planning to bring medical services directly to remote villages",
+      icon: Truck
     },
-
-    highlights: [
-      { label: "Consultations", value: "100" },
-      { label: "Health Workers Trained", value: "10" },
-    ],
-  },
+    {
+      title: "Community Health Workers",
+      description: "Ready to train local volunteers in basic healthcare and prevention",
+      icon: Users
+    },
+    {
+      title: "Maternal Health Focus",
+      description: "Designed specialized care for pregnant women and newborns",
+      icon: Baby
+    },
+    {
+      title: "Preventive Health Education",
+      description: "Community workshops planned on prevention and healthy practices",
+      icon: BookOpen
+    }
+  ],
+  
+  stories: [
+    {
+      title: "Why We Need This Program",
+      description: "In remote communities, women walk 10+ miles to reach basic healthcare. Children die from preventable diseases. Our needs assessment shows urgent need for mobile clinics.",
+      impact: "Your funding could prevent 500+ preventable deaths in the first year",
+      image: "/images/health-need.jpg"
+    },
+    {
+      title: "Community Readiness",
+      description: "Local communities have identified clinic sites, committed volunteers, and are ready to partner. They await our arrival with hope.",
+      impact: "8 communities prepared to host mobile clinics once funded",
+      image: "/images/community-ready.jpg"
+    }
+  ],
+  
+  fundingNeeds: [
+    { amount: "$25", description: "Could provide a complete prenatal care kit for one expectant mother" },
+    { amount: "$75", description: "Would fund vaccinations for 10 children once we launch" },
+    { amount: "$300", description: "Could support one mobile clinic outreach day" },
+    { amount: "$800", description: "Would train one community health worker for 6 months" },
+    { amount: "$5000", description: "Could purchase essential medical equipment for one mobile clinic" },
+    { amount: "$25000", description: "Would fund the entire program for one month, saving countless lives" }
+  ],
+  
+  fundingUrgency: "High",
+  timeline: "Can launch within 3 months of full funding",
+  communityCommitment: "8 communities have pledged land, volunteers, and local support",
+  partnerships: "In discussions with Ministry of Health and local hospitals for referrals",
+  sustainabilityPlan: "Gradual transition to community ownership with health insurance schemes"
+},
 
   {
     id: 4,
@@ -691,23 +1212,82 @@ export const programStats = [
     title: "Education & Skills Development",
     shortDescription:
       "Expanding access to literacy, vocational training, and youth development opportunities.",
-    location: "Juba, Wau, Rumbek",
+    location: "Juba, Wau, Rumbek, Bor",
     status: "Active",
     color: "purple",
     image: "/images/education.jpg",
+    duration: "Since 2019",
+    annualBudget: "$250,000",
+    fundingGoal: "$350,000",
+    fundingProgress: 20,
 
     impact: {
-      currentLabel: "Graduates",
-      currentValue: 100,
+      currentLabel: "Students Enrolled",
+      currentValue: 50,
       goalLabel: "Target by 2025",
-      goalValue: 2500,
-      progress: 4,
+      goalValue: 200,
+      progress: 20,
     },
 
     highlights: [
-      { label: "Literacy Graduates", value: "100" },
-      { label: "Youth Trained", value: "100" },
+      { label: "Literacy Graduates", value: "50" },
+      { label: "Youth Trained", value: "50" },
     ],
+
+    overview: "We provide inclusive education through accelerated learning programs, vocational training centers, and community libraries, focusing on marginalized groups including girls, displaced children, and youth affected by conflict.",
+
+    objectives: [
+      "Enroll 200 out-of-school children and youth by 2026",
+      "Achieve 80% literacy rate among program participants",
+      "Train 500 youth in market-relevant vocational skills",
+      "Establish 15 community learning centers",
+      "Support 100 girls' secondary education through scholarships"
+    ],
+
+    approach: [
+      {
+        title: "Accelerated Learning",
+        description: "Condensed curriculum for over-age learners to catch up",
+        icon: Zap
+      },
+      {
+        title: "Vocational Training",
+        description: "Market-aligned skills in construction, tailoring, and agriculture",
+        icon: Wrench
+      },
+      {
+        title: "Girls' Education",
+        description: "Scholarships and safe learning environments for girls",
+        icon: Users
+      },
+      {
+        title: "Community Libraries",
+        description: "Creating spaces for continued learning and digital access",
+        icon: BookOpen
+      }
+    ],
+
+    stories: [
+      {
+        title: "James' Second Chance",
+        description: "From child soldier to skilled carpenter through vocational training",
+        impact: "Now employs 3 other youth in his woodworking workshop",
+        image: "/images/edu-story1.jpg"
+      },
+      {
+        title: "Girls' School Success",
+        description: "How a girls' boarding school transformed community attitudes",
+        impact: "Increased girls' secondary enrollment from 15% to 45%",
+        image: "/images/edu-story2.jpg"
+      }
+    ],
+
+    fundingNeeds: [
+      { amount: "$20", description: "Provides school supplies for one student for a year" },
+      { amount: "$100", description: "Funds one month of vocational training for a youth" },
+      { amount: "$500", description: "Supports a girls' scholarship for one school term" },
+      { amount: "$1500", description: "Equips a vocational training workshop with basic tools" }
+    ]
   },
 
   {
@@ -717,150 +1297,87 @@ export const programStats = [
     title: "Peace & Reconciliation Initiative",
     shortDescription:
       "Supporting dialogue, reconciliation, and local peacebuilding in conflict-affected communities.",
-    location: "Conflict-Affected Areas, Rumbek",
+    location: "Conflict-Affected Areas, Rumbek, Jonglei, Unity State",
     status: "Critical",
     color: "orange",
     image: "/images/peace.jpg",
+    duration: "Since 2020",
+    teamSize: 10,
+    annualBudget: "$150,000",
+    fundingGoal: "$200,000",
+    fundingProgress: 25,
 
     impact: {
       currentLabel: "Communities Engaged",
       currentValue: 20,
       goalLabel: "Target by 2025",
       goalValue: 50,
-      progress: 40,
+      progress: 25,
     },
 
     highlights: [
       { label: "Peace Dialogues", value: "78" },
       { label: "Agreements Reached", value: "15" },
+      { label: "Peace Committees", value: "25" },
+      { label: "Youth Trained", value: "180" },
     ],
+
+    overview: "We employ locally-led approaches to peacebuilding, combining traditional conflict resolution mechanisms with modern mediation techniques to address both immediate conflicts and underlying tensions.",
+
+    objectives: [
+      "Establish peace committees in 50 conflict-prone communities",
+      "Train 300 youth as peace ambassadors in their communities",
+      "Facilitate 100 inter-community dialogues and reconciliation events",
+      "Support women's participation in 80% of peace processes",
+      "Document and promote 20 traditional peace agreements"
+    ],
+
+    approach: [
+      {
+        title: "Traditional Mechanisms",
+        description: "Leveraging local customs and elder wisdom for conflict resolution",
+        icon: Users
+      },
+      {
+        title: "Youth Engagement",
+        description: "Empowering young people as agents of peace and change",
+        icon: Target
+      },
+      {
+        title: "Women's Mediation",
+        description: "Training women leaders in negotiation and mediation skills",
+        icon: Heart
+      },
+      {
+        title: "Trauma Healing",
+        description: "Addressing psychological wounds from prolonged conflict",
+        icon: Shield
+      }
+    ],
+
+    stories: [
+      {
+        title: "Cattle Raid Ceasefire",
+        description: "How traditional leaders brokered peace after decades of violence",
+        impact: "Zero cattle raids for 18 months following peace agreement",
+        image: "/images/peace-story1.jpg"
+      },
+      {
+        title: "Women's Peace Council",
+        description: "Cross-ethnic women's group prevents renewed conflict",
+        impact: "Successfully mediated 12 community conflicts without violence",
+        image: "/images/peace-story2.jpg"
+      }
+    ],
+
+    fundingNeeds: [
+      { amount: "$50", description: "Funds a community peace dialogue for 20 participants" },
+      { amount: "$150", description: "Trains one youth peace ambassador for 3 months" },
+      { amount: "$400", description: "Supports a women's mediation workshop for 15 leaders" },
+      { amount: "$1000", description: "Establishes a peace resource center in a conflict zone" }
+    ]
   },
 ];
-
-
-//blog posts
-export const blogPosts = [
-  {
-    id: 1,
-    title: "Emergency Food Relief Reaches 1,500 Families in Lakes State",
-    excerpt: "CCSO responded swiftly to severe flooding in Rumbek East by distributing food to over 1,500 affected families.",
-    category: "food and hygiene",
-    date: "April 30, 2025",
-    readTime: "5 min read",
-    image: "/images/food8.jpg",
-    featured: true,
-    content: `
-      <p>For generations, the women and children of Rumbek village spent hours each day walking miles to collect water from a distant, often contaminated source. This daily burden not only consumed valuable time but also contributed to widespread waterborne illnesses in the community.</p>
-      
-      <p>Through the generous support of our donors and partners, CCSO was able to implement a comprehensive water project in Rumbek. This initiative involved drilling a deep well, installing a solar-powered pump system, and constructing water distribution points throughout the village.</p>
-      
-      <h3>Community Involvement</h3>
-      <p>From the beginning, community members were actively involved in the project. Local leaders formed a water management committee responsible for overseeing construction, establishing usage guidelines, and collecting small maintenance fees to ensure sustainability.</p>
-      
-      <p>Community members contributed labor for construction, digging trenches for pipelines and helping build the water points. This participation created a sense of ownership and pride in the project.</p>
-      
-      <h3>Immediate Impact</h3>
-      <p>The impact of reliable water access was immediately apparent. Women and children no longer spent hours collecting water, allowing more time for education, income-generating activities, and family care. Waterborne diseases decreased dramatically, reducing medical expenses and improving overall health.</p>
-      
-      <p>The local school reported increased attendance, particularly among girls who previously missed classes due to water collection duties.</p>
-      
-      <h3>Long-Term Sustainability</h3>
-      <p>To ensure long-term success, CCSO provided technical training to community members for basic maintenance and repairs. The water management committee established a transparent financial system for collecting and managing maintenance funds.</p>
-      
-      <p>Regular monitoring visits by CCSO staff help identify and address any challenges before they become major issues.</p>
-      
-      <h3>Looking Forward</h3>
-      <p>The Rumbek water project serves as a model for our work in other communities. The combination of appropriate technology, community involvement, and sustainable management practices has created a lasting solution to a critical need.</p>
-      
-      <p>We are grateful to all who supported this project and continue to partner with us in bringing clean water to vulnerable communities across South Sudan.</p>
-    `
-  },
-  {
-    id: 2,
-    title: "Peace Program Engages Over 5,000 for Reconciliation",
-    excerpt: "Our Peace and Reconciliation initiative has successfully brought together over 5,000 individuals for dialogue and healing.",
-    category: "peace",
-    date: "April 20, 2025",
-    readTime: "4 min read",
-    image: "/images/peace-project.jpg",
-    content: `
-      <p>CCSO’s Peace and Reconciliation Program has fostered dialogue across divided communities by hosting forums, workshops, and community gatherings aimed at restoring trust and harmony.</p>
-      <p>Participants shared personal stories of conflict, loss, and hope, creating an environment of mutual understanding and healing. Through traditional dispute resolution methods and modern peacebuilding strategies, we helped rebuild fractured relationships.</p>
-      <p>The engagement of youth, women, and elders was crucial to this success, ensuring inclusivity and long-lasting peace outcomes.</p>
-    `
-  },
-  {
-    id: 3,
-    title: "Education Support Empowers Over 200 South Sudanese Students",
-    excerpt: "From tuition to learning kits, our sponsorship program has helped hundreds of vulnerable students pursue their dreams.",
-    category: "education",
-    date: "March 30, 2025",
-    readTime: "6 min read",
-    image: "https://brokenchalk.org/wp-content/uploads/2023/06/South-Sudan_Oxfam-Girl-Education-Project.jpg",
-    content: `
-      <p>Access to education is life-changing. CCSO provided school fees, uniforms, and essential learning materials to over 200 students, many of whom had dropped out due to poverty.</p>
-      <p>We collaborated with local schools to monitor academic progress and address barriers to learning, such as child labor and early marriage. Girls received additional mentorship and menstrual hygiene kits.</p>
-      <p>Parents expressed renewed hope for their children's future as school attendance improved and dropout rates declined.</p>
-    `
-  },
-  {
-    id: 4,
-    title: "Church Built in Mathiang Becomes Community Hub",
-    excerpt: "More than 300 residents now have a spiritual home and space for youth gatherings, Sunday school, and community events.",
-    category: "evangelism",
-    date: "March 15, 2025",
-    readTime: "4 min read",
-    image: "/images/school-project.jpg",
-    content: `
-      <p>CCSO supported the construction of a church in Mathiang village, which now serves as a multipurpose center for worship, youth engagement, and community meetings.</p>
-      <p>Residents volunteered time and materials for construction, while church leaders developed a schedule for weekly services and community outreach events.</p>
-      <p>This project has strengthened spiritual life and social bonds within the village, creating a safe space for dialogue, learning, and growth.</p>
-    `
-  },
-  {
-    id: 5,
-    title: "Communities Face Urgent Flood and Food Crises",
-    excerpt: "Ongoing floods and food shortages have devastated several regions. We're working to deliver emergency aid—but we need your help.",
-    category: "emergency",
-    date: "March 1, 2025",
-    readTime: "5 min read",
-    image: "/images/floods3.jpg",
-    content: `
-      <p>Severe flooding in multiple counties has displaced families, destroyed farmland, and disrupted food supply chains. CCSO’s rapid response teams are on the ground delivering life-saving assistance.</p>
-      <p>Food packs, clean water, and shelter materials are being distributed to the most affected areas. We're also assessing long-term recovery needs including crop rehabilitation and water infrastructure repairs.</p>
-      <p>Your support is critical in reaching more families and preventing further suffering during this crisis.</p>
-    `
-  },
-  {
-    id: 6,
-    title: "Education Crisis: Help Us Get More Kids in School",
-    excerpt: "Thousands of displaced or impoverished children remain out of school. Join our mission to change that.",
-    category: "education",
-    date: "February 20, 2025",
-    readTime: "4 min read",
-    image: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg",
-    content: `
-      <p>Barriers to education such as displacement, poverty, and gender inequality have left thousands of South Sudanese children without access to learning.</p>
-      <p>CCSO is working with local communities to identify out-of-school children and provide them with scholarships, school materials, and psychosocial support.</p>
-      <p>Your donations help us expand our reach and ensure every child has the opportunity to learn and thrive.</p>
-    `
-  },
-  {
-    id: 7,
-    title: "Sowing Seeds of Hope: Supporting Local Farmers",
-    excerpt: "CCSO is helping families bounce back from food insecurity with sustainable agriculture and seed distributions.",
-    category: "agriculture",
-    date: "January 25, 2025",
-    readTime: "3 min read",
-    image: "https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    content: `
-      <p>With funding from our partners, CCSO has launched a program to support smallholder farmers with drought-resistant seeds, tools, and training in sustainable farming practices.</p>
-      <p>Farmers have already begun harvesting improved yields, boosting food security and income in their communities.</p>
-      <p>We believe that investing in agriculture is key to building resilience and ensuring long-term development in South Sudan.</p>
-    `
-  }
-];
-
 
 // current issues
 export const currentIssues = [
@@ -900,47 +1417,3 @@ export const currentIssues = [
 ];
 
 
-export const testimonials = [
-  {
-    quote: "CCSO's work has transformed communities. Their dedication to sustainable development is inspiring.",
-    author: "Jane Smith",
-    role: "Corporate Partner",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-  },
-  {
-    quote: "Being a volunteer with CCSO has been life-changing. The impact we make is real and measurable.",
-    author: "John Davis",
-    role: "Volunteer",
-    image: "https://randomuser.me/api/portraits/men/3.jpg"
-  },
-  {
-    quote: "Their transparent approach and effective use of resources made us confident in our partnership.",
-    author: "Sarah Johnson",
-    role: "Foundation Director",
-    image: "https://randomuser.me/api/portraits/women/6.jpg"
-  }
-];
-
-export const testimonialsData = [
-  {
-    name: 'Mary Akuol',
-    role: 'Community Leader, Rumbek',
-    content: 'CCSO brought us clean water for the first time in decades. Our children no longer walk hours to fetch water, and they can now attend school regularly. This has transformed our entire community.',
-    avatar: 'https://images.pexels.com/photos/8090034/pexels-photo-8090034.jpeg?auto=compress&cs=tinysrgb&w=150',
-    rating: 5,
-  },
-  {
-    name: 'Joseph Marial',
-    role: 'Pacong',
-    content: 'The agricultural training I received from CCSO has doubled my harvest. I can now feed my family and sell surplus crops at the market. Their approach respects our traditional knowledge while teaching new techniques.',
-    avatar: 'https://images.pexels.com/photos/8090032/pexels-photo-8090032.jpeg?auto=compress&cs=tinysrgb&w=150',
-    rating: 5,
-  },
-  {
-    name: 'Sarah Aweng',
-    role: 'Mother of 4, Yirol',
-    content: 'The health education program saved my youngest child\'s life. CCSO taught us about nutrition and disease prevention. Their mobile clinic provides care when we need it most, with dignity and respect.',
-    avatar: 'https://images.pexels.com/photos/8090037/pexels-photo-8090037.jpeg?auto=compress&cs=tinysrgb&w=150',
-    rating: 5,
-  },
-];

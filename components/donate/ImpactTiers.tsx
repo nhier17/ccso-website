@@ -56,8 +56,6 @@ export default function ImpactTiers() {
 
     return (
         <div>
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-2">Your Impact at Every Level</h2>
-                    <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {tiers.map((tier, index) => {
             const colors = getColorClasses(tier.color);

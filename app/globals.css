@@ -167,6 +167,9 @@
   body {
     @apply bg-background text-foreground font-bebas-neue;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 
@@ -230,6 +233,40 @@
     -webkit-mask-image: url('/icons/lakes.svg');
     mask-image: url('/icons/lakes.svg');
   }
+
+  /* mdx*/
+.prose-lg h2 {
+  @apply text-3xl font-bold text-gray-900 mt-12 mb-6 pb-3 border-b border-gray-200;
+}
+
+.prose-lg h3 {
+  @apply text-2xl font-bold text-gray-800 mt-10 mb-4;
+}
+
+.prose-lg p {
+  @apply text-gray-700 leading-relaxed mb-6;
+}
+
+.prose-lg ul {
+  @apply space-y-3 mb-8;
+}
+
+.prose-lg li {
+  @apply text-gray-700 leading-relaxed pl-2;
+}
+
+.prose-lg strong {
+  @apply font-bold text-gray-900;
+}
+
+/* Custom container for MDX sections */
+.mdx-container > *:not(:last-child) {
+  @apply mb-8;
+}
+
+.mdx-container > h2:first-child {
+  @apply mt-0;
+}
 }
 
 

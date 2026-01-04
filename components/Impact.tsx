@@ -6,11 +6,12 @@ import type { Options } from "@splidejs/react-splide";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Button } from "@/components/ui/button";
-import { completedProjects, impactStories } from "@/constants";
+import { completedProjects } from "@/constants";
 import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MapPin, Users, Heart, HeartHandshake } from "lucide-react";
+import { MapPin, Users, Heart, HeartHandshake, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "./ui/badge";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -130,10 +131,6 @@ export const Impact = () => {
         <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Impact So Far</h2>
         <div className="mx-auto mb-6 h-1 w-20 rounded bg-primary"></div>
-        <p className="mb-12 text-lg text-muted-foreground">
-        Every initiative we lead is rooted in community partnership and focused on restoring
-        lives, dignity, and resilience in conflict-affected communities across South Sudan.
-        </p>
       </div>
         </div>
 
@@ -155,35 +152,72 @@ export const Impact = () => {
             </div>
           ))}
         </div>
-        <h3 className="text-2xl font-semibold mb-4 text-center">
-          Stories From the Communities We Serve
-        </h3>
-        <div ref={sliderRef} className="shadow-2xl rounded-2xl overflow-hidden bg-white">
-          <Splide options={splideOptions}>
-            {completedProjects.map((story, index) => (
-              <SplideSlide key={index}>
-                <div className="relative h-[420px] flex items-center justify-center">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center w-full h-full"
-                    style={{ backgroundImage: `url(${story.imageSrc[0]})` }}
-                  >
-                    <div className="absolute inset-0 bg-linear-to-r from-black/70 to-black/40"></div>
-                  </div>
+  
+        <div className="mb-20">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Stories From the Communities We Serve</h3>
+              <p className="text-gray-600">Real lives transformed through sustainable development</p>
+            </div>
+          </div>
 
-                  <div className="relative z-10 max-w-2xl p-8 text-left">
-                    <h3 className="text-3xl font-bold mb-4 text-white">{story.title}</h3>
-                    <p className="text-lg mb-6 text-white/90">{story.description}</p>
-                    <Link 
-                     href={`/programs/details/${story.id}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:underline"
+          <div ref={sliderRef} className="rounded-3xl overflow-hidden shadow-2xl border-0">
+            <Splide 
+              options={splideOptions} 
+            >
+              {completedProjects.map((story, index) => (
+                <SplideSlide key={index}>
+                  <div className="relative h-[500px]">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                      style={{ backgroundImage: `url(${story.imageSrc[0]})` }}
                     >
-                      Read Full Story
-                    </Link>
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+                    </div>
+
+                    <div className="relative z-10 h-full flex items-center">
+                      <div className="max-w-3xl p-8 md:p-12">
+                        <Badge className="mb-4 px-3 py-1 bg-white/20 backdrop-blur-sm text-white border-0">
+                          <Star className="h-3 w-3 mr-1" />
+                          Success Story
+                        </Badge>
+                        
+                        <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                          {story.title}
+                        </h3>
+                        
+                        <p className="text-lg mb-8 text-white/90 max-w-2xl leading-relaxed">
+                          {story.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-4">
+                          <Button
+                            asChild
+                            className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all group"
+                          >
+                            <Link 
+                           href={`/programs/details/${story.id}`}
+                              className="flex items-center gap-2"
+                            >
+                              Read Full Story
+                              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-6 left-8 right-8">
+                      <div className="flex items-center justify-between text-white/80 text-sm">
+                        <span>Story {index + 1} of {completedProjects.length}</span>
+                        <span>Read time: 3 min</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </SplideSlide>
-            ))}
-          </Splide>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
         </div>
 
         <div className="text-center mt-12">

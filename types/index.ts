@@ -25,3 +25,32 @@ export type Program = {
     partnershipDetails: string;
     additionalInfo?: string;
   }
+
+  export interface StoryFrontmatter {
+  title: string
+  slug: string
+  excerpt: string
+
+  category: 
+    | "Emergency"
+    | "Education"
+    | "Health"
+    | "Peace"
+    | "Agriculture"
+    | "Evangelism"
+
+  program: string
+  location: string
+
+  date: string
+  readTime?: string
+  coverImage: string
+
+  impact?: {
+    beneficiaries?: number
+    duration?: string
+    outputs?: string[]
+  }
+
+  status?: "update" | "report" | "story"
+}
