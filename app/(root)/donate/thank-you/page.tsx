@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { 
   CheckCircle, 
   Mail, 
@@ -14,7 +14,6 @@ import {
   Trophy,
   Gift,
   Calendar,
-  TrendingUp,
   Zap,
   Star,
   Award,
@@ -95,6 +94,7 @@ export default function ThankYouPage() {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="min-h-screen py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="text-center mb-16">
           <div className="relative inline-block mb-8">
@@ -354,5 +354,6 @@ export default function ThankYouPage() {
           </div>
         </div>
     </div>
+    </Suspense>
   );
 }
