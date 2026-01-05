@@ -1416,4 +1416,152 @@ export const currentIssues = [
   },
 ];
 
-
+//stories
+export const stories: Story[] = [
+  {
+    slug: "church-built-mathiang",
+    title: "Church Built in Mathiang Becomes Community Hub",
+    excerpt: "More than 300 residents now have a spiritual home and space for youth gatherings, Sunday school, and community events.",
+    category: "Evangelism",
+    program: "Church Development",
+    location: "Mathiang Village",
+    date: "2025-03-15",
+    readTime: "4 min read",
+    coverImage: "/images/school-project.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 300,
+      duration: "6 months",
+      outputs: [
+        "Church building constructed and furnished",
+        "Weekly worship services established",
+        "Youth and community meetings hosted"
+      ]
+    }
+  },
+  {
+    slug: "education-crisis",
+    title: "Education Crisis: Help Us Get More Kids in School",
+    excerpt: "Thousands of displaced or impoverished children remain out of school due to conflict, poverty, and displacement.",
+    category: "Education",
+    program: "Education Support",
+    location: "South Sudan",
+    date: "2025-02-20",
+    readTime: "4 min read",
+    coverImage: "https://brokenchalk.org/wp-content/uploads/2023/08/South-Sudan_Windle-Trust.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 1200,
+      duration: "1 academic year",
+      outputs: [
+        "School fees and learning materials provided",
+        "Psychosocial support sessions conducted",
+        "Community outreach to identify out-of-school children"
+      ]
+    }
+  },
+  {
+    slug: "education-support-vulnerable-students",
+    title: "Education Support Program Empowers Vulnerable Students",
+    excerpt: "Through scholarships, learning materials, and mentorship, CCSO supported vulnerable children to remain in school and pursue their education.",
+    category: "Education",
+    program: "Education Support",
+    location: "Multiple Counties, South Sudan",
+    date: "2025-03-30",
+    readTime: "6 min read",
+    coverImage: "https://brokenchalk.org/wp-content/uploads/2023/06/South-Sudan_Oxfam-Girl-Education-Project.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 200,
+      duration: "Academic year",
+      outputs: [
+        "School fees and uniforms provided",
+        "Learning kits distributed",
+        "Mentorship and psychosocial support"
+      ]
+    }
+  },
+  {
+    slug: "emergency-food-relief-lakes-state",
+    title: "Emergency Food Relief Reaches 1,500 Families in Lakes State",
+    excerpt: "CCSO responded swiftly to severe flooding in Rumbek East by distributing emergency food supplies to vulnerable households.",
+    category: "Emergency",
+    program: "Emergency Response",
+    location: "Rumbek East County, Lakes State",
+    date: "2025-04-30",
+    readTime: "5 min read",
+    coverImage: "/images/food8.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 1500,
+      duration: "3 months",
+      outputs: [
+        "Food parcels distributed to flood-affected households",
+        "Emergency coordination with local leaders"
+      ]
+    }
+  },
+  {
+    slug: "flood-food-crisis",
+    title: "Communities Face Urgent Flood and Food Crises",
+    excerpt: "Ongoing floods and food shortages have devastated several regions, displacing families and disrupting livelihoods.",
+    category: "Emergency",
+    program: "Emergency Response",
+    location: "Multiple Counties",
+    date: "2025-03-01",
+    readTime: "5 min read",
+    coverImage: "/images/floods3.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 2200,
+      duration: "3 months",
+      outputs: [
+        "Emergency food distributions conducted",
+        "Clean water provided to flood-affected households",
+        "Shelter materials distributed"
+      ]
+    }
+  },
+  {
+    slug: "peace-training-youth-community-leaders",
+    title: "Peace Training Program Engages Youth and Community Leaders",
+    excerpt: "CCSO brought together youth and local leaders for peacebuilding and reconciliation training aimed at reducing conflict and fostering social cohesion.",
+    category: "Peace",
+    program: "Peace & Reconciliation",
+    location: "Rumbek Town, Western Lakes State",
+    date: "2025-04-20",
+    readTime: "4 min read",
+    coverImage: "/images/peace-project.jpg",
+    status: "report",
+    impact: {
+      beneficiaries: 5000,
+      duration: "2 months",
+      outputs: [
+        "Peacebuilding workshops for youth and elders",
+        "Dialogue forums between conflicting groups",
+        "Training on non-violent conflict resolution"
+      ]
+    }
+  },
+  {
+    slug: "supporting-local-farmers",
+    title: "Sowing Seeds of Hope: Supporting Local Farmers",
+    excerpt: "CCSO is helping families recover from food insecurity through sustainable agriculture and seed distribution.",
+    category: "Agriculture",
+    program: "Food Security & Livelihoods",
+    location: "Rural Communities",
+    date: "2025-01-25",
+    readTime: "3 min read",
+    coverImage: "https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg",
+    status: "report",
+    impact: {
+      beneficiaries: 800,
+      duration: "4 months",
+      outputs: [
+        "Drought-resistant seeds distributed",
+        "Farming tools provided",
+        "Training on sustainable agriculture conducted"
+      ]
+    }
+  }
+];

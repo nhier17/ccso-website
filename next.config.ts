@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
-import { withContentlayer } from 'next-contentlayer'
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -14,7 +17,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  turbopack: {},
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
-export default withContentlayer(nextConfig)
+export default withMDX(nextConfig);

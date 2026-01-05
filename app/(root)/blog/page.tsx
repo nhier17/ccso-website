@@ -1,4 +1,4 @@
-import { allStories } from "contentlayer/generated";
+import { stories } from "@/constants";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -27,23 +27,19 @@ const categories = [
   { value: "Evangelism", label: "Evangelism" },
 ]
 
-export default async function BlogPage({ 
-  searchParams 
-}: { 
-  searchParams: { category?: string; q?: string } 
-}) {
-  const params = await searchParams;
-  const selectedCategory = params.category ?? "all";
-  const searchQuery = params.q?.toLowerCase() ?? "";
+export default async function BlogPage() {
+  const selectedCategory = "all";
+  const searchQuery = "";
+
 
   // Calculate category counts
   const categoryCounts = categories.map(cat => {
-    if (cat.value === "all") return { ...cat, count: allStories.length };
-    const count = allStories.filter(story => story.category === cat.value).length;
+    if (cat.value === "all") return { ...cat, count: stories.length };
+    const count = stories.filter(story => story.category === cat.value).length;
     return { ...cat, count };
   });
 
-  const stories = allStories
+  const storyList = stories
     .filter(story => selectedCategory === "all" || story.category === selectedCategory)
     .filter(story =>
       story.title.toLowerCase().includes(searchQuery) ||
@@ -51,7 +47,7 @@ export default async function BlogPage({
       story.location?.toLowerCase().includes(searchQuery)
     );
 
-  const featuredStory = allStories.find(story => story.featured) || allStories[3];
+  const featuredStory = storyList[1];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">

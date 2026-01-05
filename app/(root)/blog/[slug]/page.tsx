@@ -1,21 +1,22 @@
-"use client";
-
-import { useParams, notFound } from "next/navigation";
 import Image from "next/image";
-import { allStories } from "contentlayer/generated";
-import { Mdx } from "@/components/Mdx";
+import { stories } from "@/constants";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Calendar, Clock, MapPin, Users, Target } from "lucide-react";
+import { notFound } from "next/navigation";
 
-const StoryDetailsPage = () => {
-  const params = useParams();
-  const slug = params.slug as string;
+interface StoryDetailsPageProps {
+  params: Promise<{ slug: string }>;
+}
 
-  const story = allStories.find((p) => p.slug === slug);
-  if (!story) notFound();
+const StoryDetailsPage = async ({ params }: StoryDetailsPageProps) => {
+  const { slug } = await params;
+  
+  const story = stories.find(story => story.slug === slug);
+
+  if (!story) {
+    notFound(); 
+  }
 
   return (
     <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -28,6 +29,7 @@ const StoryDetailsPage = () => {
               fill
               priority
               className="object-cover"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           </div>
@@ -119,14 +121,6 @@ const StoryDetailsPage = () => {
                 </CardContent>
               </Card>
             )}
-          </div>
-        </div>
-      </div>
-
-      <div className="section-padding">
-        <div className="prose prose-lg md:prose-xl max-w-none">
-          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 border border-gray-100">
-            <Mdx code={story.body.code} />
           </div>
         </div>
       </div>
