@@ -7,20 +7,17 @@ import { Button } from "@/components/ui/button";
 import { 
   HeartHandshake, 
   Clock, 
-  Award, 
   Shield,
   Target,
   Users,
   Globe,
   HandHeart,
-  Scale,
-  Brain,
   BookOpen,
   TrendingUp,
-  Sparkles,
   ArrowRight,
-  MapPin,
-  ChevronRight
+  CheckCircle,
+  Handshake,
+  Scale,
 } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -213,6 +210,55 @@ const About = () => {
           </div>
       </section>
 
+      <section ref={addToRefs} className="section-padding px-4 bg-white">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <Badge className="mb-4 px-4 py-2 bg-green-100 text-green-800 border-0">
+              <Scale className="h-4 w-4 mr-2" />
+              Legal Standing
+            </Badge>
+            <h2 className="mb-6 text-3xl md:text-4xl font-bold text-gray-900">
+              Officially Registered Organization
+            </h2>
+            <div className="space-y-4">
+              <div className="p-4 rounded-xl border border-green-200 bg-green-50">
+                <h4 className="font-semibold text-green-800 mb-2">Registration Details</h4>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="font-medium min-w-40">Registration Number:</span>
+                    <span className="text-gray-700">2207</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-medium min-w-40">Registered With:</span>
+                    <span className="text-gray-700">Relief & Rehabilitation Commission (RRC), South Sudan</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-medium min-w-40">Date Registered:</span>
+                    <span className="text-gray-700">2019-04-04</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-medium min-w-40">Legal Status:</span>
+                    <span className="text-gray-700">Non-Governmental Organization (NGO)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg">
+            <Shield className="h-12 w-12 text-green-600 mb-4" />
+            <h3 className="text-xl font-bold mb-4">Compliance & Governance</h3>
+            <p className="text-gray-600 mb-4">
+              CCSO maintains full compliance with all regulatory requirements in South Sudan and adheres to international NGO standards.
+            </p>
+            <Button variant="outline" className="border-green-600 text-green-600">
+              <Link href="/documents">
+                View Registration Certificate
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section ref={addToRefs} className="section-padding px-4 bg-gradient-to-b from-gray-50 to-white">
           <div className="text-center mb-16">
             <Badge className="mb-4 px-4 py-2 bg-primary/10 text-primary border-0">
@@ -282,7 +328,7 @@ const About = () => {
             <div className="h-1 w-20 bg-primary rounded mx-auto mb-4" />
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-4">
             {leaders.map((member, index) => (
               <div key={index} className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -295,13 +341,13 @@ const About = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </div>
-                <CardContent className="p-8 relative">
+                <div className="p-8 relative">
                   <h3 className="mb-2 text-2xl font-bold text-gray-900">{member.name}</h3>
                   <Badge className="mb-4 px-3 py-1 bg-primary/10 text-primary border-0">
                     {member.role}
                   </Badge>
                   <p className="text-gray-600 leading-relaxed">{member.bio}</p>
-                </CardContent>
+                </div>
               </div>
             ))}
           </div>

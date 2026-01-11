@@ -21,7 +21,8 @@ import {
   Sparkles,
   HeartHandshake,
   BookOpen,
-  Globe
+  Globe,
+  LucideIcon
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,19 +116,23 @@ const Programs = () => {
   const programSummary = [
     { value: programStats.length, label: "Active Programs", icon: Target, color: "text-primary" },
     { 
-      value: programStats.reduce((sum, p) => sum + p.impact.currentValue, 0).toLocaleString(), 
-      label: "Lives Impacted", 
+      value: programStats.reduce((sum, p) => sum + (p.targetBeneficiaries?.estimatedNumber || 0), 0).toLocaleString(), 
+      label: "Target Beneficiaries", 
       icon: Users, 
       color: "text-blue-600" 
     },
     { 
-      value: Math.round(programStats.reduce((sum, p) => sum + p.impact.progress, 0) / programStats.length), 
-      label: "Average Progress", 
+      value: Math.round(programStats.reduce((sum, p) => {
+        const funded = parseInt(p.budgetSummary?.annualBudget?.replace(/[$,]/g, '') || '0');
+        const goal = parseInt(p.budgetSummary?.fundingGoal?.replace(/[$,]/g, '') || '0');
+        return sum + (goal > 0 ? (funded / goal) * 100 : 0);
+      }, 0) / programStats.length), 
+      label: "Avg Funding", 
       icon: TrendingUp, 
       color: "text-green-600" 
     },
     { 
-      value: new Set(programStats.map(p => p.location)).size, 
+      value: new Set(programStats.map(p => p.summary?.location?.join(', '))).size, 
       label: "Regions Covered", 
       icon: Globe, 
       color: "text-purple-600" 
@@ -135,7 +140,7 @@ const Programs = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-screen overflow-hidden font-bebas-neue">
       <section className="relative section-padding overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-blue-500/10" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-48 translate-x-48 blur-3xl" />
@@ -157,6 +162,7 @@ const Programs = () => {
       </section>
 
       <section className="py-12 px-4 bg-gradient-to-r from-primary/5 via-white to-blue-500/5">
+        <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {programSummary.map((stat, index) => (
               <div 
@@ -168,12 +174,13 @@ const Programs = () => {
                   <stat.icon className={`h-8 w-8 ${stat.color}`} />
                 </div>
                 <div className={`text-4xl font-bold mb-2 ${stat.color}`}>
-                  {typeof stat.value === 'number' && stat.value > 1000 ? `${stat.value}+` : stat.value}
+                  {typeof stat.value === 'number' ? `${stat.value}${stat.label === 'Avg Funding' ? '%' : ''}` : stat.value}
                 </div>
                 <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
+        </div>
       </section>
 
       <section id="programs-slug" ref={addToRefs} className="section-padding px-4 bg-gradient-to-b from-gray-50 to-white">
@@ -189,12 +196,18 @@ const Programs = () => {
           </div>
 
           <div className="space-y-24">
-            {programStats.map((project, index) => {
-              const colors = getColorClasses(project.color);
+            {programStats.map((program, index) => {
+              const colors = getColorClasses(program.color);
+              const IconComponent = program.icon as LucideIcon;
+              const estimatedBeneficiaries = program.targetBeneficiaries?.estimatedNumber || 0;
+              const fundingGap = parseInt(program.budgetSummary?.fundingGap?.replace(/[$,]/g, '') || '0');
+              const fundingGoal = parseInt(program.budgetSummary?.fundingGoal?.replace(/[$,]/g, '') || '0');
+              const fundingProgress = fundingGoal > 0 ? Math.round(((fundingGoal - fundingGap) / fundingGoal) * 100) : 0;
+              
               return (
                 <div 
-                  key={project.id} 
-                  id={project.slug}
+                  key={program.id} 
+                  id={program.slug}
                   ref={addToCardRefs}
                   className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-gray-50 shadow-xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-2 ${
                     index % 2 === 1 ? 'lg:flex-row-reverse' : ''
@@ -208,8 +221,8 @@ const Programs = () => {
                     <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       <div className="relative w-full h-full min-h-[400px]">
                         <Image
-                          src={project.image}
-                          alt={project.title}
+                          src={program.image}
+                          alt={program.summary?.title}
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-700"
                           sizes="(max-width: 1024px) 100vw, 50vw"
@@ -217,13 +230,13 @@ const Programs = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                         <div className="absolute top-6 left-6">
                           <Badge className={`px-4 py-2 ${colors.badge} backdrop-blur-sm border-0`}>
-                            {project.status}
+                            {program.status}
                           </Badge>
                         </div>
                         <div className="absolute bottom-6 left-6 right-6">
                           <div className="flex items-center text-white">
                             <MapPin className="h-5 w-5 mr-2" />
-                            <span className="text-lg font-medium">{project.location}</span>
+                            <span className="text-lg font-medium">{program.summary?.location?.join(' ')}</span>
                           </div>
                         </div>
                       </div>
@@ -232,58 +245,78 @@ const Programs = () => {
                     <div className={`p-8 md:p-12 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                       <div className="flex items-center gap-3 mb-6">
                         <div className={`p-3 rounded-xl ${colors.bg}`}>
-                          <project.icon className={`h-8 w-8 ${colors.text}`} />
+                          <IconComponent className={`h-8 w-8 ${colors.text}`} />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                            {project.title}
+                            {program.summary?.title}
                           </h3>
                           <div className="flex items-center gap-2 text-sm text-gray-500">
                             <Calendar className="h-4 w-4" />
-                            <span>Active Program</span>
+                            <span>{program.summary?.duration}</span>
                           </div>
                         </div>
                       </div>
 
-                      <p className="mb-8 text-gray-600 leading-relaxed text-lg maw-w-2xl">
-                        {project.shortDescription}
+                      <p className="mb-8 text-gray-600 leading-relaxed text-lg">
+                        {program.summary?.shortDescription}
                       </p>
 
                       <div className="mb-8">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium text-gray-700">{project.impact.currentLabel}</span>
+                          <span className="font-medium text-gray-700">
+                            Funding Progress ({program.status})
+                          </span>
                           <span className={`font-bold ${colors.text}`}>
-                            {project.impact.currentValue.toLocaleString()} / {project.impact.goalValue.toLocaleString()}
+                            ${(fundingGoal - fundingGap).toLocaleString()} / ${fundingGoal.toLocaleString()}
                           </span>
                         </div>
                         <Progress 
-                          value={project.impact.progress} 
+                          value={fundingProgress} 
                           className="h-3 rounded-full bg-gray-200 [&>div]:bg-gradient-to-r [&>div]:from-primary [&>div]:to-blue-500"
                         />
                         <div className="mt-2 text-right text-sm text-gray-500">
-                          {project.impact.progress}% Complete
+                          {fundingProgress}% {program.status}
                         </div>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4 mb-8">
-                        {project.highlights.map((item, i) => (
+                        <div className="p-4 rounded-xl bg-white shadow-sm border border-gray-100">
+                          <div className={`text-2xl font-bold mb-1 ${colors.text}`}>
+                            {estimatedBeneficiaries.toLocaleString()}
+                          </div>
+                          <div className="text-xs font-medium text-gray-600">
+                            Target Beneficiaries
+                          </div>
+                        </div>
+                        
+                        <div className="p-4 rounded-xl bg-white shadow-sm border border-gray-100">
+                          <div className={`text-2xl font-bold mb-1 ${colors.text}`}>
+                            {program.budgetSummary?.annualBudget || 'N/A'}
+                          </div>
+                          <div className="text-xs font-medium text-gray-600">
+                            Annual Budget
+                          </div>
+                        </div>
+
+                        {program.indicators?.slice(0, 2).map((indicator, i) => (
                           <div key={i} className="p-4 rounded-xl bg-white shadow-sm border border-gray-100">
                             <div className={`text-2xl font-bold mb-1 ${colors.text}`}>
-                              {item.value}
+                              {indicator.target}
                             </div>
-                            <div className="text-xs font-medium text-gray-600">
-                              {item.label}
+                            <div className="text-xs font-medium text-gray-600 truncate">
+                              {indicator.indicator}
                             </div>
                           </div>
                         ))}
                       </div>
 
-                 <Button asChild className="w-full bg-primary text-white">
-                      <Link href={`/programs/${project.slug}`}>
-                        View Program
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                      <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
+                        <Link href={`/programs/${program.slug}`}>
+                          View Program Details
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -293,6 +326,7 @@ const Programs = () => {
       </section>
 
       <section ref={addToRefs} className="section-padding px-4">
+        <div className="mx-auto max-w-6xl">
           <div className="rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-blue-600 overflow-hidden shadow-2xl">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-12 md:p-16">
@@ -335,20 +369,31 @@ const Programs = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/20 to-transparent" />
               
                 <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-primary mb-1">95%</div>
-                      <div className="text-xs text-gray-600">Program Efficiency</div>
+                      <div className="text-2xl font-bold text-primary mb-1">
+                        {programStats.filter(p => p.status === 'Active' || p.status === 'Expanding').length}
+                      </div>
+                      <div className="text-xs text-gray-600">Active Programs</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">10k+</div>
-                      <div className="text-xs text-gray-600">Annual Impact</div>
+                      <div className="text-2xl font-bold text-blue-600 mb-1">
+                        {programStats.reduce((sum, p) => sum + (p.targetBeneficiaries?.estimatedNumber || 0), 0).toLocaleString()}+
+                      </div>
+                      <div className="text-xs text-gray-600">Lives to Impact</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-green-600 mb-1">
+                        ${programStats.reduce((sum, p) => sum + parseInt(p.budgetSummary?.fundingGoal?.replace(/[$,]/g, '') || '0'), 0).toLocaleString()}
+                      </div>
+                      <div className="text-xs text-gray-600">Total Funding Goal</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </section>
     </div>
   );

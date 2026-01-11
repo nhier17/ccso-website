@@ -938,444 +938,460 @@ export const successTestimonials = [
     img: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
+
 //program stats
 export const programStats = [
   {
     id: 1,
     slug: "clean-water",
+    sector: "Water",
+    status: "Proposed",
     icon: Droplets,
-    title: "Clean Water Access Initiative",
-    shortDescription:
-      "Building sustainable water points and training communities to ensure long-term access to clean, safe drinking water.",
-    location: "Rumbek East, Rumbek Center",
-    status: "Active",
     color: "blue",
     image: "/images/water.png",
-    duration: "Since 2024",
-    annualBudget: "$120,000",
-    fundingGoal: "$200,000",
-    fundingProgress: 60,
 
-    impact: {
-      currentLabel: "People Served",
-      currentValue: 2,
-      goalLabel: "Target by 2026",
-      goalValue: 10,
-      progress: 5,
+    summary: {
+      title: "Borehole Drilling & Water Pans Construction",
+      shortDescription:
+        "Constructing water pans and drilling boreholes to provide sustainable water access for households and livestock in underserved communities.",
+      overview:
+        "This 3-month initiative focuses on drilling boreholes and constructing water pans in Cuecok, Pacong, Malengagok, and Mathiang payams of Western and Eastern Bahr Naam State to address chronic water shortages affecting both human consumption and livestock needs.",
+      location: [
+        "Cuecock",
+        "Pacong",
+        "Malengagok",
+        "Mathiang"
+      ],
+      duration: "3 months",
     },
 
-    highlights: [
-      { label: "Water Points Built", value: "2" },
-      { label: "Communities Served", value: "2" },
-    ],
+    problemStatement:
+      "Residents of Western and Eastern Bahr Naam State face severe water shortages, forcing women and girls to walk 6 hours daily to fetch water from contaminated sources, while male youths miss school to search for water and pasture for livestock. Communities rely on contaminated shallow ponds and rivers, leading to high rates of waterborne diseases and disrupted education for children.",
 
-    overview: "Our Clean Water Initiative focuses on providing sustainable water solutions through community-led approaches. Each water point includes training local committees for maintenance and hygiene education to ensure long-term sustainability.",
+    targetBeneficiaries: {
+      primary: "Rural households, women, children, pastoral communities, and livestock keepers",
+      estimatedNumber: 4000,
+      demographics: ["Women and girls", "School-age children", "Pastoral communities", "Livestock owners"],
+    },
+
+    theoryOfChange:
+      "If communities are provided with accessible, clean water sources through boreholes and water pans, then time spent fetching water will decrease, school attendance will improve, livestock mortality will reduce, and waterborne diseases will decline, leading to improved health, education, and economic productivity.",
 
     objectives: [
-      "Provide clean water access to 100 people by 2026",
-      "Reduce waterborne diseases by 70% in target communities",
-      "Train 5 local technicians in water point maintenance",
-      "Establish 10 community water management committees",
-      "Reduce women's water collection time by 80%"
+    "Construct 4 functional water pans in Cuecok, Pacong, Malengagok, and Mathiang payams",
+    "Drill 4 functional boreholes in the four target payams",
+    "Establish 5-member water management committees in each of the four payams",
+    "Improve access to clean water for 4,000 residents and their livestock",
+    "Increase school attendance for boys and girls by reducing water-fetching time",
     ],
 
-    approach: [
-      {
-        title: "Community-Led Implementation",
-        description: "Local communities identify locations and participate in construction",
-        icon: Users
-      },
-      {
-        title: "Sustainable Technology",
-        description: "locally repairable hand pumps",
-        icon: Cpu
-      },
-      {
-        title: "Hygiene Education",
-        description: "Comprehensive water, sanitation, and hygiene training",
-        icon: Shield
-      },
-      {
-        title: "Local Capacity Building",
-        description: "Training community members in maintenance and management",
-        icon: BookOpen
-      }
+    keyActivities: [
+    "Community mobilization meetings in all four payams",
+    "Site identification and clearance for water pans and boreholes",
+    "Construction of 4 water pans with fencing",
+    "Drilling of 4 boreholes with proper infrastructure",
+    "Formation and training of water management committees",
+    "Handover ceremonies to beneficiary communities",
     ],
 
-    stories: [
-      {
-        title: "Maria's Daily Journey",
-        description: "How a solar-powered borehole transformed life for a mother of five",
-        impact: "Reduced water collection time from 4 hours to 15 minutes daily",
-        image: "/images/water-story1.jpg"
-      },
-      {
-        title: "Community Ownership Success",
-        description: "Local water committee successfully maintains borehole for 2+ years",
-        impact: "Zero breakdowns with community-funded maintenance fund",
-        image: "/images/water-story2.jpg"
-      }
+    indicators: [
+    { indicator: "Number of water pans constructed and functional", target: "4" },
+    { indicator: "Number of boreholes drilled and functional", target: "4" },
+    { indicator: "Water management committees established", target: "4 committees (5 members each)" },
+    { indicator: "Reduction in water collection time for women and girls", target: "From 6 hours to 1 hour daily" },
+    { indicator: "Increase in school attendance among affected children", target: "50% improvement" },
     ],
 
-    fundingNeeds: [
-      { amount: "$50", description: "Provides water purification tablets for 1 family for 6 months" },
-      { amount: "$150", description: "Trains 1 community member in basic water point maintenance" },
-      { amount: "$500", description: "Installs handwashing station at a community water point" },
-      { amount: "$2000", description: "Funds construction materials for a new hand-dug well" }
+    risksAndMitigation: [
+    {
+      risk: "Seasonal flooding affecting construction timelines",
+      mitigation: "Pre-position materials before rainy season and engage local labor for rapid construction",
+    },
+    {
+      risk: "Community conflicts over water access points",
+      mitigation: "Involve all stakeholders in site selection and establish clear usage guidelines",
+    },
+    {
+      risk: "Equipment breakdown during drilling operations",
+      mitigation: "Hire experienced contractors with backup equipment and establish maintenance protocols",
+    },
+    ],
+
+    budgetSummary: {
+    annualBudget: "$84,000",
+    fundingGoal: "$84,000",
+    fundingGap: "$84,000",
+    breakdown: [
+      { item: "Construction of 4 water pans", amount: "$28,000" },
+      { item: "Drilling of 4 boreholes", amount: "$52,000" },
+      { item: "Administrative costs (5%)", amount: "$4,000" }
     ]
+    },
+
+    sustainabilityPlan:
+      "Water management committees (5 members each in all four payams) will oversee maintenance, establish usage guidelines, and collect nominal fees for repairs. Local capacity will be built through training on basic maintenance, and communities will contribute labor during construction to foster ownership.",
+
+    evidenceOfImpact: [],
+
+    donationAnchors: [
+    { amount: "$50", description: "Provides clean water for one family for 6 months" },
+    { amount: "$250", description: "Funds fencing for one water pan to protect from contamination" },
+    { amount: "$1,000", description: "Supports one community mobilization and training session" },
+    { amount: "$7,000", description: "Constructs one complete water pan for an entire community" },
+    { amount: "$13,000", description: "Drills one borehole providing water for 1,000 people" },
+    { amount: "$21,000", description: "Funds one water pan and contributes to a borehole" },
+    ],
   },
 
   {
     id: 2,
     slug: "agriculture",
-    icon: Sprout,
-    title: "Agricultural Empowerment Program",
-    shortDescription:
-      "Equipping farmers with sustainable agriculture skills, tools, and cooperative support to strengthen food security.",
+    sector: "Agriculture",
     status: "Expanding",
+    icon: Sprout,
     color: "green",
     image: "/images/food3.JPG",
-    duration: "Since 2024",
-    annualBudget: "$180,000",
-    fundingGoal: "$250,000",
-    fundingProgress: 5,
 
-    impact: {
-      currentLabel: "Farmers Trained",
-      currentValue: 200,
-      goalLabel: "Target by 2025",
-      goalValue: 500,
-      progress: 5,
+    summary: {
+      title: "Agricultural Empowerment Program",
+      shortDescription:
+        "Equipping farmers with sustainable agriculture skills, tools, and cooperative support to strengthen food security.",
+      overview:
+        "We promote climate-smart agriculture through farmer field schools, seed multiplication programs, and cooperative development to build resilient food systems in South Sudan's challenging environment.",
+      location: ["Rumbek East", "Yirol", "Bor"],
+      duration: "Since 2024",
     },
 
-    highlights: [
-      { label: "Farmers Trained", value: "200" },
-      { label: "Cooperatives Formed", value: "12" },
-      { label: "Acres Cultivated", value: "450" },
-    ],
+    problemStatement:
+      "Farmers in South Sudan face low productivity due to outdated farming methods, lack of access to quality inputs, climate change impacts, and poor market linkages, leading to chronic food insecurity and poverty.",
 
-    overview: "We promote climate-smart agriculture through farmer field schools, seed multiplication programs, and cooperative development to build resilient food systems in South Sudan's challenging environment.",
+    targetBeneficiaries: {
+      primary: "Smallholder farmers, women farmer groups, youth agricultural entrepreneurs",
+      estimatedNumber: 1000,
+      demographics: ["Smallholder farmers", "Women-led households", "Youth (18-35)"],
+    },
+
+    theoryOfChange:
+      "If farmers are equipped with climate-smart agricultural techniques, quality inputs, and market access through cooperatives, then agricultural productivity will increase, leading to improved food security and household incomes.",
 
     objectives: [
       "Train 1,000 farmers in sustainable agriculture by 2025",
       "Increase crop yields by 150% for participating farmers",
       "Establish 50 farmer cooperatives with market linkages",
       "Create 6 community seed banks for climate-resilient varieties",
-      "Reduce post-harvest losses by 60% through improved storage"
+      "Reduce post-harvest losses by 60% through improved storage",
     ],
 
-    approach: [
-      {
-        title: "Farmer Field Schools",
-        description: "Hands-on training in climate-resilient farming techniques",
-        icon: GraduationCap
-      },
-      {
-        title: "Seed Multiplication",
-        description: "Local production of improved, climate-adapted seeds",
-        icon: Leaf
-      },
-      {
-        title: "Cooperative Development",
-        description: "Building farmer groups for collective marketing",
-        icon: Users
-      },
-      {
-        title: "Market Linkages",
-        description: "Connecting farmers to local and regional markets",
-        icon: Store
-      }
+    keyActivities: [
+      "Farmer field schools and hands-on training sessions",
+      "Establishment and support of farmer cooperatives",
+      "Distribution of improved seeds and farming tools",
+      "Climate-smart agriculture demonstrations",
+      "Market linkage development and value chain strengthening",
     ],
 
-    stories: [
-      {
-        title: "Samuel's Harvest Miracle",
-        description: "From one bag of maize to surplus for his family and community",
-        impact: "Increased yield from 150kg to 850kg per acre",
-        image: "/images/agri-story1.jpg"
-      },
-      {
-        title: "Women's Cooperative Success",
-        description: "How 15 women transformed vegetable farming into a thriving business",
-        impact: "Increased household income by 300% for member families",
-        image: "/images/agri-story2.jpg"
-      }
+    indicators: [
+      { indicator: "Farmers trained in sustainable practices", target: "1,000" },
+      { indicator: "Increase in average crop yields", target: "+150%" },
+      { indicator: "Farmer cooperatives established", target: "50" },
+      { indicator: "Reduction in post-harvest losses", target: "-60%" },
     ],
 
-    fundingNeeds: [
+    risksAndMitigation: [
+      {
+        risk: "Unpredictable rainfall patterns due to climate change",
+        mitigation: "Promote drought-resistant crops and water harvesting techniques",
+      },
+      {
+        risk: "Market price fluctuations affecting farmer incomes",
+        mitigation: "Establish forward contracts and collective bargaining through cooperatives",
+      },
+    ],
+
+    budgetSummary: {
+      annualBudget: "$180,000",
+      fundingGoal: "$180,000",
+      fundingGap: "$180,000",
+    },
+
+    sustainabilityPlan:
+      "Farmer cooperatives will establish revolving seed funds, collective marketing systems, and savings groups to ensure long-term program benefits continue beyond project funding.",
+
+    evidenceOfImpact: [],
+
+    donationAnchors: [
       { amount: "$30", description: "Provides improved seeds for one farmer for a season" },
       { amount: "$100", description: "Equips a farmer with basic tools (hoe, machete, watering can)" },
       { amount: "$400", description: "Funds a farmer field school session for 25 farmers" },
-      { amount: "$1000", description: "Establishes a community seed bank with 10 varieties" }
-    ]
+      { amount: "$1,000", description: "Establishes a community seed bank with 10 varieties" },
+    ],
   },
-
-{
-  id: 3,
-  slug: "healthcare",
-  icon: Heart,
-  title: "Healthcare & Wellness Program",
-  shortDescription: "Aiming to deliver essential healthcare through mobile clinics, maternal health services, and community education.",
-  longDescription: "Our proposed Healthcare & Wellness Program seeks funding to bring essential medical services to remote communities through mobile clinics, maternal and child health centers, and community health worker networks. We plan to focus on preventive care, maternal health, and disease prevention in areas with limited access to medical facilities. This program is designed but requires funding to launch.",
-  location: "Remote Communities, Rumbek East, Yirol",
-  status: "Planning",
-  color: "red",
-  image: "/images/health1.jpeg",
-  duration: "Proposed for 2024",
-  annualBudget: "$220,000",
-  fundingGoal: "$220,000",
-  fundingProgress: 5, 
-  
-  impact: {
-    currentLabel: "Funding Required",
-    currentValue: 11000, 
-    goalLabel: "Target to Launch",
-    goalValue: 220000, 
-    progress: 5,
-  },
-  
-  highlights: [
-    { label: "Target Communities", value: "8" },
-    { label: "Mobile Clinics Planned", value: "2" },
-    { label: "Health Workers to Train", value: "30" },
-    { label: "Lives to Impact", value: "15,000" },
-  ],
-  
-  overview: "This is a proposed program that urgently needs funding to launch. We have conducted needs assessments, developed comprehensive plans, and identified partner communities ready for implementation. Your support will enable us to start saving lives and improving health outcomes in some of South Sudan's most underserved areas.",
-  
-  objectives: [
-    "Provide 10,000 medical consultations in the first year",
-    "Reduce maternal mortality by 30% in target areas within 2 years",
-    "Train 30 community health workers in basic healthcare",
-    "Achieve 70% vaccination coverage for children under 5",
-    "Establish 2 maternal waiting homes near health facilities"
-  ],
-  
-  approach: [
-    {
-      title: "Mobile Health Units",
-      description: "Planning to bring medical services directly to remote villages",
-      icon: Truck
-    },
-    {
-      title: "Community Health Workers",
-      description: "Ready to train local volunteers in basic healthcare and prevention",
-      icon: Users
-    },
-    {
-      title: "Maternal Health Focus",
-      description: "Designed specialized care for pregnant women and newborns",
-      icon: Baby
-    },
-    {
-      title: "Preventive Health Education",
-      description: "Community workshops planned on prevention and healthy practices",
-      icon: BookOpen
-    }
-  ],
-  
-  stories: [
-    {
-      title: "Why We Need This Program",
-      description: "In remote communities, women walk 10+ miles to reach basic healthcare. Children die from preventable diseases. Our needs assessment shows urgent need for mobile clinics.",
-      impact: "Your funding could prevent 500+ preventable deaths in the first year",
-      image: "/images/health-need.jpg"
-    },
-    {
-      title: "Community Readiness",
-      description: "Local communities have identified clinic sites, committed volunteers, and are ready to partner. They await our arrival with hope.",
-      impact: "8 communities prepared to host mobile clinics once funded",
-      image: "/images/community-ready.jpg"
-    }
-  ],
-  
-  fundingNeeds: [
-    { amount: "$25", description: "Could provide a complete prenatal care kit for one expectant mother" },
-    { amount: "$75", description: "Would fund vaccinations for 10 children once we launch" },
-    { amount: "$300", description: "Could support one mobile clinic outreach day" },
-    { amount: "$800", description: "Would train one community health worker for 6 months" },
-    { amount: "$5000", description: "Could purchase essential medical equipment for one mobile clinic" },
-    { amount: "$25000", description: "Would fund the entire program for one month, saving countless lives" }
-  ],
-  
-  fundingUrgency: "High",
-  timeline: "Can launch within 3 months of full funding",
-  communityCommitment: "8 communities have pledged land, volunteers, and local support",
-  partnerships: "In discussions with Ministry of Health and local hospitals for referrals",
-  sustainabilityPlan: "Gradual transition to community ownership with health insurance schemes"
-},
 
   {
-    id: 4,
-    slug: "education",
-    icon: GraduationCap,
-    title: "Education & Skills Development",
-    shortDescription:
-      "Expanding access to literacy, vocational training, and youth development opportunities.",
-    location: "Juba, Wau, Rumbek, Bor",
-    status: "Active",
-    color: "purple",
-    image: "/images/education.jpg",
-    duration: "Since 2019",
-    annualBudget: "$250,000",
-    fundingGoal: "$350,000",
-    fundingProgress: 20,
+    id: 3,
+    slug: "healthcare",
+    sector: "Health",
+    status: "Planning",
+    icon: Heart,
+    color: "red",
+    image: "/images/health1.jpeg",
 
-    impact: {
-      currentLabel: "Students Enrolled",
-      currentValue: 50,
-      goalLabel: "Target by 2025",
-      goalValue: 200,
-      progress: 20,
+    summary: {
+      title: "Healthcare & Wellness Program",
+      shortDescription:
+        "Aiming to deliver essential healthcare through mobile clinics, maternal health services, and community education.",
+      overview:
+        "Our proposed Healthcare & Wellness Program seeks funding to bring essential medical services to remote communities through mobile clinics, maternal and child health centers, and community health worker networks. We plan to focus on preventive care, maternal health, and disease prevention in areas with limited access to medical facilities.",
+      location: ["Remote Communities", "Rumbek East", "Yirol"],
+      duration: "Proposed for 2024",
     },
 
-    highlights: [
-      { label: "Literacy Graduates", value: "50" },
-      { label: "Youth Trained", value: "50" },
-    ],
+    problemStatement:
+      "Remote communities in South Sudan face severe healthcare access challenges, with women walking 10+ miles for basic care, high maternal and child mortality rates, and preventable diseases causing unnecessary deaths due to lack of medical facilities and trained personnel.",
 
-    overview: "We provide inclusive education through accelerated learning programs, vocational training centers, and community libraries, focusing on marginalized groups including girls, displaced children, and youth affected by conflict.",
+    targetBeneficiaries: {
+      primary: "Women and children, elderly, displaced populations in remote areas",
+      estimatedNumber: 3000,
+      demographics: ["Pregnant women", "Children under 5", "Elderly", "Displaced families"],
+    },
+
+    theoryOfChange:
+      "If remote communities receive regular mobile clinic services, community health worker support, and maternal health interventions, then healthcare access will improve, leading to reduced mortality rates and better health outcomes.",
 
     objectives: [
-      "Enroll 200 out-of-school children and youth by 2026",
-      "Achieve 80% literacy rate among program participants",
-      "Train 500 youth in market-relevant vocational skills",
-      "Establish 15 community learning centers",
-      "Support 100 girls' secondary education through scholarships"
+      "Provide 10,000 medical consultations in the first year",
+      "Reduce maternal mortality by 30% in target areas within 2 years",
+      "Train 30 community health workers in basic healthcare",
+      "Achieve 70% vaccination coverage for children under 5",
+      "Establish 2 maternal waiting homes near health facilities",
     ],
 
-    approach: [
-      {
-        title: "Accelerated Learning",
-        description: "Condensed curriculum for over-age learners to catch up",
-        icon: Zap
-      },
-      {
-        title: "Vocational Training",
-        description: "Market-aligned skills in construction, tailoring, and agriculture",
-        icon: Wrench
-      },
-      {
-        title: "Girls' Education",
-        description: "Scholarships and safe learning environments for girls",
-        icon: Users
-      },
-      {
-        title: "Community Libraries",
-        description: "Creating spaces for continued learning and digital access",
-        icon: BookOpen
-      }
+    keyActivities: [
+      "Mobile clinic outreach to remote villages",
+      "Training of community health workers",
+      "Maternal and child health services",
+      "Vaccination campaigns and preventive healthcare",
+      "Health education and awareness sessions",
     ],
 
-    stories: [
-      {
-        title: "James' Second Chance",
-        description: "From child soldier to skilled carpenter through vocational training",
-        impact: "Now employs 3 other youth in his woodworking workshop",
-        image: "/images/edu-story1.jpg"
-      },
-      {
-        title: "Girls' School Success",
-        description: "How a girls' boarding school transformed community attitudes",
-        impact: "Increased girls' secondary enrollment from 15% to 45%",
-        image: "/images/edu-story2.jpg"
-      }
+    indicators: [
+      { indicator: "Medical consultations provided", target: "10,000" },
+      { indicator: "Community health workers trained", target: "30" },
+      { indicator: "Children under 5 vaccinated", target: "70%" },
+      { indicator: "Reduction in maternal mortality", target: "-30%" },
     ],
 
-    fundingNeeds: [
-      { amount: "$20", description: "Provides school supplies for one student for a year" },
-      { amount: "$100", description: "Funds one month of vocational training for a youth" },
-      { amount: "$500", description: "Supports a girls' scholarship for one school term" },
-      { amount: "$1500", description: "Equips a vocational training workshop with basic tools" }
-    ]
+    risksAndMitigation: [
+      {
+        risk: "Security challenges in remote areas",
+        mitigation: "Coordinate with local authorities and community leaders for safe access",
+      },
+      {
+        risk: "Limited local healthcare infrastructure for referrals",
+        mitigation: "Establish partnership agreements with regional hospitals in advance",
+      },
+    ],
+
+    budgetSummary: {
+      annualBudget: "$220,000",
+      fundingGoal: "$220,000",
+      fundingGap: "$220,000",
+    },
+
+    sustainabilityPlan:
+      "Gradual transition to community ownership with health insurance schemes, local government partnerships, and capacity building of local health workers to ensure long-term service continuity.",
+
+    evidenceOfImpact: [],
+
+    donationAnchors: [
+      { amount: "$25", description: "Could provide a complete prenatal care kit for one expectant mother" },
+      { amount: "$75", description: "Would fund vaccinations for 10 children once we launch" },
+      { amount: "$300", description: "Could support one mobile clinic outreach day" },
+      { amount: "$800", description: "Would train one community health worker for 6 months" },
+      { amount: "$5,000", description: "Could purchase essential medical equipment for one mobile clinic" },
+      { amount: "$25,000", description: "Would fund the entire program for one month, saving countless lives" },
+    ],
+  },
+
+  {
+  id: 4,
+  slug: "pacong-girls-school",
+  sector: "Education",
+  status: "Planning", 
+  icon: GraduationCap,
+  color: "purple",
+  image: "/images/education.jpg", 
+
+  summary: {
+    title: "Pacong Girls' Primary School",
+    shortDescription: "Establishing a community-owned primary school to enhance access to quality education for 200 girls annually and provide adult literacy for 30 women in rural Rumbek East.",
+    overview: "This project will construct a new school facility in Pacong to serve as a pilot education center for four underserved villages: Pacong, Cueicok, Malengagok, and Mathiang. The initiative addresses a 98% illiteracy rate among women and girls in the area through comprehensive educational infrastructure and community integration.",
+    location: [
+      "Pacong",
+      "Cueicok",
+      "Malengagok",
+      "Mathiang"
+    ],
+    duration: "12 months",
+    },
+
+  problemStatement: "The Pacong area has a staggering 98% illiteracy rate among women and girls due to cultural norms, underinvestment in girls' education, and lack of nearby schools. Women and girls face extreme educational deprivation, with no existing primary school infrastructure serving the four target villages, perpetuating cycles of poverty and gender inequality.",
+
+  targetBeneficiaries: {
+    primary: "Girls (ages 6-14) and adult women, particularly childbearing mothers from underserved rural communities",
+    estimatedNumber: 230, 
+    demographics: ["Girls (primary school age)", "Adult women (childbearing age)", "Host community members", "Returnees", "Internally Displaced Persons (IDPs)"],
+  },
+
+  theoryOfChange: "If a community-owned primary school with comprehensive infrastructure is established in Pacong, then girls' enrollment will increase, female illiteracy will decrease, women's literacy will improve, and intercommunity relations will strengthen, leading to transformative educational and social outcomes for marginalized populations.",
+
+  objectives: [
+    "Increase primary school enrollment among girls from four villages by 200 students annually",
+    "Reduce female illiteracy rate by at least 30% within the first three years",
+    "Improve adult literacy among 30 women through evening classes",
+    "Enhance peaceful coexistence among host, returnee, and IDP communities through shared educational spaces",
+    "Establish sustainable school management through community ownership and participation",
+  ],
+
+  keyActivities: [
+    "Community mobilization, land acquisition, and School Management Committee formation",
+    "Site preparation including land clearing, fencing, and sanitation facilities construction",
+    "Construction of 4 classrooms, kitchen, staff room, office block, latrines, store, and borehole",
+    "Recruitment and orientation of 5 qualified teachers",
+    "Targeted enrollment campaigns across the four villages for girls and women",
+    "Curriculum delivery with morning sessions for children and evening literacy for adult women",
+    "School feeding program implementation through school garden and subsidized community water",
+    "Monthly monitoring and evaluation of attendance, teacher performance, and academic progress",
+  ],
+
+  indicators: [
+    { indicator: "Girls enrolled in primary school annually", target: "200" },
+    { indicator: "Adult women enrolled in evening literacy classes", target: "30" },
+    { indicator: "Reduction in female illiteracy rate", target: "30%" },
+    { indicator: "Classrooms constructed and functional", target: "4" },
+    { indicator: "Qualified teachers recruited and trained", target: "5" },
+    { indicator: "Mixed student composition from all target community groups", target: "Achieved" },
+  ],
+
+  risksAndMitigation: [
+    {
+      risk: "Security instability affecting construction and school operations",
+      mitigation: "Engage local security committees and maintain close coordination with community leaders",
+    },
+    {
+      risk: "Cultural resistance to girls' education and women's literacy programs",
+      mitigation: "Conduct extensive community sensitization and involve traditional leaders in planning",
+    },
+    {
+      risk: "Limited community participation in school management",
+      mitigation: "Establish clear governance structure with incentives for School Management Committee members",
+    },
+  ],
+
+    budgetSummary: {
+    annualBudget: "$231,642.85",
+    fundingGoal: "$231,642.85",
+    fundingGap: "$231,642.85",
+    },
+
+    sustainabilityPlan:
+      "School Management Committee (SMC) comprised of community stakeholders will oversee operations. School garden will provide food for feeding program and potential income. Community ownership model ensures long-term maintenance and operation. Adult literacy graduates may become future teachers or tutors.",
+
+    evidenceOfImpact: [],
+
+  donationAnchors: [
+    { amount: "$35", description: "Provides one desk for a student" },
+    { amount: "$250", description: "Funds one teacher's salary for one month" },
+    { amount: "$1,000", description: "Supports school feeding program for one month" },
+    { amount: "$3,000", description: "Constructs one classroom with basic materials" },
+    { amount: "$13,000", description: "Drills the borehole for clean water access" },
+    { amount: "$50,000", description: "Funds teacher salaries and training for one year" },
+    { amount: "$141,712", description: "Covers complete school construction materials and labor" },
+  ],
   },
 
   {
     id: 5,
     slug: "peacebuilding",
-    icon: Handshake,
-    title: "Peace & Reconciliation Initiative",
-    shortDescription:
-      "Supporting dialogue, reconciliation, and local peacebuilding in conflict-affected communities.",
-    location: "Conflict-Affected Areas, Rumbek, Jonglei, Unity State",
+    sector: "Peace & Governance",
     status: "Critical",
+    icon: Handshake,
     color: "orange",
     image: "/images/peace.jpg",
-    duration: "Since 2020",
-    teamSize: 10,
-    annualBudget: "$150,000",
-    fundingGoal: "$200,000",
-    fundingProgress: 25,
 
-    impact: {
-      currentLabel: "Communities Engaged",
-      currentValue: 20,
-      goalLabel: "Target by 2025",
-      goalValue: 50,
-      progress: 25,
+    summary: {
+      title: "Peace & Reconciliation Initiative",
+      shortDescription:
+        "Supporting dialogue, reconciliation, and local peacebuilding in conflict-affected communities.",
+      overview:
+        "We employ locally-led approaches to peacebuilding, combining traditional conflict resolution mechanisms with modern mediation techniques to address both immediate conflicts and underlying tensions in South Sudan's conflict-prone regions.",
+      location: ["Conflict-Affected Areas", "Rumbek", "Jonglei", "Unity State"],
+      duration: "Since 2020",
     },
 
-    highlights: [
-      { label: "Peace Dialogues", value: "78" },
-      { label: "Agreements Reached", value: "15" },
-      { label: "Peace Committees", value: "25" },
-      { label: "Youth Trained", value: "180" },
-    ],
+    problemStatement:
+      "Decades of conflict have created deep-seated inter-communal tensions, cattle raiding cycles, and resource-based conflicts that undermine development efforts and perpetuate violence, displacement, and human suffering.",
 
-    overview: "We employ locally-led approaches to peacebuilding, combining traditional conflict resolution mechanisms with modern mediation techniques to address both immediate conflicts and underlying tensions.",
+    targetBeneficiaries: {
+      primary: "Conflict-affected communities, youth at risk of violence, women peacebuilders, traditional leaders",
+      estimatedNumber: 5000,
+      demographics: ["Youth (15-35)", "Women", "Traditional leaders", "Displaced populations"],
+    },
+
+    theoryOfChange:
+      "If communities engage in structured dialogue, build local peace committees, and address root causes of conflict through traditional and modern peacebuilding approaches, then sustainable peace will be achieved, creating conditions for development and prosperity.",
 
     objectives: [
       "Establish peace committees in 50 conflict-prone communities",
       "Train 300 youth as peace ambassadors in their communities",
       "Facilitate 100 inter-community dialogues and reconciliation events",
       "Support women's participation in 80% of peace processes",
-      "Document and promote 20 traditional peace agreements"
+      "Document and promote 20 traditional peace agreements",
     ],
 
-    approach: [
-      {
-        title: "Traditional Mechanisms",
-        description: "Leveraging local customs and elder wisdom for conflict resolution",
-        icon: Users
-      },
-      {
-        title: "Youth Engagement",
-        description: "Empowering young people as agents of peace and change",
-        icon: Target
-      },
-      {
-        title: "Women's Mediation",
-        description: "Training women leaders in negotiation and mediation skills",
-        icon: Heart
-      },
-      {
-        title: "Trauma Healing",
-        description: "Addressing psychological wounds from prolonged conflict",
-        icon: Shield
-      }
+    keyActivities: [
+      "Community peace committee formation and training",
+      "Inter-community dialogue and mediation sessions",
+      "Youth peace ambassador training programs",
+      "Women's peace leadership development",
+      "Trauma healing and reconciliation workshops",
     ],
 
-    stories: [
-      {
-        title: "Cattle Raid Ceasefire",
-        description: "How traditional leaders brokered peace after decades of violence",
-        impact: "Zero cattle raids for 18 months following peace agreement",
-        image: "/images/peace-story1.jpg"
-      },
-      {
-        title: "Women's Peace Council",
-        description: "Cross-ethnic women's group prevents renewed conflict",
-        impact: "Successfully mediated 12 community conflicts without violence",
-        image: "/images/peace-story2.jpg"
-      }
+    indicators: [
+      { indicator: "Peace committees established", target: "50" },
+      { indicator: "Youth peace ambassadors trained", target: "300" },
+      { indicator: "Inter-community dialogues facilitated", target: "100" },
+      { indicator: "Women's participation in peace processes", target: "80%" },
     ],
 
-    fundingNeeds: [
+    risksAndMitigation: [
+      {
+        risk: "Escalation of violence during peace processes",
+        mitigation: "Work through trusted intermediaries and ensure security protocols",
+      },
+      {
+        risk: "Political interference in community peace efforts",
+        mitigation: "Maintain neutrality and build broad-based community ownership",
+      },
+    ],
+
+    budgetSummary: {
+      annualBudget: "$150,000",
+      fundingGoal: "$200,000",
+      fundingGap: "$195,000",
+    },
+
+    sustainabilityPlan:
+      "Build local ownership through community peace funds, establish traditional peace institutions, and develop early warning systems managed by local committees to ensure long-term conflict prevention.",
+
+    evidenceOfImpact: [],
+
+    donationAnchors: [
       { amount: "$50", description: "Funds a community peace dialogue for 20 participants" },
       { amount: "$150", description: "Trains one youth peace ambassador for 3 months" },
       { amount: "$400", description: "Supports a women's mediation workshop for 15 leaders" },
-      { amount: "$1000", description: "Establishes a peace resource center in a conflict zone" }
-    ]
+      { amount: "$1,000", description: "Establishes a peace resource center in a conflict zone" },
+    ],
   },
 ];
 
@@ -1565,3 +1581,43 @@ export const stories: Story[] = [
     }
   }
 ];
+
+//docs
+export const documentCategories = [
+    {
+      id: "legal",
+      title: "Legal & Registration",
+      description: "Official registration documents and legal compliance",
+      icon: Shield,
+      color: "bg-blue-100 text-blue-800 border-blue-200",
+      documents: [
+        {
+          title: "Certificate of Registration",
+          description: "Official NGO registration with Relief & Rehabilitation Commission (RRC)",
+          year: "2019",
+          type: "PDF",
+          size: "1.2 MB",
+          downloadUrl: "/documents/legal/registration-certificate.pdf",
+          public: true
+        },
+        {
+          title: "Constitution & Bylaws",
+          description: "Governing documents and organizational structure",
+          year: "2020",
+          type: "PDF",
+          size: "850 KB",
+          downloadUrl: "/docs/ccso-laws.pdf",
+          public: true
+        },
+                {
+          title: "Concept & Strategy",
+          description: "CCSO Concept & Strategy",
+          year: "2020",
+          type: "PDF",
+          size: "850 KB",
+          downloadUrl: "/docs/ccso-concept.pdf",
+          public: true
+        },
+      ]
+    },
+  ];
