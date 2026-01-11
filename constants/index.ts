@@ -375,7 +375,7 @@ export const campaigns = [
   {
     id: "water",
     name: "Water Wells Project",
-    raised: 500,
+    raised: 0,
     goal: 10000,
     featured: true,
     impact: "Provides clean drinking water to entire villages",
@@ -384,7 +384,7 @@ export const campaigns = [
   {
     id: "education",
     name: "Education Program",
-    raised: 5000,
+    raised: 0,
     goal: 50000,
     impact: "Keeps children in school and supports teachers",
     urgency: "School term ongoing",
@@ -392,7 +392,7 @@ export const campaigns = [
   {
     id: "healthcare",
     name: "Healthcare Initiative",
-    raised: 5000,
+    raised: 0,
     goal: 200000,
     impact: "Delivers essential medical care to remote communities",
     urgency: "Medical supplies running low",

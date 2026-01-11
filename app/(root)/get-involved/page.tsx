@@ -384,7 +384,7 @@ const GetInvolved = () => {
           </Tabs>
       </section>
 
-      <section ref={addToRefs} className="section-padding bg-muted/40">
+      <section ref={addToRefs} className="section-padding bg-muted/40 px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 px-4 py-2 bg-primary/10 text-primary border-0">
               <TrendingUp className="h-4 w-4 mr-2" />
